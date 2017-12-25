@@ -331,6 +331,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -408,6 +415,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -436,7 +450,9 @@
 <li>Subaddress - allows for organizing your funds in subaccounts within a single wallet</li>
 </ul>
 <h2 id="standard-address">Standard address</h2>
-<p>Monero standard ("raw") address is composed of two public keys:</p>
+<p>The raw address is useful for things like donations (where you don't care who donated)
+or exchange withdrawals (where you know the payer out of band). Its strength is simplicity.</p>
+<p>Monero standard address is composed of two public keys:</p>
 <ul>
 <li>public spend key</li>
 <li>public view key</li>
@@ -474,9 +490,9 @@
 </tr>
 </tbody>
 </table>
-<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../Monero-Base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
+<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/Base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
 <p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
-<p>Reference:</p>
+<h2 id="reference">Reference</h2>
 <ul>
 <li><a href="https://xmr.llcoins.net/addresstests.html">https://xmr.llcoins.net/addresstests.html</a></li>
 </ul>
