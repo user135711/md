@@ -337,6 +337,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" title="Reference" class="md-nav__link">
     Reference
   </a>
@@ -400,6 +407,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#reference" title="Reference" class="md-nav__link">
@@ -475,6 +489,8 @@ TODO: explain how exactly payment IDs are encoded in transactions.</p>
 </table>
 <p>It totals to 78 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/Base58">Monero specific Base58</a> format, resulting in a 106 chars long string. Example integrated address:</p>
 <p><code>4LL9oSLmtpccfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2bYXZKKQePHES9khPK</code></p>
+<h2 id="caveats">Caveats</h2>
+<p>Single transaction cannot pay to multiple integrated addresses.</p>
 <h2 id="reference">Reference</h2>
 <ul>
 <li>question on <a href="https://monero.stackexchange.com/questions/3179/what-is-an-integrated-address">StackExchenge</a> </li>
