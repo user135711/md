@@ -13,6 +13,8 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
+        <link rel="canonical" href="https://monerodocs.org/public-address/standard-address/">
+      
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
       
@@ -31,22 +33,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.1">
     
     
       
-        <title>Monero Docs</title>
+        <title>Standard - Monero Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.41c6761c.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.41c6761c.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
       
     
     
-      <script src="/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -56,7 +58,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="/extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
     
   </head>
@@ -100,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                
+                Standard
               </span>
             
           
@@ -215,7 +217,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/" title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -227,7 +229,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/technical-specs/" title="Technical Specs" class="md-nav__link">
+    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
       Technical Specs
     </a>
   </li>
@@ -258,7 +260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/primitives/base58/" title="Base58" class="md-nav__link">
+    <a href="../../primitives/base58/" title="Base58" class="md-nav__link">
       Base58
     </a>
   </li>
@@ -273,10 +275,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Address
@@ -292,11 +296,54 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/public-address/standard-address/" title="Standard" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Standard
+      </label>
+    
+    <a href="./" title="Standard" class="md-nav__link md-nav__link--active">
       Standard
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-address" title="Standard address" class="md-nav__link">
+    Standard address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -306,7 +353,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/public-address/integrated-address/" title="Integrated" class="md-nav__link">
+    <a href="../integrated-address/" title="Integrated" class="md-nav__link">
       Integrated
     </a>
   </li>
@@ -318,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/public-address/subaddress/" title="Subaddress" class="md-nav__link">
+    <a href="../subaddress/" title="Subaddress" class="md-nav__link">
       Subaddress
     </a>
   </li>
@@ -335,7 +382,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/multisignature/" title="Multisignature" class="md-nav__link">
+    <a href="../../multisignature/" title="Multisignature" class="md-nav__link">
       Multisignature
     </a>
   </li>
@@ -347,7 +394,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/directory/overview/" title="Directory" class="md-nav__link">
+    <a href="../../directory/overview/" title="Directory" class="md-nav__link">
       Directory
     </a>
   </li>
@@ -360,12 +407,111 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-address" title="Standard address" class="md-nav__link">
+    Standard address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/public-address/standard-address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="address">Address</h1>
+<p>Monero public address is what you publish to get paid.</p>
+<p>An address can be generated offline and for free. It boils down to generating a large random number representing your private spending key.</p>
+<p>Publishing your Monero address does <strong>not</strong> endanger your privacy. That's because in Monero transactions go to stealth addresses which are decoupled from your public address.</p>
+<p>There are a few types of public addresses in Monero:</p>
+<ul>
+<li>Standard address - the basic type of the address, also refered to as raw address</li>
+<li>Integrated address - embeds payment ID so you can learn for what you are being paid</li>
+<li>Subaddress - slightly enhances privacy and allows for organizing your funds in subaccounts within a single wallet</li>
+</ul>
+<h2 id="standard-address">Standard address</h2>
+<p>The raw address is useful for things like donations (where you don't care who donated)
+or exchange withdrawals (where you know the payer out of band). Its strength is simplicity.</p>
+<p>Monero standard address is composed of two public keys:</p>
+<ul>
+<li>public spend key</li>
+<li>public view key</li>
+</ul>
+<p>It also contains a checksum and a "network byte" which actually identifies both the network and the address type.</p>
+<p>Data structure (<a href="https://github.com/monero-project/monero/blob/f7b9f44c1b0d53170fd7f53d37fc67648f3247a2/src/cryptonote_basic/cryptonote_basic_impl.cpp#L159">src</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Size in bytes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>identifies the network and address type; <a href="https://github.com/monero-project/monero/blob/793bc973746a10883adb2f89827e223f562b9651/src/cryptonote_config.h#L149">18</a> - main chain; <a href="https://github.com/monero-project/monero/blob/793bc973746a10883adb2f89827e223f562b9651/src/cryptonote_config.h#L161">53</a> - test chain</td>
+</tr>
+<tr>
+<td>1</td>
+<td>32</td>
+<td>public spend key</td>
+</tr>
+<tr>
+<td>33</td>
+<td>32</td>
+<td>public view key</td>
+</tr>
+<tr>
+<td>65</td>
+<td>4</td>
+<td>checksum (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L261">Keccak-f[1600] hash</a> of the previous 65 bytes, trimmed to first <a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L53">4</a> bytes)</td>
+</tr>
+</tbody>
+</table>
+<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
+<p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://xmr.llcoins.net/addresstests.html">https://xmr.llcoins.net/addresstests.html</a></li>
+</ul>
+                
+                  
+                
+              
               
                 
               
@@ -376,6 +522,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../primitives/base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Base58
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../integrated-address/" title="Integrated" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Integrated
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -396,9 +577,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.5165553b.js"></script>
+      <script src="../../assets/javascripts/application.5165553b.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:""}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
       
     
     

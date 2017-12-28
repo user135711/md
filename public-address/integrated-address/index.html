@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/public-address/Integrated-Address/">
+        <link rel="canonical" href="https://monerodocs.org/public-address/integrated-address/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -229,7 +229,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Technical-Specs/" title="Technical Specs" class="md-nav__link">
+    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
       Technical Specs
     </a>
   </li>
@@ -260,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../primitives/Base58/" title="Base 58" class="md-nav__link">
-      Base 58
+    <a href="../../primitives/base58/" title="Base58" class="md-nav__link">
+      Base58
     </a>
   </li>
 
@@ -298,7 +298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Standard-Address/" title="Standard" class="md-nav__link">
+    <a href="../standard-address/" title="Standard" class="md-nav__link">
       Standard
     </a>
   </li>
@@ -365,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Subaddress/" title="Subaddress" class="md-nav__link">
+    <a href="../subaddress/" title="Subaddress" class="md-nav__link">
       Subaddress
     </a>
   </li>
@@ -382,8 +382,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Multisignature/" title="Multisignature" class="md-nav__link">
+    <a href="../../multisignature/" title="Multisignature" class="md-nav__link">
       Multisignature
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../directory/overview/" title="Directory" class="md-nav__link">
+      Directory
     </a>
   </li>
 
@@ -436,7 +448,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/public-address/Integrated-Address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/public-address/integrated-address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="integrated-address">Integrated address</h1>
@@ -487,7 +499,7 @@ TODO: explain how exactly payment IDs are encoded in transactions.</p>
 </tr>
 </tbody>
 </table>
-<p>It totals to 78 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/Base58">Monero specific Base58</a> format, resulting in a 106 chars long string. Example integrated address:</p>
+<p>It totals to 78 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/base58">Monero specific Base58</a> format, resulting in a 106 chars long string. Example integrated address:</p>
 <p><code>4LL9oSLmtpccfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2bYXZKKQePHES9khPK</code></p>
 <h2 id="caveats">Caveats</h2>
 <p>Single transaction cannot pay to multiple integrated addresses.</p>
@@ -513,7 +525,7 @@ TODO: explain how exactly payment IDs are encoded in transactions.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Standard-Address/" title="Standard" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../standard-address/" title="Standard" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -528,7 +540,7 @@ TODO: explain how exactly payment IDs are encoded in transactions.</p>
           </a>
         
         
-          <a href="../Subaddress/" title="Subaddress" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../subaddress/" title="Subaddress" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
