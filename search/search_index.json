@@ -11,6 +11,31 @@
             "title": "Unofficial Monero Documentation (1% done)"
         },
         {
+            "location": "/interacting/overview/",
+            "text": "Interacting with Monero\n\n\nYou can interact with Monero via desktop GUI, commandline interface, and programming API.\n\n\nOn top of that, Monero nodes interact with each other in a peer-to-peer network. \n\n\nInstallation directory overview\n\n\nThis considers the released version of Monero software. Once unpacked, you will notice six executable files:\n\n\n\n\nSeparation of node and wallet\n\n\nMonero project nicely decouples node logic \nmonerod\n from wallet logic \nmonero-wallet-*\n.\nWallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.\n\n\n\n\n\n\n\n\nExecutable\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nmonerod\n\n\nThe full node daemon. Does not require a wallet.\n\n\n\n\n\n\nmonero-wallet-gui\n\n\nWallet logic and \ngraphical\n user interface. Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-wallet-cli\n\n\nWallet logic and \ncommandline\n user interface. Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-wallet-rpc\n\n\nWallet logic and \nHTTP API\n (JSON-RPC protocol). Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-blockchain-export\n\n\nTool to export blockchain to \nblockchain.raw\n file.\n\n\n\n\n\n\nmonero-blockchain-import\n\n\nTool to import \nblockchain.raw\n - ideally your own trusted copy.\n\n\n\n\n\n\n\n\nInteracting\n\n\nThere are quite a few ways you can interact with Monero software.\nPerhaps the most surprising for newcomers is that \nmonerod\n daemon accepts interactive keyboard commands while it is running.\n\n\nAlso, please note that HTTP API is split across \nmonerod\n and \nmonero-wallet-rpc\n. You need to run and call both daemons to explore the full API.\nThis follows the node-logic vs wallet-logic split mentioned earlier.   \n\n\nAll wallet implementations depend on the \nmonerod\n running.\n\n\n\n\n\n\n\n\nExecutable\n\n\np2p network\n\n\nnode commands via keyboard\n\n\nnode HTTP API\n\n\nwallet commands via keyboard\n\n\nwallet HTTP API\n\n\nwallet via GUI\n\n\n\n\n\n\n\n\n\n\nmonerod\n\n\n\u2714\n\n\n\u2714\n\n\n\u2714\n\n\n\n\n\n\n\n\n\n\n\n\nmonero-wallet-cli\n\n\n\n\n\n\n\n\n\u2714\n\n\n\n\n\n\n\n\n\n\nmonero-wallet-rpc\n\n\n\n\n\n\n\n\n\n\n\u2714\n\n\n\n\n\n\n\n\nmonero-wallet-gui\n\n\n\n\n\n\n\n\n\n\n\n\n\u2714",
+            "title": "Interacting"
+        },
+        {
+            "location": "/interacting/overview/#interacting-with-monero",
+            "text": "You can interact with Monero via desktop GUI, commandline interface, and programming API.  On top of that, Monero nodes interact with each other in a peer-to-peer network.",
+            "title": "Interacting with Monero"
+        },
+        {
+            "location": "/interacting/overview/#installation-directory-overview",
+            "text": "This considers the released version of Monero software. Once unpacked, you will notice six executable files:",
+            "title": "Installation directory overview"
+        },
+        {
+            "location": "/interacting/overview/#separation-of-node-and-wallet",
+            "text": "Monero project nicely decouples node logic  monerod  from wallet logic  monero-wallet-* .\nWallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.     Executable  Description      monerod  The full node daemon. Does not require a wallet.    monero-wallet-gui  Wallet logic and  graphical  user interface. Requires  monerod  running.    monero-wallet-cli  Wallet logic and  commandline  user interface. Requires  monerod  running.    monero-wallet-rpc  Wallet logic and  HTTP API  (JSON-RPC protocol). Requires  monerod  running.    monero-blockchain-export  Tool to export blockchain to  blockchain.raw  file.    monero-blockchain-import  Tool to import  blockchain.raw  - ideally your own trusted copy.",
+            "title": "Separation of node and wallet"
+        },
+        {
+            "location": "/interacting/overview/#interacting",
+            "text": "There are quite a few ways you can interact with Monero software.\nPerhaps the most surprising for newcomers is that  monerod  daemon accepts interactive keyboard commands while it is running.  Also, please note that HTTP API is split across  monerod  and  monero-wallet-rpc . You need to run and call both daemons to explore the full API.\nThis follows the node-logic vs wallet-logic split mentioned earlier.     All wallet implementations depend on the  monerod  running.     Executable  p2p network  node commands via keyboard  node HTTP API  wallet commands via keyboard  wallet HTTP API  wallet via GUI      monerod  \u2714  \u2714  \u2714       monero-wallet-cli     \u2714      monero-wallet-rpc      \u2714     monero-wallet-gui       \u2714",
+            "title": "Interacting"
+        },
+        {
             "location": "/technical-specs/",
             "text": "Monero Technical Specs\n\n\nNo premine, no instamine, no token\n\n\n\n\nMonero had no premine or instamine\n\n\nMonero did not sell any token\n\n\nMonero had no presale of any kind\n\n\n\n\nProof of Work\n\n\n\n\nCryptoNight\n\n\nmay change in the future\n\n\n\n\nDifficulty retarget\n\n\n\n\nevery block\n\n\nbased on the last 720 blocks, excluding 20% of the timestamp outliers\n\n\n\n\nBlock time\n\n\n\n\n2 minutes\n\n\nmay change in the future as long as emission curve is preserved\n\n\n\n\nBlock reward\n\n\n\n\n~6 XMR as of Dec 2017, see the \nlatest block\n coinbase transaction amount for current reward\n\n\nsmoothly decreasing and subject to penalties for blocks greater then median size of the last 100 blocks (M100)\n\n\n\n\nBlock size\n\n\n\n\ndynamic, maximum of two times median size of the last 100 blocks (2 * M100)\n\n\n\n\nEmission curve\n\n\nMain curve\n\n\nFirst, the main emission is about to produce ~18.132 million coins by the end of May 2022.\n\n\nAs of Dec 2017 the emission is about 30 XMR per 10 minutes.\n\n\nSee \ncharts and details\n.\n\n\nTail curve\n\n\nThe tail emission kicks in once main emission is done.\n\n\nIt will produce 0.6 XMR per 2-minute block.\n\n\nThis translates to <1% inflation decreasing over time.\n\n\nMax supply\n\n\n\n\ninfinite\n\n\n\n\nSender privacy\n\n\n\n\nRing signatures\n\n\n\n\nRecipient privacy\n\n\n\n\nStealth addresses\n\n\n\n\nAmount obfuscation\n\n\n\n\nRing confidential transactions",
             "title": "Technical Specs"
@@ -219,21 +244,6 @@
             "location": "/multisignature/#reference",
             "text": "https://monero.stackexchange.com/questions/5646/how-to-use-monero-multisignature-wallets-2-2-2-3",
             "title": "Reference"
-        },
-        {
-            "location": "/directory/overview/",
-            "text": "Monero directory overview\n\n\nThis considers the released version of Monero software. Once unpacked, directory structure looks like:\n\n\n\n\nSeparation of node and wallet\n\n\nMonero project nicely decouples node logic \nmonerod\n from wallet logic \nmonero-wallet-*\n.\nWallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.\n\n\n\n\n\n\n\n\nExecutable\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nmonerod\n\n\nThe full node daemon. Does not require a wallet.\n\n\n\n\n\n\nmonero-wallet-gui\n\n\nWallet logic and graphical user interface. Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-wallet-cli\n\n\nWallet logic and commandline user interface. Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-wallet-rpc\n\n\nWallet logic and HTTP API (JSON-RPC protocol). Requires \nmonerod\n running.\n\n\n\n\n\n\nmonero-blockchain-export\n\n\nTool to export synchronized blockchain to \nblockchain.raw\n file.\n\n\n\n\n\n\nmonero-blockchain-import\n\n\nTool to import \nblockchain.raw\n - ideally your own trusted copy.",
-            "title": "Directory"
-        },
-        {
-            "location": "/directory/overview/#monero-directory-overview",
-            "text": "This considers the released version of Monero software. Once unpacked, directory structure looks like:",
-            "title": "Monero directory overview"
-        },
-        {
-            "location": "/directory/overview/#separation-of-node-and-wallet",
-            "text": "Monero project nicely decouples node logic  monerod  from wallet logic  monero-wallet-* .\nWallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.     Executable  Description      monerod  The full node daemon. Does not require a wallet.    monero-wallet-gui  Wallet logic and graphical user interface. Requires  monerod  running.    monero-wallet-cli  Wallet logic and commandline user interface. Requires  monerod  running.    monero-wallet-rpc  Wallet logic and HTTP API (JSON-RPC protocol). Requires  monerod  running.    monero-blockchain-export  Tool to export synchronized blockchain to  blockchain.raw  file.    monero-blockchain-import  Tool to import  blockchain.raw  - ideally your own trusted copy.",
-            "title": "Separation of node and wallet"
         }
     ]
 }
