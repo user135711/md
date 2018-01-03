@@ -268,8 +268,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#no-premine-no-instamine-no-token" title="No premine, no instamine, no token" class="md-nav__link">
-    No premine, no instamine, no token
+  <a href="#live" title="Live" class="md-nav__link">
+    Live
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-premine-no-instamine-no-icotoken" title="No premine, no instamine, no ICO/token" class="md-nav__link">
+    No premine, no instamine, no ICO/token
   </a>
   
 </li>
@@ -338,8 +345,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#amount-obfuscation" title="Amount obfuscation" class="md-nav__link">
-    Amount obfuscation
+  <a href="#amount-privacy" title="Amount privacy" class="md-nav__link">
+    Amount privacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-address-privacy" title="IP address privacy" class="md-nav__link">
+    IP address privacy
   </a>
   
 </li>
@@ -399,10 +413,70 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Address
+      Cryptography
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        Cryptography
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/prng/" title="PRNG" class="md-nav__link">
+      PRNG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+      Keccak-256
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Address
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -482,8 +556,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#no-premine-no-instamine-no-token" title="No premine, no instamine, no token" class="md-nav__link">
-    No premine, no instamine, no token
+  <a href="#live" title="Live" class="md-nav__link">
+    Live
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-premine-no-instamine-no-icotoken" title="No premine, no instamine, no ICO/token" class="md-nav__link">
+    No premine, no instamine, no ICO/token
   </a>
   
 </li>
@@ -552,8 +633,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#amount-obfuscation" title="Amount obfuscation" class="md-nav__link">
-    Amount obfuscation
+  <a href="#amount-privacy" title="Amount privacy" class="md-nav__link">
+    Amount privacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-address-privacy" title="IP address privacy" class="md-nav__link">
+    IP address privacy
   </a>
   
 </li>
@@ -576,7 +664,11 @@
                 
                 
                 <h1 id="monero-technical-specs">Monero Technical Specs</h1>
-<h2 id="no-premine-no-instamine-no-token">No premine, no instamine, no token</h2>
+<h2 id="live">Live</h2>
+<ul>
+<li>Monero blockchain is live since 18 April 2014</li>
+</ul>
+<h2 id="no-premine-no-instamine-no-icotoken">No premine, no instamine, no ICO/token</h2>
 <ul>
 <li>Monero had no premine or instamine</li>
 <li>Monero did not sell any token</li>
@@ -607,11 +699,11 @@
 <li>dynamic, maximum of two times median size of the last 100 blocks (2 * M100)</li>
 </ul>
 <h2 id="emission-curve">Emission curve</h2>
-<p><strong>Main curve</strong></p>
+<p><strong>Main emission</strong></p>
 <p>First, the main emission is about to produce ~18.132 million coins by the end of May 2022.</p>
 <p>As of Dec 2017 the emission is about 30 XMR per 10 minutes.</p>
 <p>See <a href="https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/">charts and details</a>.</p>
-<p><strong>Tail curve</strong></p>
+<p><strong>Tail emission</strong></p>
 <p>The tail emission kicks in once main emission is done.</p>
 <p>It will produce 0.6 XMR per 2-minute block.</p>
 <p>This translates to &lt;1% inflation decreasing over time.</p>
@@ -627,9 +719,15 @@
 <ul>
 <li>Stealth addresses</li>
 </ul>
-<h2 id="amount-obfuscation">Amount obfuscation</h2>
+<h2 id="amount-privacy">Amount privacy</h2>
 <ul>
 <li>Ring confidential transactions</li>
+</ul>
+<h2 id="ip-address-privacy">IP address privacy</h2>
+<ul>
+<li>not built in</li>
+<li>use TOR or I2P</li>
+<li>there is an ongoing effort to integrate I2P into Monero: the Kovri project </li>
 </ul>
                 
                   

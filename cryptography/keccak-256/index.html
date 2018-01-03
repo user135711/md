@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/interacting/overview/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/keccak-256/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Interacting - Monero Docs</title>
+        <title>Keccak-256 - Monero Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Interacting
+                Keccak-256
               </span>
             
           
@@ -227,61 +227,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Interacting
-      </label>
-    
-    <a href="./" title="Interacting" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../interacting/overview/" title="Interacting" class="md-nav__link">
       Interacting
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation-directory-overview" title="Installation directory overview" class="md-nav__link">
-    Installation directory overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#separation-of-node-and-wallet" title="Separation of node and wallet" class="md-nav__link">
-    Separation of node and wallet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interacting" title="Interacting" class="md-nav__link">
-    Interacting
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -337,10 +287,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Cryptography
@@ -358,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cryptography/overview/" title="Overview" class="md-nav__link">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -370,7 +322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
+    <a href="../prng/" title="PRNG" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -380,11 +332,61 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Keccak-256
+      </label>
+    
+    <a href="./" title="Keccak-256" class="md-nav__link md-nav__link--active">
       Keccak-256
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uses" title="Uses" class="md-nav__link">
+    Uses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keccak-256-vs-sha3-256" title="Keccak-256 vs SHA3-256" class="md-nav__link">
+    Keccak-256 vs SHA3-256
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -486,22 +488,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation-directory-overview" title="Installation directory overview" class="md-nav__link">
-    Installation directory overview
+  <a href="#uses" title="Uses" class="md-nav__link">
+    Uses
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#separation-of-node-and-wallet" title="Separation of node and wallet" class="md-nav__link">
-    Separation of node and wallet
+  <a href="#keccak-256-vs-sha3-256" title="Keccak-256 vs SHA3-256" class="md-nav__link">
+    Keccak-256 vs SHA3-256
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interacting" title="Interacting" class="md-nav__link">
-    Interacting
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -520,109 +522,38 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/keccak-256.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="interacting-with-monero">Interacting with Monero</h1>
-<p>You can interact with Monero via desktop GUI, commandline interface, and programming API.</p>
-<p>On top of that, Monero nodes interact with each other in a peer-to-peer network. </p>
-<h2 id="installation-directory-overview">Installation directory overview</h2>
-<p>This considers the released version of Monero software. Once unpacked, you will notice six executable files:</p>
-<p><img alt="Monero Directory" src="../../images/monero-dir.png" title="Logo Title Text 1" /></p>
-<h2 id="separation-of-node-and-wallet">Separation of node and wallet</h2>
-<p>Monero project nicely decouples node logic <code>monerod</code> from wallet logic <code>monero-wallet-*</code>.
-Wallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.</p>
-<table>
-<thead>
-<tr>
-<th>Executable</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>monerod</code></td>
-<td align="left">The full node daemon. Does not require a wallet.</td>
-</tr>
-<tr>
-<td><code>monero-wallet-gui</code></td>
-<td align="left">Wallet logic and <strong>graphical</strong> user interface. Requires <code>monerod</code> running.</td>
-</tr>
-<tr>
-<td><code>monero-wallet-cli</code></td>
-<td align="left">Wallet logic and <strong>commandline</strong> user interface. Requires <code>monerod</code> running.</td>
-</tr>
-<tr>
-<td><code>monero-wallet-rpc</code></td>
-<td align="left">Wallet logic and <strong>HTTP API</strong> (JSON-RPC protocol). Requires <code>monerod</code> running.</td>
-</tr>
-<tr>
-<td><code>monero-blockchain-export</code></td>
-<td align="left">Tool to export blockchain to <code>blockchain.raw</code> file.</td>
-</tr>
-<tr>
-<td><code>monero-blockchain-import</code></td>
-<td align="left">Tool to import <a href="https://downloads.getmonero.org/blockchain.raw">blockchain.raw</a> - ideally your own trusted copy.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="interacting">Interacting</h2>
-<p>There are quite a few ways you can interact with Monero software.
-Perhaps the most surprising for newcomers is that <code>monerod</code> daemon accepts interactive keyboard commands while it is running.</p>
-<p>Also, please note that HTTP API is split across <code>monerod</code> and <code>monero-wallet-rpc</code>. You need to run and call both daemons to explore the full API.
-This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
-<p>All wallet implementations depend on the <code>monerod</code> running.</p>
-<table>
-<thead>
-<tr>
-<th>Executable</th>
-<th>p2p network</th>
-<th>node commands via keyboard</th>
-<th>node HTTP API</th>
-<th>wallet commands via keyboard</th>
-<th>wallet HTTP API</th>
-<th>wallet via GUI</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>monerod</code></td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>monero-wallet-cli</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>monero-wallet-rpc</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td><code>monero-wallet-gui</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>✔</td>
-</tr>
-</tbody>
-</table>
+                <h1 id="keccak-256-hash-function">Keccak-256 hash function</h1>
+<p>Monero employs Keccak-256 as a hashing function.</p>
+<p>Keccak is the leading hashing function, designed by non-NSA designers.
+Keccak won <a href="https://en.wikipedia.org/wiki/NIST_hash_function_competition">NIST competition</a> to become the official SHA3.</p>
+<h2 id="uses">Uses</h2>
+<p>Monero does <strong>not</strong> employ Keccak for Proof-of-Work. Instead, Keccak is used for:</p>
+<ul>
+<li>random number generator</li>
+<li>block hashing</li>
+<li>transaction hashing</li>
+<li>stealth address private key image (for double spend protection)</li>
+<li>public address checksum</li>
+<li>RingCT</li>
+<li>multisig</li>
+<li>bulletproofs</li>
+</ul>
+<p>...and likely a few other things.</p>
+<h2 id="keccak-256-vs-sha3-256">Keccak-256 vs SHA3-256</h2>
+<p>SHA3-256 is Keccak-256, except NIST changed padding.
+For that reason original Keccak-256 gives in a different hash value than NIST SHA3-256.  </p>
+<p>Monero uses original Keccak-256.
+The NIST standard was only published on August 2015, while Monero went live on 18 April 2014.  </p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/monero-project/monero/blob/5c2dfe157b48a486eb2b92dcf8789b3b1eb20f60/src/crypto/keccak.c">Keccak source code used in Monero</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SHA-3">SHA3 on Wikipedia</a></li>
+<li><a href="https://ethereum.stackexchange.com/questions/550/which-cryptographic-hash-function-does-ethereum-use">Keccak-256 vs SHA3-256</a> explained on Ethereum stackexchange</li>
+<li><a href="https://emn178.github.io/online-tools/keccak_256.html">Online tool to calculate Keccak-256 and SHA3-256</a></li>
+</ul>
                 
                   
                 
@@ -641,7 +572,7 @@ This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../prng/" title="PRNG" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -650,19 +581,19 @@ This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                PRNG
               </span>
             </div>
           </a>
         
         
-          <a href="../../technical-specs/" title="Technical Specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../public-address/standard-address/" title="Standard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Technical Specs
+                Standard
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
