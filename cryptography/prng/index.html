@@ -251,54 +251,18 @@
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Primitives
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Primitives
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../primitives/base58/" title="Base58" class="md-nav__link">
-      Base58
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       Cryptography
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Cryptography
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -383,6 +347,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ed25519/" title="Ed25519" class="md-nav__link">
+      Ed25519
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base58/" title="Base58" class="md-nav__link">
+      Base58
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -395,13 +383,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Address
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -511,14 +499,18 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/prng.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="monero-pseudo-random-number-generator">Monero Pseudo Random Number Generator</h1>
-<p>Monero uses PRNG based on Keccak hashing function.</p>
-<p>The seed comes from entropy sources provided by operating system.
-On Linux and MacOS this translates to <code>/dev/urandom</code>.
-On Windows the WinAPI <code>CryptGenRandom</code> call is used.</p>
+                <h1 id="monero-pseudorandom-number-generator">Monero Pseudorandom Number Generator</h1>
+<p>Monero uses PRNG based on the Keccak hashing function.
+Basically, output of the previous hashing round is input for the next one.</p>
+<p>The initial seed comes from entropy sources provided by operating system.
+On Linux and MacOS the seed comes from <code>/dev/urandom</code>.
+On Windows the WinAPI <code>CryptGenRandom</code> call is used for seeding.</p>
 <p>There is no reseeding.</p>
 <h2 id="caveats">Caveats</h2>
 <ul>
+<li>This concerns the reference C++ implementation of Monero.
+Please note there are many alternative implementations of private key generation,
+including JavaScript, Python, Android/Java. These should be researched case by case for correctness.    </li>
 <li>In Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.  </li>
 </ul>
 <h2 id="reference">Reference</h2>

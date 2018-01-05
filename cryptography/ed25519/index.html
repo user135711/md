@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/primitives/base58/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/ed25519/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Base58 - Monero Docs</title>
+        <title>Ed25519 - Monero Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Base58
+                Ed25519
               </span>
             
           
@@ -259,14 +259,50 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Primitives
+      Cryptography
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Primitives
+        Cryptography
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../prng/" title="PRNG" class="md-nav__link">
+      PRNG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
+      Keccak-256
+    </a>
+  </li>
+
         
           
           
@@ -283,11 +319,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Base58
+        Ed25519
       </label>
     
-    <a href="./" title="Base58" class="md-nav__link md-nav__link--active">
-      Base58
+    <a href="./" title="Ed25519" class="md-nav__link md-nav__link--active">
+      Ed25519
     </a>
     
       
@@ -301,8 +337,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
+  <a href="#public-key-derivation" title="Public key derivation" class="md-nav__link">
+    Public key derivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature-scheme" title="Signature scheme" class="md-nav__link">
+    Signature scheme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -313,6 +370,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base58/" title="Base58" class="md-nav__link">
+      Base58
+    </a>
   </li>
 
         
@@ -331,70 +400,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Cryptography
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Cryptography
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cryptography/overview/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
-      PRNG
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
-      Keccak-256
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
       Address
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -474,8 +483,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
+  <a href="#public-key-derivation" title="Public key derivation" class="md-nav__link">
+    Public key derivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signature-scheme" title="Signature scheme" class="md-nav__link">
+    Signature scheme
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" title="Implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -494,19 +524,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/primitives/base58.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/ed25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="base58">Base58</h1>
-<p>Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: <code>IOl0+/</code></p>
-<p>Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.</p>
-<p>For details, see <a href="https://en.wikipedia.org/wiki/Base58">Wikipedia</a>.</p>
-<h2 id="base58-in-monero">Base58 in Monero</h2>
-<p>Monero has its own variant of Base58.</p>
-<p>In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .</p>
-<p>The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with "1"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.</p>
-<p>The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.</p>
-<p>For details, see <a href="https://github.com/monero-project/monero/blob/master/src/common/base58.cpp">reference C++ Base58</a> implementation and <a href="https://github.com/bigreddmachine/MoneroPy/blob/master/moneropy/base58.py">unofficial Python Base58</a> implementation.</p>
+                <h1 id="ed25519-curve">Ed25519 curve</h1>
+<p><strong>!! Work in progress - be sceptical on accuracy !!</strong></p>
+<p>Monero employs Ed25519 curve as a basis for its signature scheme.</p>
+<p>However, Monero does not follow EdDSA reference signature scheme.</p>
+<h2 id="public-key-derivation">Public key derivation</h2>
+<p>In relation to EdDSA, Monero derives public keys differently:</p>
+<ul>
+<li>Monero uses Keccak instead of SHA-512</li>
+<li>Monero uses private keys as scalars, not as seeds</li>
+</ul>
+<h2 id="signature-scheme">Signature scheme</h2>
+<p>In relation to EdDSA, Monero uses a different signature scheme.</p>
+<h2 id="implementation">Implementation</h2>
+<p>For the curve itself, Monero uses Ref10 implementation by Daniel J. Bernstein.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://medium.com/@luigi1111w/understanding-monero-cryptography-privacy-introduction-9baf073e970c">Understanding Monero Cryptography</a> - excellent writeup by Luigi</li>
+<li><a href="https://monero.stackexchange.com/questions/2290/why-how-does-monero-generate-public-ed25519-keys-without-using-the-standard-publ">StackOverflow answer</a></li>
+</ul>
                 
                   
                 
@@ -525,7 +564,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../technical-specs/" title="Technical Specs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../keccak-256/" title="Keccak-256" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -534,19 +573,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Technical Specs
+                Keccak-256
               </span>
             </div>
           </a>
         
         
-          <a href="../../cryptography/overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Base58
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

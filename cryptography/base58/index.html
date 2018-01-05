@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/overview/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/base58/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Overview - Monero Docs</title>
+        <title>Base58 - Monero Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Overview
+                Base58
               </span>
             
           
@@ -272,20 +272,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
-    
   </li>
 
         
@@ -329,11 +320,47 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../base58/" title="Base58" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Base58
+      </label>
+    
+    <a href="./" title="Base58" class="md-nav__link md-nav__link--active">
       Base58
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
+    Base58 in Monero
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -431,6 +458,20 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
+    Base58 in Monero
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -441,14 +482,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/base58.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="monero-cryptography-overview">Monero cryptography overview</h1>
-<p>Monero uses a wide variety of cryptographic primitives for various use cases.</p>
-<p>Comparing to altcoins, Monero cryptography is considered conservative, sound and robust.</p>
-<p>Comparing to Bitcoin, Monero uses much more primitives, and some of them are more advanced, especially those related to privacy and Proof of Work.
-Some choices are deliberately non-standard (for better or worse) - oftentimes a legacy of the CryptoNote protocol.</p>
+                <h1 id="base58">Base58</h1>
+<p>Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: <code>IOl0+/</code></p>
+<p>Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.</p>
+<p>For details, see <a href="https://en.wikipedia.org/wiki/Base58">Wikipedia</a>.</p>
+<h2 id="base58-in-monero">Base58 in Monero</h2>
+<p>Monero has its own variant of Base58.</p>
+<p>In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .</p>
+<p>The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with "1"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.</p>
+<p>The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.</p>
+<p>For details, see <a href="https://github.com/monero-project/monero/blob/master/src/common/base58.cpp">reference C++ Base58</a> implementation and <a href="https://github.com/bigreddmachine/MoneroPy/blob/master/moneropy/base58.py">unofficial Python Base58</a> implementation.</p>
                 
                   
                 
@@ -467,7 +513,7 @@ Some choices are deliberately non-standard (for better or worse) - oftentimes a 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../technical-specs/" title="Technical Specs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ed25519/" title="Ed25519" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -476,19 +522,19 @@ Some choices are deliberately non-standard (for better or worse) - oftentimes a 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Technical Specs
+                Ed25519
               </span>
             </div>
           </a>
         
         
-          <a href="../prng/" title="PRNG" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../public-address/standard-address/" title="Standard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PRNG
+                Standard
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

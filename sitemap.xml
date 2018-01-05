@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://monerodocs.org//</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>https://monerodocs.org//interacting/overview/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,38 +20,40 @@
     
     <url>
      <loc>https://monerodocs.org//technical-specs/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
-    <url>
-     <loc>https://monerodocs.org//primitives/base58/</loc>
-     <lastmod>2018-01-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
         
     <url>
      <loc>https://monerodocs.org//cryptography/overview/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://monerodocs.org//cryptography/prng/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://monerodocs.org//cryptography/keccak-256/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://monerodocs.org//cryptography/ed25519/</loc>
+     <lastmod>2018-01-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://monerodocs.org//cryptography/base58/</loc>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -61,19 +63,19 @@
         
     <url>
      <loc>https://monerodocs.org//public-address/standard-address/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://monerodocs.org//public-address/integrated-address/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://monerodocs.org//public-address/subaddress/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -82,7 +84,7 @@
     
     <url>
      <loc>https://monerodocs.org//multisignature/</loc>
-     <lastmod>2018-01-03</lastmod>
+     <lastmod>2018-01-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

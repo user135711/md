@@ -257,46 +257,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Primitives
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Primitives
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../primitives/base58/" title="Base58" class="md-nav__link">
-      Base58
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
       Cryptography
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Cryptography
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -338,6 +302,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/ed25519/" title="Ed25519" class="md-nav__link">
+      Ed25519
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
+      Base58
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -352,13 +340,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Address
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -562,7 +550,7 @@ or exchange withdrawals (where you know the payer out of band). Its strength is 
 </tr>
 </tbody>
 </table>
-<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../primitives/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
+<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../cryptography/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
 <p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
 <h2 id="reference">Reference</h2>
 <ul>
@@ -586,7 +574,7 @@ or exchange withdrawals (where you know the payer out of band). Its strength is 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../cryptography/base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -595,7 +583,7 @@ or exchange withdrawals (where you know the payer out of band). Its strength is 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Keccak-256
+                Base58
               </span>
             </div>
           </a>

@@ -37,7 +37,7 @@
         },
         {
             "location": "/technical-specs/",
-            "text": "Monero Technical Specs\n\n\nLive\n\n\n\n\nMonero blockchain is live since 18 April 2014\n\n\n\n\nNo premine, no instamine, no ICO/token\n\n\n\n\nMonero had no premine or instamine\n\n\nMonero did not sell any token\n\n\nMonero had no presale of any kind\n\n\n\n\nProof of Work\n\n\n\n\nCryptoNight\n\n\nmay change in the future\n\n\n\n\nDifficulty retarget\n\n\n\n\nevery block\n\n\nbased on the last 720 blocks, excluding 20% of the timestamp outliers\n\n\n\n\nBlock time\n\n\n\n\n2 minutes\n\n\nmay change in the future as long as emission curve is preserved\n\n\n\n\nBlock reward\n\n\n\n\n~6 XMR as of Dec 2017, see the \nlatest block\n coinbase transaction amount for current reward\n\n\nsmoothly decreasing and subject to penalties for blocks greater then median size of the last 100 blocks (M100)\n\n\n\n\nBlock size\n\n\n\n\ndynamic, maximum of two times median size of the last 100 blocks (2 * M100)\n\n\n\n\nEmission curve\n\n\nMain emission\n\n\nFirst, the main emission is about to produce ~18.132 million coins by the end of May 2022.\n\n\nAs of Dec 2017 the emission is about 30 XMR per 10 minutes.\n\n\nSee \ncharts and details\n.\n\n\nTail emission\n\n\nThe tail emission kicks in once main emission is done.\n\n\nIt will produce 0.6 XMR per 2-minute block.\n\n\nThis translates to <1% inflation decreasing over time.\n\n\nMax supply\n\n\n\n\ninfinite\n\n\n\n\nSender privacy\n\n\n\n\nRing signatures\n\n\n\n\nRecipient privacy\n\n\n\n\nStealth addresses\n\n\n\n\nAmount privacy\n\n\n\n\nRing confidential transactions\n\n\n\n\nIP address privacy\n\n\n\n\nnot built in\n\n\nuse TOR or I2P\n\n\nthere is an ongoing effort to integrate I2P into Monero: the Kovri project",
+            "text": "Monero Technical Specs\n\n\nLive\n\n\n\n\nMonero blockchain is live since 18 April 2014\n\n\n\n\nNo premine, no instamine, no ICO/token\n\n\n\n\nMonero had no premine or instamine\n\n\nMonero did not sell any token\n\n\nMonero had no presale of any kind\n\n\n\n\nProof of Work\n\n\n\n\nCryptoNight\n\n\nmay change in the future\n\n\n\n\nDifficulty retarget\n\n\n\n\nevery block\n\n\nbased on the last 720 blocks, excluding 20% of the timestamp outliers\n\n\n\n\nBlock time\n\n\n\n\n2 minutes\n\n\nmay change in the future as long as emission curve is preserved\n\n\n\n\nBlock reward\n\n\n\n\n~6 XMR as of Dec 2017, see the \nlatest block\n coinbase transaction amount for current reward\n\n\nsmoothly decreasing and subject to penalties for blocks greater then median size of the last 100 blocks (M100)\n\n\n\n\nBlock size\n\n\n\n\ndynamic, maximum of two times median size of the last 100 blocks (2 * M100)\n\n\n\n\nEmission curve\n\n\nMain emission\n\n\nFirst, the main emission is about to produce ~18.132 million coins by the end of May 2022.\n\n\nAs of Dec 2017 the emission is about 30 XMR per 10 minutes.\n\n\nSee \ncharts and details\n.\n\n\nTail emission\n\n\nThe tail emission kicks in once main emission is done.\n\n\nIt will produce 0.6 XMR per 2-minute block.\n\n\nThis translates to <1% inflation decreasing over time.\n\n\nMax supply\n\n\n\n\ninfinite\n\n\n\n\nSender privacy\n\n\n\n\nRing signatures\n\n\n\n\nRecipient privacy\n\n\n\n\nStealth addresses\n\n\n\n\nAmount privacy\n\n\n\n\nRing confidential transactions\n\n\n\n\nIP address privacy\n\n\n\n\nnot built in - please use TOR or I2P\n\n\nthere is an ongoing effort to integrate I2P into Monero - the Kovri project",
             "title": "Technical Specs"
         },
         {
@@ -107,23 +107,8 @@
         },
         {
             "location": "/technical-specs/#ip-address-privacy",
-            "text": "not built in  use TOR or I2P  there is an ongoing effort to integrate I2P into Monero: the Kovri project",
+            "text": "not built in - please use TOR or I2P  there is an ongoing effort to integrate I2P into Monero - the Kovri project",
             "title": "IP address privacy"
-        },
-        {
-            "location": "/primitives/base58/",
-            "text": "Base58\n\n\nBase58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: \nIOl0+/\n\n\nBase58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.\n\n\nFor details, see \nWikipedia\n.\n\n\nBase58 in Monero\n\n\nMonero has its own variant of Base58.\n\n\nIn Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .\n\n\nThe 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with \"1\"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.\n\n\nThe advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.\n\n\nFor details, see \nreference C++ Base58\n implementation and \nunofficial Python Base58\n implementation.",
-            "title": "Base58"
-        },
-        {
-            "location": "/primitives/base58/#base58",
-            "text": "Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are:  IOl0+/  Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.  For details, see  Wikipedia .",
-            "title": "Base58"
-        },
-        {
-            "location": "/primitives/base58/#base58-in-monero",
-            "text": "Monero has its own variant of Base58.  In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .  The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with \"1\"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.  The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.  For details, see  reference C++ Base58  implementation and  unofficial Python Base58  implementation.",
-            "title": "Base58 in Monero"
         },
         {
             "location": "/cryptography/overview/",
@@ -137,17 +122,17 @@
         },
         {
             "location": "/cryptography/prng/",
-            "text": "Monero Pseudo Random Number Generator\n\n\nMonero uses PRNG based on Keccak hashing function.\n\n\nThe seed comes from entropy sources provided by operating system.\nOn Linux and MacOS this translates to \n/dev/urandom\n.\nOn Windows the WinAPI \nCryptGenRandom\n call is used.\n\n\nThere is no reseeding.\n\n\nCaveats\n\n\n\n\nIn Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.  \n\n\n\n\nReference\n\n\n\n\nSource code\n\n\nStackExchange answer",
+            "text": "Monero Pseudorandom Number Generator\n\n\nMonero uses PRNG based on the Keccak hashing function.\nBasically, output of the previous hashing round is input for the next one.\n\n\nThe initial seed comes from entropy sources provided by operating system.\nOn Linux and MacOS the seed comes from \n/dev/urandom\n.\nOn Windows the WinAPI \nCryptGenRandom\n call is used for seeding.\n\n\nThere is no reseeding.\n\n\nCaveats\n\n\n\n\nThis concerns the reference C++ implementation of Monero.\nPlease note there are many alternative implementations of private key generation,\nincluding JavaScript, Python, Android/Java. These should be researched case by case for correctness.    \n\n\nIn Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.  \n\n\n\n\nReference\n\n\n\n\nSource code\n\n\nStackExchange answer",
             "title": "PRNG"
         },
         {
-            "location": "/cryptography/prng/#monero-pseudo-random-number-generator",
-            "text": "Monero uses PRNG based on Keccak hashing function.  The seed comes from entropy sources provided by operating system.\nOn Linux and MacOS this translates to  /dev/urandom .\nOn Windows the WinAPI  CryptGenRandom  call is used.  There is no reseeding.",
-            "title": "Monero Pseudo Random Number Generator"
+            "location": "/cryptography/prng/#monero-pseudorandom-number-generator",
+            "text": "Monero uses PRNG based on the Keccak hashing function.\nBasically, output of the previous hashing round is input for the next one.  The initial seed comes from entropy sources provided by operating system.\nOn Linux and MacOS the seed comes from  /dev/urandom .\nOn Windows the WinAPI  CryptGenRandom  call is used for seeding.  There is no reseeding.",
+            "title": "Monero Pseudorandom Number Generator"
         },
         {
             "location": "/cryptography/prng/#caveats",
-            "text": "In Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.",
+            "text": "This concerns the reference C++ implementation of Monero.\nPlease note there are many alternative implementations of private key generation,\nincluding JavaScript, Python, Android/Java. These should be researched case by case for correctness.      In Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.",
             "title": "Caveats"
         },
         {
@@ -157,18 +142,18 @@
         },
         {
             "location": "/cryptography/keccak-256/",
-            "text": "Keccak-256 hash function\n\n\nMonero employs Keccak-256 as a hashing function.\n\n\nKeccak is the leading hashing function, designed by non-NSA designers.\nKeccak won \nNIST competition\n to become the official SHA3.\n\n\nUses\n\n\nMonero does \nnot\n employ Keccak for Proof-of-Work. Instead, Keccak is used for:\n\n\n\n\nrandom number generator\n\n\nblock hashing\n\n\ntransaction hashing\n\n\nstealth address private key image (for double spend protection)\n\n\npublic address checksum\n\n\nRingCT\n\n\nmultisig\n\n\nbulletproofs\n\n\n\n\n...and likely a few other things.\n\n\nKeccak-256 vs SHA3-256\n\n\nSHA3-256 is Keccak-256, except NIST changed padding.\nFor that reason original Keccak-256 gives in a different hash value than NIST SHA3-256.  \n\n\nMonero uses original Keccak-256.\nThe NIST standard was only published on August 2015, while Monero went live on 18 April 2014.  \n\n\nReference\n\n\n\n\nKeccak source code used in Monero\n\n\nSHA3 on Wikipedia\n\n\nKeccak-256 vs SHA3-256\n explained on Ethereum stackexchange\n\n\nOnline tool to calculate Keccak-256 and SHA3-256",
+            "text": "Keccak-256 hash function\n\n\nMonero employs Keccak as a hashing function. In most context specifically Keccak-256 is used,\nproviding 32-byte hashes.\n\n\nKeccak is the leading hashing function, designed by non-NSA designers.\nKeccak won \nNIST competition\n to become the official SHA3.\n\n\nUse Cases\n\n\nMonero does \nnot\n employ Keccak for Proof-of-Work. Instead, Keccak is used for:\n\n\n\n\nrandom number generator\n\n\nblock hashing\n\n\ntransaction hashing\n\n\nstealth address private key image (for double spend protection)\n\n\npublic address checksum\n\n\nRingCT\n\n\nmultisig\n\n\nbulletproofs\n\n\n\n\n...and likely a few other things.\n\n\nKeccak-256 vs SHA3-256\n\n\nSHA3-256 is Keccak-256, except NIST changed padding.\nFor that reason original Keccak-256 gives in a different hash value than NIST SHA3-256.  \n\n\nMonero uses original Keccak-256.\nThe NIST standard was only published on August 2015, while Monero went live on 18 April 2014.  \n\n\nReference\n\n\n\n\nKeccak source code used in Monero\n\n\nSHA3 on Wikipedia\n\n\nKeccak-256 vs SHA3-256\n explained on Ethereum stackexchange\n\n\nOnline tool to calculate Keccak-256 and SHA3-256",
             "title": "Keccak-256"
         },
         {
             "location": "/cryptography/keccak-256/#keccak-256-hash-function",
-            "text": "Monero employs Keccak-256 as a hashing function.  Keccak is the leading hashing function, designed by non-NSA designers.\nKeccak won  NIST competition  to become the official SHA3.",
+            "text": "Monero employs Keccak as a hashing function. In most context specifically Keccak-256 is used,\nproviding 32-byte hashes.  Keccak is the leading hashing function, designed by non-NSA designers.\nKeccak won  NIST competition  to become the official SHA3.",
             "title": "Keccak-256 hash function"
         },
         {
-            "location": "/cryptography/keccak-256/#uses",
+            "location": "/cryptography/keccak-256/#use-cases",
             "text": "Monero does  not  employ Keccak for Proof-of-Work. Instead, Keccak is used for:   random number generator  block hashing  transaction hashing  stealth address private key image (for double spend protection)  public address checksum  RingCT  multisig  bulletproofs   ...and likely a few other things.",
-            "title": "Uses"
+            "title": "Use Cases"
         },
         {
             "location": "/cryptography/keccak-256/#keccak-256-vs-sha3-256",
@@ -179,6 +164,51 @@
             "location": "/cryptography/keccak-256/#reference",
             "text": "Keccak source code used in Monero  SHA3 on Wikipedia  Keccak-256 vs SHA3-256  explained on Ethereum stackexchange  Online tool to calculate Keccak-256 and SHA3-256",
             "title": "Reference"
+        },
+        {
+            "location": "/cryptography/ed25519/",
+            "text": "Ed25519 curve\n\n\n!! Work in progress - be sceptical on accuracy !!\n\n\nMonero employs Ed25519 curve as a basis for its signature scheme.\n\n\nHowever, Monero does not follow EdDSA reference signature scheme.\n\n\nPublic key derivation\n\n\nIn relation to EdDSA, Monero derives public keys differently:\n\n\n\n\nMonero uses Keccak instead of SHA-512\n\n\nMonero uses private keys as scalars, not as seeds\n\n\n\n\nSignature scheme\n\n\nIn relation to EdDSA, Monero uses a different signature scheme.\n\n\nImplementation\n\n\nFor the curve itself, Monero uses Ref10 implementation by Daniel J. Bernstein.\n\n\nReference\n\n\n\n\nUnderstanding Monero Cryptography\n - excellent writeup by Luigi\n\n\nStackOverflow answer",
+            "title": "Ed25519"
+        },
+        {
+            "location": "/cryptography/ed25519/#ed25519-curve",
+            "text": "!! Work in progress - be sceptical on accuracy !!  Monero employs Ed25519 curve as a basis for its signature scheme.  However, Monero does not follow EdDSA reference signature scheme.",
+            "title": "Ed25519 curve"
+        },
+        {
+            "location": "/cryptography/ed25519/#public-key-derivation",
+            "text": "In relation to EdDSA, Monero derives public keys differently:   Monero uses Keccak instead of SHA-512  Monero uses private keys as scalars, not as seeds",
+            "title": "Public key derivation"
+        },
+        {
+            "location": "/cryptography/ed25519/#signature-scheme",
+            "text": "In relation to EdDSA, Monero uses a different signature scheme.",
+            "title": "Signature scheme"
+        },
+        {
+            "location": "/cryptography/ed25519/#implementation",
+            "text": "For the curve itself, Monero uses Ref10 implementation by Daniel J. Bernstein.",
+            "title": "Implementation"
+        },
+        {
+            "location": "/cryptography/ed25519/#reference",
+            "text": "Understanding Monero Cryptography  - excellent writeup by Luigi  StackOverflow answer",
+            "title": "Reference"
+        },
+        {
+            "location": "/cryptography/base58/",
+            "text": "Base58\n\n\nBase58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: \nIOl0+/\n\n\nBase58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.\n\n\nFor details, see \nWikipedia\n.\n\n\nBase58 in Monero\n\n\nMonero has its own variant of Base58.\n\n\nIn Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .\n\n\nThe 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with \"1\"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.\n\n\nThe advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.\n\n\nFor details, see \nreference C++ Base58\n implementation and \nunofficial Python Base58\n implementation.",
+            "title": "Base58"
+        },
+        {
+            "location": "/cryptography/base58/#base58",
+            "text": "Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are:  IOl0+/  Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.  For details, see  Wikipedia .",
+            "title": "Base58"
+        },
+        {
+            "location": "/cryptography/base58/#base58-in-monero",
+            "text": "Monero has its own variant of Base58.  In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .  The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with \"1\"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.  The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.  For details, see  reference C++ Base58  implementation and  unofficial Python Base58  implementation.",
+            "title": "Base58 in Monero"
         },
         {
             "location": "/public-address/standard-address/",

@@ -251,54 +251,18 @@
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Primitives
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Primitives
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../primitives/base58/" title="Base58" class="md-nav__link">
-      Base58
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-4">
       Cryptography
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-4">
         Cryptography
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -361,8 +325,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uses" title="Uses" class="md-nav__link">
-    Uses
+  <a href="#use-cases" title="Use Cases" class="md-nav__link">
+    Use Cases
   </a>
   
 </li>
@@ -390,6 +354,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ed25519/" title="Ed25519" class="md-nav__link">
+      Ed25519
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base58/" title="Base58" class="md-nav__link">
+      Base58
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -402,13 +390,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-5">
       Address
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-5">
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -488,8 +476,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uses" title="Uses" class="md-nav__link">
-    Uses
+  <a href="#use-cases" title="Use Cases" class="md-nav__link">
+    Use Cases
   </a>
   
 </li>
@@ -526,10 +514,11 @@
                 
                 
                 <h1 id="keccak-256-hash-function">Keccak-256 hash function</h1>
-<p>Monero employs Keccak-256 as a hashing function.</p>
+<p>Monero employs Keccak as a hashing function. In most context specifically Keccak-256 is used,
+providing 32-byte hashes.</p>
 <p>Keccak is the leading hashing function, designed by non-NSA designers.
 Keccak won <a href="https://en.wikipedia.org/wiki/NIST_hash_function_competition">NIST competition</a> to become the official SHA3.</p>
-<h2 id="uses">Uses</h2>
+<h2 id="use-cases">Use Cases</h2>
 <p>Monero does <strong>not</strong> employ Keccak for Proof-of-Work. Instead, Keccak is used for:</p>
 <ul>
 <li>random number generator</li>
@@ -587,13 +576,13 @@ The NIST standard was only published on August 2015, while Monero went live on 1
           </a>
         
         
-          <a href="../../public-address/standard-address/" title="Standard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ed25519/" title="Ed25519" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Standard
+                Ed25519
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
