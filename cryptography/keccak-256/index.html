@@ -241,8 +241,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -359,10 +359,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -513,12 +537,12 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/keccak-256.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="keccak-256-hash-function">Keccak-256 hash function</h1>
+                <h1 id="keccak-256-hash-function">Keccak-256 hash function<a class="headerlink" href="#keccak-256-hash-function" title="Permanent link">&para;</a></h1>
 <p>Monero employs Keccak as a hashing function. In most context specifically Keccak-256 is used,
 providing 32-byte hashes.</p>
 <p>Keccak is the leading hashing function, designed by non-NSA designers.
 Keccak won <a href="https://en.wikipedia.org/wiki/NIST_hash_function_competition">NIST competition</a> to become the official SHA3.</p>
-<h2 id="use-cases">Use Cases</h2>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <p>Monero does <strong>not</strong> employ Keccak for Proof-of-Work. Instead, Keccak is used for:</p>
 <ul>
 <li>random number generator</li>
@@ -531,12 +555,12 @@ Keccak won <a href="https://en.wikipedia.org/wiki/NIST_hash_function_competition
 <li>bulletproofs</li>
 </ul>
 <p>...and likely a few other things.</p>
-<h2 id="keccak-256-vs-sha3-256">Keccak-256 vs SHA3-256</h2>
+<h2 id="keccak-256-vs-sha3-256">Keccak-256 vs SHA3-256<a class="headerlink" href="#keccak-256-vs-sha3-256" title="Permanent link">&para;</a></h2>
 <p>SHA3-256 is Keccak-256, except NIST changed padding.
 For that reason original Keccak-256 gives in a different hash value than NIST SHA3-256.  </p>
 <p>Monero uses original Keccak-256.
 The NIST standard was only published on August 2015, while Monero went live on 18 April 2014.  </p>
-<h2 id="reference">Reference</h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/monero-project/monero/blob/5c2dfe157b48a486eb2b92dcf8789b3b1eb20f60/src/crypto/keccak.c">Keccak source code used in Monero</a></li>
 <li><a href="https://en.wikipedia.org/wiki/SHA-3">SHA3 on Wikipedia</a></li>
@@ -576,13 +600,13 @@ The NIST standard was only published on August 2015, while Monero went live on 1
           </a>
         
         
-          <a href="../ed25519/" title="Ed25519" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../asymmetric/ed25519/" title="Ed25519 curve" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Ed25519
+                Ed25519 curve
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

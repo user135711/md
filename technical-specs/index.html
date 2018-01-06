@@ -38,7 +38,7 @@
     
     
       
-        <title>Technical Specs - Monero Docs</title>
+        <title>Technical specs - Monero Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Technical Specs
+                Technical specs
               </span>
             
           
@@ -250,11 +250,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Technical Specs
+        Technical specs
       </label>
     
-    <a href="./" title="Technical Specs" class="md-nav__link md-nav__link--active">
-      Technical Specs
+    <a href="./" title="Technical specs" class="md-nav__link md-nav__link--active">
+      Technical specs
     </a>
     
       
@@ -275,8 +275,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-premine-no-instamine-no-icotoken" title="No premine, no instamine, no ICO/token" class="md-nav__link">
-    No premine, no instamine, no ICO/token
+  <a href="#no-premine-no-instamine-no-ico-no-token" title="No premine, no instamine, no ICO, no token" class="md-nav__link">
+    No premine, no instamine, no ICO, no token
   </a>
   
 </li>
@@ -320,6 +320,26 @@
   <a href="#emission-curve" title="Emission curve" class="md-nav__link">
     Emission curve
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-emission" title="Main emission" class="md-nav__link">
+    Main emission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail-emission" title="Tail emission" class="md-nav__link">
+    Tail emission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -427,10 +447,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../cryptography/ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../cryptography/asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -551,8 +595,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-premine-no-instamine-no-icotoken" title="No premine, no instamine, no ICO/token" class="md-nav__link">
-    No premine, no instamine, no ICO/token
+  <a href="#no-premine-no-instamine-no-ico-no-token" title="No premine, no instamine, no ICO, no token" class="md-nav__link">
+    No premine, no instamine, no ICO, no token
   </a>
   
 </li>
@@ -596,6 +640,26 @@
   <a href="#emission-curve" title="Emission curve" class="md-nav__link">
     Emission curve
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-emission" title="Main emission" class="md-nav__link">
+    Main emission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail-emission" title="Tail emission" class="md-nav__link">
+    Tail emission
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -651,67 +715,75 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/technical-specs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="monero-technical-specs">Monero Technical Specs</h1>
-<h2 id="live">Live</h2>
+                <h1 id="monero-technical-specs">Monero Technical Specs<a class="headerlink" href="#monero-technical-specs" title="Permanent link">&para;</a></h1>
+<h2 id="live">Live<a class="headerlink" href="#live" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Monero blockchain is live since 18 April 2014</li>
 </ul>
-<h2 id="no-premine-no-instamine-no-icotoken">No premine, no instamine, no ICO/token</h2>
+<h2 id="no-premine-no-instamine-no-ico-no-token">No premine, no instamine, no ICO, no token<a class="headerlink" href="#no-premine-no-instamine-no-ico-no-token" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Monero had no premine or instamine</li>
 <li>Monero did not sell any token</li>
 <li>Monero had no presale of any kind</li>
 </ul>
-<h2 id="proof-of-work">Proof of Work</h2>
+<h2 id="proof-of-work">Proof of Work<a class="headerlink" href="#proof-of-work" title="Permanent link">&para;</a></h2>
 <ul>
 <li>CryptoNight</li>
 <li>may change in the future</li>
 </ul>
-<h2 id="difficulty-retarget">Difficulty retarget</h2>
+<h2 id="difficulty-retarget">Difficulty retarget<a class="headerlink" href="#difficulty-retarget" title="Permanent link">&para;</a></h2>
 <ul>
 <li>every block</li>
 <li>based on the last 720 blocks, excluding 20% of the timestamp outliers</li>
 </ul>
-<h2 id="block-time">Block time</h2>
+<h2 id="block-time">Block time<a class="headerlink" href="#block-time" title="Permanent link">&para;</a></h2>
 <ul>
 <li>2 minutes</li>
 <li>may change in the future as long as emission curve is preserved</li>
 </ul>
-<h2 id="block-reward">Block reward</h2>
+<h2 id="block-reward">Block reward<a class="headerlink" href="#block-reward" title="Permanent link">&para;</a></h2>
 <ul>
-<li>~6 XMR as of Dec 2017, see the <a href="https://moneroblocks.info/">latest block</a> coinbase transaction amount for current reward</li>
 <li>smoothly decreasing and subject to penalties for blocks greater then median size of the last 100 blocks (M100)</li>
+<li>~6 XMR as of Dec 2017; for the current reward check the coinbase transaction of the <a href="https://moneroblocks.info/">latest block</a></li>
 </ul>
-<h2 id="block-size">Block size</h2>
+<h2 id="block-size">Block size<a class="headerlink" href="#block-size" title="Permanent link">&para;</a></h2>
 <ul>
-<li>dynamic, maximum of two times median size of the last 100 blocks (2 * M100)</li>
+<li>dynamic</li>
+<li>maximum of two times the median size of the last 100 blocks (2 * M100)</li>
+<li>~150KB as of Dec 2017; check <a href="https://bitinfocharts.com/comparison/monero-size.html#3m">the latest block size</a></li>
 </ul>
-<h2 id="emission-curve">Emission curve</h2>
-<p><strong>Main emission</strong></p>
-<p>First, the main emission is about to produce ~18.132 million coins by the end of May 2022.</p>
-<p>As of Dec 2017 the emission is about 30 XMR per 10 minutes.</p>
-<p>See <a href="https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/">charts and details</a>.</p>
-<p><strong>Tail emission</strong></p>
-<p>The tail emission kicks in once main emission is done.</p>
-<p>It will produce 0.6 XMR per 2-minute block.</p>
-<p>This translates to &lt;1% inflation decreasing over time.</p>
-<h2 id="max-supply">Max supply</h2>
+<h2 id="emission-curve">Emission curve<a class="headerlink" href="#emission-curve" title="Permanent link">&para;</a></h2>
+<h3 id="main-emission">Main emission<a class="headerlink" href="#main-emission" title="Permanent link">&para;</a></h3>
 <ul>
-<li>infinite</li>
+<li>first, the main emission is about to produce ~18.132 million coins by the end of May 2022</li>
+<li>as of Dec 2017 the emission is about 30 XMR per 10 minutes</li>
+<li>see <a href="https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/">charts and details</a></li>
 </ul>
-<h2 id="sender-privacy">Sender privacy</h2>
+<h3 id="tail-emission">Tail emission<a class="headerlink" href="#tail-emission" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Ring signatures</li>
+<li>the tail emission kicks in once main emission is done</li>
+<li>it will produce 0.6 XMR per 2-minute block</li>
+<li>this translates to &lt;1% inflation decreasing over time</li>
 </ul>
-<h2 id="recipient-privacy">Recipient privacy</h2>
+<h2 id="max-supply">Max supply<a class="headerlink" href="#max-supply" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Stealth addresses</li>
+<li>~18.132 million XMR + 0.6 XMR per 2 minutes</li>
+<li>technically infinite</li>
+<li>practically might be deflationary if accounted for lost coins</li>
 </ul>
-<h2 id="amount-privacy">Amount privacy</h2>
+<h2 id="sender-privacy">Sender privacy<a class="headerlink" href="#sender-privacy" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ring confidential transactions</li>
+<li>ring signatures</li>
 </ul>
-<h2 id="ip-address-privacy">IP address privacy</h2>
+<h2 id="recipient-privacy">Recipient privacy<a class="headerlink" href="#recipient-privacy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>stealth addresses</li>
+</ul>
+<h2 id="amount-privacy">Amount privacy<a class="headerlink" href="#amount-privacy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ring confidential transactions</li>
+</ul>
+<h2 id="ip-address-privacy">IP address privacy<a class="headerlink" href="#ip-address-privacy" title="Permanent link">&para;</a></h2>
 <ul>
 <li>not built in - please use TOR or I2P</li>
 <li>there is an ongoing effort to integrate I2P into Monero - the Kovri project </li>

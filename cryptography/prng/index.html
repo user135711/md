@@ -241,8 +241,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -352,10 +352,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -499,21 +523,21 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/prng.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="monero-pseudorandom-number-generator">Monero Pseudorandom Number Generator</h1>
+                <h1 id="monero-pseudorandom-number-generator">Monero Pseudorandom Number Generator<a class="headerlink" href="#monero-pseudorandom-number-generator" title="Permanent link">&para;</a></h1>
 <p>Monero uses PRNG based on the Keccak hashing function.
 Basically, output of the previous hashing round is input for the next one.</p>
 <p>The initial seed comes from entropy sources provided by operating system.
 On Linux and MacOS the seed comes from <code>/dev/urandom</code>.
 On Windows the WinAPI <code>CryptGenRandom</code> call is used for seeding.</p>
 <p>There is no reseeding.</p>
-<h2 id="caveats">Caveats</h2>
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
 <ul>
 <li>This concerns the reference C++ implementation of Monero.
 Please note there are many alternative implementations of private key generation,
 including JavaScript, Python, Android/Java. These should be researched case by case for correctness.    </li>
 <li>In Monero source code you can also find libsodium based random bytes generator. It is part of the embedded library and apparently is not used in actual Monero code.  </li>
 </ul>
-<h2 id="reference">Reference</h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/monero-project/monero/blob/1a4298685aa9e694bc555ae69be59d14d3790465/src/crypto/random.c">Source code</a></li>
 <li><a href="https://monero.stackexchange.com/a/2076/3218">StackExchange answer</a></li>

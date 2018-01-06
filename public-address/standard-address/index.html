@@ -241,8 +241,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -307,10 +307,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../cryptography/ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../../cryptography/asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -499,7 +523,7 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/public-address/standard-address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="address">Address</h1>
+                <h1 id="address">Address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h1>
 <p>Monero public address is what you publish to get paid.</p>
 <p>An address can be generated offline and for free. It boils down to generating a large random number representing your private spending key.</p>
 <p>Publishing your Monero address does <strong>not</strong> endanger your privacy. That's because in Monero transactions go to stealth addresses which are decoupled from your public address.</p>
@@ -509,7 +533,7 @@
 <li>Integrated address - embeds payment ID so you can learn for what you are being paid</li>
 <li>Subaddress - slightly enhances privacy and allows for organizing your funds in subaccounts within a single wallet</li>
 </ul>
-<h2 id="standard-address">Standard address</h2>
+<h2 id="standard-address">Standard address<a class="headerlink" href="#standard-address" title="Permanent link">&para;</a></h2>
 <p>The raw address is useful for things like donations (where you don't care who donated)
 or exchange withdrawals (where you know the payer out of band). Its strength is simplicity.</p>
 <p>Monero standard address is composed of two public keys:</p>
@@ -552,7 +576,7 @@ or exchange withdrawals (where you know the payer out of band). Its strength is 
 </table>
 <p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="../../cryptography/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
 <p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
-<h2 id="reference">Reference</h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://xmr.llcoins.net/addresstests.html">https://xmr.llcoins.net/addresstests.html</a></li>
 </ul>

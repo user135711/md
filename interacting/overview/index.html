@@ -291,8 +291,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -357,10 +357,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../cryptography/ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../../cryptography/asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -511,13 +535,13 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/overview.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="interacting-with-monero">Interacting with Monero</h1>
+                <h1 id="interacting-with-monero">Interacting with Monero<a class="headerlink" href="#interacting-with-monero" title="Permanent link">&para;</a></h1>
 <p>You can interact with Monero via desktop GUI, commandline interface, and programming API.</p>
 <p>On top of that, Monero nodes interact with each other in a peer-to-peer network. </p>
-<h2 id="installation-directory-overview">Installation directory overview</h2>
+<h2 id="installation-directory-overview">Installation directory overview<a class="headerlink" href="#installation-directory-overview" title="Permanent link">&para;</a></h2>
 <p>This considers the released version of Monero software. Once unpacked, you will notice six executable files:</p>
 <p><img alt="Monero Directory" src="../../images/monero-dir.png" title="Logo Title Text 1" /></p>
-<h2 id="separation-of-node-and-wallet">Separation of node and wallet</h2>
+<h2 id="separation-of-node-and-wallet">Separation of node and wallet<a class="headerlink" href="#separation-of-node-and-wallet" title="Permanent link">&para;</a></h2>
 <p>Monero project nicely decouples node logic <code>monerod</code> from wallet logic <code>monero-wallet-*</code>.
 Wallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.</p>
 <table>
@@ -554,7 +578,7 @@ Wallet logic is offered through three independent user interfaces - the GUI, the
 </tr>
 </tbody>
 </table>
-<h2 id="interacting">Interacting</h2>
+<h2 id="interacting">Interacting<a class="headerlink" href="#interacting" title="Permanent link">&para;</a></h2>
 <p>There are quite a few ways you can interact with Monero software.
 Perhaps the most surprising for newcomers is that <code>monerod</code> daemon accepts interactive keyboard commands while it is running.</p>
 <p>Also, please note that HTTP API is split across <code>monerod</code> and <code>monero-wallet-rpc</code>. You need to run and call both daemons to explore the full API.
@@ -644,13 +668,13 @@ This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
           </a>
         
         
-          <a href="../../technical-specs/" title="Technical Specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../technical-specs/" title="Technical specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Technical Specs
+                Technical specs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

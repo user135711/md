@@ -241,8 +241,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -309,10 +309,34 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../ed25519/" title="Ed25519" class="md-nav__link">
-      Ed25519
+    <a href="../asymmetric/ed25519/" title="Ed25519 curve" class="md-nav__link">
+      Ed25519 curve
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -485,11 +509,11 @@
                   <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/base58.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="base58">Base58</h1>
+                <h1 id="base58">Base58<a class="headerlink" href="#base58" title="Permanent link">&para;</a></h1>
 <p>Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: <code>IOl0+/</code></p>
 <p>Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.</p>
 <p>For details, see <a href="https://en.wikipedia.org/wiki/Base58">Wikipedia</a>.</p>
-<h2 id="base58-in-monero">Base58 in Monero</h2>
+<h2 id="base58-in-monero">Base58 in Monero<a class="headerlink" href="#base58-in-monero" title="Permanent link">&para;</a></h2>
 <p>Monero has its own variant of Base58.</p>
 <p>In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .</p>
 <p>The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with "1"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.</p>
@@ -513,7 +537,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ed25519/" title="Ed25519" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../asymmetric/ed25519/" title="Ed25519 curve" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -522,7 +546,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Ed25519
+                Ed25519 curve
               </span>
             </div>
           </a>

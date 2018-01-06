@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/ed25519/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/asymmetric/ed25519/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -33,22 +33,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.1">
     
     
       
-        <title>Ed25519 - Monero Docs</title>
+        <title>Ed25519 curve - Monero Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.41c6761c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.41c6761c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.792431c1.css">
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -58,7 +58,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
-      <link rel="stylesheet" href="../../extra.css">
+      <link rel="stylesheet" href="../../../extra.css">
     
     
   </head>
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Ed25519
+                Ed25519 curve
               </span>
             
           
@@ -217,7 +217,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -229,7 +229,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/overview/" title="Interacting" class="md-nav__link">
+    <a href="../../../interacting/overview/" title="Interacting" class="md-nav__link">
       Interacting
     </a>
   </li>
@@ -241,8 +241,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical Specs" class="md-nav__link">
-      Technical Specs
+    <a href="../../../technical-specs/" title="Technical specs" class="md-nav__link">
+      Technical specs
     </a>
   </li>
 
@@ -274,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../overview/" title="Overview" class="md-nav__link">
+    <a href="../../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -286,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../prng/" title="PRNG" class="md-nav__link">
+    <a href="../../prng/" title="PRNG" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -298,11 +298,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
+    <a href="../../keccak-256/" title="Keccak-256" class="md-nav__link">
       Keccak-256
     </a>
   </li>
 
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" checked>
+    
+    <label class="md-nav__link" for="nav-4-4">
+      Asymmetric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-4">
+        Asymmetric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -319,11 +340,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Ed25519
+        Ed25519 curve
       </label>
     
-    <a href="./" title="Ed25519" class="md-nav__link md-nav__link--active">
-      Ed25519
+    <a href="./" title="Ed25519 curve" class="md-nav__link md-nav__link--active">
+      Ed25519 curve
     </a>
     
       
@@ -337,15 +358,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public-key-derivation" title="Public key derivation" class="md-nav__link">
-    Public key derivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signature-scheme" title="Signature scheme" class="md-nav__link">
-    Signature scheme
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
   </a>
   
 </li>
@@ -373,13 +387,18 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../base58/" title="Base58" class="md-nav__link">
+    <a href="../../base58/" title="Base58" class="md-nav__link">
       Base58
     </a>
   </li>
@@ -415,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/standard-address/" title="Standard" class="md-nav__link">
+    <a href="../../../public-address/standard-address/" title="Standard" class="md-nav__link">
       Standard
     </a>
   </li>
@@ -427,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/integrated-address/" title="Integrated" class="md-nav__link">
+    <a href="../../../public-address/integrated-address/" title="Integrated" class="md-nav__link">
       Integrated
     </a>
   </li>
@@ -439,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/subaddress/" title="Subaddress" class="md-nav__link">
+    <a href="../../../public-address/subaddress/" title="Subaddress" class="md-nav__link">
       Subaddress
     </a>
   </li>
@@ -456,7 +475,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../multisignature/" title="Multisignature" class="md-nav__link">
+    <a href="../../../multisignature/" title="Multisignature" class="md-nav__link">
       Multisignature
     </a>
   </li>
@@ -483,15 +502,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#public-key-derivation" title="Public key derivation" class="md-nav__link">
-    Public key derivation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signature-scheme" title="Signature scheme" class="md-nav__link">
-    Signature scheme
+  <a href="#definition" title="Definition" class="md-nav__link">
+    Definition
   </a>
   
 </li>
@@ -524,27 +536,79 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/ed25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/asymmetric/ed25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ed25519-curve">Ed25519 curve</h1>
-<p><strong>!! Work in progress - be sceptical on accuracy !!</strong></p>
-<p>Monero employs Ed25519 curve as a basis for its signature scheme.</p>
-<p>However, Monero does not follow EdDSA reference signature scheme.</p>
-<h2 id="public-key-derivation">Public key derivation</h2>
-<p>In relation to EdDSA, Monero derives public keys differently:</p>
+                <h1 id="ed25519-curve">Ed25519 curve<a class="headerlink" href="#ed25519-curve" title="Permanent link">&para;</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Article author is nowhere close to being a cryptographer. Be sceptical on accuracy.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This article is only about the underlying curve. Public key derivation and signing algorithm will be treated separately. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before we get to Monero, a little bit of context. We are talking asymmetric cryptography here.
+The "asymmetric" simply means the are two keys:</p>
 <ul>
-<li>Monero uses Keccak instead of SHA-512</li>
-<li>Monero uses private keys as scalars, not as seeds</li>
+<li>the private key (used primarily for signing data and for decrypting data)</li>
+<li>the public key (used primarily for signature verification and encrypting data)</li>
 </ul>
-<h2 id="signature-scheme">Signature scheme</h2>
-<p>In relation to EdDSA, Monero uses a different signature scheme.</p>
-<h2 id="implementation">Implementation</h2>
-<p>For the curve itself, Monero uses Ref10 implementation by Daniel J. Bernstein.</p>
-<h2 id="reference">Reference</h2>
+<p>This is in contrast to symmetric cryptography which uses a single (secret) key.</p>
+<p>Historically, asymmetric cryptography was based on the problem of factorization of a very large integers
+back into prime numbers (which is practically impossible for large enough integers).</p>
+<p>Recently, asymmetric cryptography is based on a mathematical notion of elliptic curves.
+Ed25519 is a specific, well researched and standardized elliptic curve.      </p>
+</div>
+<p>Monero employs Ed25519 elliptic curve as a basis for its key pair generation.</p>
+<p>However, Monero does not exactly follow EdDSA reference signature scheme.</p>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>This is the standard Ed25519 curve definition, no Monero specific stuff here.</p>
+<p>Curve equation:</p>
+<div class="codehilite"><pre><span></span>−x^2 + y^2 = 1 − (121665/121666) * x^2 * y^2
+</pre></div>
+
+
+<p>Base point:</p>
+<div class="codehilite"><pre><span></span># The base point is the specific point on the curve. It is used
+# as a basis for further calculations. It is an arbitrary choice
+# by the curve authors, just to standarize the scheme.
+# 
+# Note that it is enough to specify the y value and the sign of the x value.
+# That&#39;s because the specific x can be calculated from the curve equation.    
+G = (x, 4/5)  # take the point with the positive x
+
+# The hex representation of the base point
+5866666666666666666666666666666666666666666666666666666666666666
+</pre></div>
+
+
+<p>Prime order of the base point:</p>
+<div class="codehilite"><pre><span></span># In layment terms, the &quot;canvas&quot; where the curve is drawn is assumed
+# to have a finite &quot;resolution&quot;, so point coordinates must &quot;wrap around&quot;
+# at some point. This is achieved by modulo the &quot;l&quot; value.
+# In other words, the &quot;l&quot; defines the maximum scalar we can use.
+l = 2^252 + 27742317777372353535851937790883648493
+</pre></div>
+
+
+<p>The total number of points on the curve, a prime number:</p>
+<div class="codehilite"><pre><span></span>q = 2^255 - 19
+</pre></div>
+
+
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<p>Monero uses (apparently modified) Ref10 implementation by Daniel J. Bernstein.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://medium.com/@luigi1111w/understanding-monero-cryptography-privacy-introduction-9baf073e970c">Understanding Monero Cryptography</a> - excellent writeup by Luigi</li>
+<li><a href="https://steemit.com/monero/@luigi1111/understanding-monero-cryptography-privacy-introduction">Understanding Monero Cryptography</a> - excellent writeup by Luigi</li>
 <li><a href="https://monero.stackexchange.com/questions/2290/why-how-does-monero-generate-public-ed25519-keys-without-using-the-standard-publ">StackOverflow answer</a></li>
+<li><a href="https://github.com/monero-project/mininero/blob/master/ed25519.py">Python implementation</a> - not the reference one but easier to understand</li>
+<li><a href="https://monero.stackexchange.com/questions/6050/what-is-the-base-point-g-from-the-whitepaper-and-how-is-it-represented-as-a">Encoding point to hex</a></li>
+<li><a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">Ed25519 on Wikipedia</a></li>
+<li><a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">A (Relatively Easy To Understand) Primer on Elliptic Curve Cryptography</a></li>
 </ul>
                 
                   
@@ -564,7 +628,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../keccak-256/" title="Keccak-256" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../keccak-256/" title="Keccak-256" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -579,7 +643,7 @@
           </a>
         
         
-          <a href="../base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -615,9 +679,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.5165553b.js"></script>
+      <script src="../../../assets/javascripts/application.5165553b.js"></script>
       
-      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.2",url:{base:"../../.."}})</script>
       
     
     
