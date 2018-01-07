@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/asymmetric/ed25519/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/asymmetric/private-key/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -38,7 +38,7 @@
     
     
       
-        <title>Ed25519 curve - Monero Docs</title>
+        <title>Private keys - Monero Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Ed25519 curve
+                Private keys
               </span>
             
           
@@ -341,11 +341,47 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../private-key/" title="Private keys" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Private keys
+      </label>
+    
+    <a href="./" title="Private keys" class="md-nav__link md-nav__link--active">
       Private keys
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relation-to-ed25519" title="Relation to Ed25519" class="md-nav__link">
+    Relation to Ed25519
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -365,61 +401,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Ed25519 curve
-      </label>
-    
-    <a href="./" title="Ed25519 curve" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ed25519/" title="Ed25519 curve" class="md-nav__link">
       Ed25519 curve
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" title="Definition" class="md-nav__link">
-    Definition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" title="Implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -538,22 +524,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definition" title="Definition" class="md-nav__link">
-    Definition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" title="Implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
+  <a href="#relation-to-ed25519" title="Relation to Ed25519" class="md-nav__link">
+    Relation to Ed25519
   </a>
   
 </li>
@@ -572,80 +544,33 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/asymmetric/ed25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/asymmetric/private-key.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ed25519-curve">Ed25519 curve<a class="headerlink" href="#ed25519-curve" title="Permanent link">&para;</a></h1>
+                <h1 id="private-keys-in-monero">Private keys in Monero<a class="headerlink" href="#private-keys-in-monero" title="Permanent link">&para;</a></h1>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>Article author is nowhere close to being a cryptographer. Be sceptical on accuracy.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This article is only about the underlying curve. Public key derivation and signing algorithm will be treated separately. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Article is a work in progress.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before we get to Monero, a little bit of context. We are talking asymmetric cryptography here.
-The "asymmetric" simply means the are two keys:</p>
-<ul>
-<li>the private key (used primarily for signing data and for decrypting data)</li>
-<li>the public key (used primarily for signature verification and encrypting data)</li>
-</ul>
-<p>This is in contrast to symmetric cryptography which uses a single (secret) key.</p>
-<p>Historically, asymmetric cryptography was based on the problem of factorization of a very large integers
-back into prime numbers (which is practically impossible for large enough integers).</p>
-<p>Recently, asymmetric cryptography is based on a mathematical notion of elliptic curves.
-Ed25519 is a specific, well researched and standardized elliptic curve.      </p>
-</div>
-<p>Monero employs Ed25519 elliptic curve as a basis for its key pair generation.</p>
-<p>However, Monero does not exactly follow EdDSA reference signature scheme.</p>
-<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
-<p>This is the standard Ed25519 curve definition, no Monero specific stuff here.</p>
-<p>Curve equation:</p>
-<div class="codehilite"><pre><span></span>−x^2 + y^2 = 1 − (121665/121666) * x^2 * y^2
-</pre></div>
-
-
-<p>Base point:</p>
-<div class="codehilite"><pre><span></span># The base point is the specific point on the curve. It is used
-# as a basis for further calculations. It is an arbitrary choice
-# by the curve authors, just to standarize the scheme.
-# 
-# Note that it is enough to specify the y value and the sign of the x value.
-# That&#39;s because the specific x can be calculated from the curve equation.    
-G = (x, 4/5)  # take the point with the positive x
-
-# The hex representation of the base point
-5866666666666666666666666666666666666666666666666666666666666666
-</pre></div>
-
-
-<p>Prime order of the base point:</p>
-<div class="codehilite"><pre><span></span># In layment terms, the &quot;canvas&quot; where the curve is drawn is assumed
-# to have a finite &quot;resolution&quot;, so point coordinates must &quot;wrap around&quot;
-# at some point. This is achieved by modulo the &quot;l&quot; value.
-# In other words, the &quot;l&quot; defines the maximum scalar we can use.
-l = 2^252 + 27742317777372353535851937790883648493
-</pre></div>
-
-
-<p>The total number of points on the curve, a prime number:</p>
-<div class="codehilite"><pre><span></span>q = 2^255 - 19
-</pre></div>
-
-
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<p>Monero uses (apparently modified) Ref10 implementation by Daniel J. Bernstein.</p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://steemit.com/monero/@luigi1111/understanding-monero-cryptography-privacy-introduction">Understanding Monero Cryptography</a> - excellent writeup by Luigi</li>
-<li><a href="https://monero.stackexchange.com/questions/2290/why-how-does-monero-generate-public-ed25519-keys-without-using-the-standard-publ">StackOverflow answer</a></li>
-<li><a href="https://github.com/monero-project/mininero/blob/master/ed25519.py">Python implementation</a> - not the reference one but easier to understand</li>
-<li><a href="https://monero.stackexchange.com/questions/6050/what-is-the-base-point-g-from-the-whitepaper-and-how-is-it-represented-as-a">Encoding point to hex</a></li>
-<li><a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">Ed25519 on Wikipedia</a></li>
-<li><a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">A (Relatively Easy To Understand) Primer on Elliptic Curve Cryptography</a></li>
-</ul>
+<p>Private key is generated <a href="../../../cryptography/prng">randomly</a>.</p>
+<p>Private key must be kept secret.</p>
+<p>Private key is a <strong>large integer</strong> impossible to guess, like:
+<code>108555083659983933209597798445644913612440610624038028786991485007418559037440</code></p>
+<p>Private key is 256 bits long. </p>
+<p>Private key is a <strong>scalar</strong>, meaning it is a single value.</p>
+<p>In equations scalars are represented by <strong>lowercase letters</strong>. </p>
+<p>In user-facing contexts, private key is encoded in a <a href="https://en.wikipedia.org/wiki/Endianness#Little">little-endian</a> hexadecimal form, like:
+<code>b3588a87056fb21dc4d052d59e83b54293882e646b543c29478e4cf45c28a402</code></p>
+<h2 id="relation-to-ed25519">Relation to Ed25519<a class="headerlink" href="#relation-to-ed25519" title="Permanent link">&para;</a></h2>
+<p>Being a simple random integer, private key is not specific to any particular asymmetric cryptography scheme.</p>
+<p>However, before deriving Ed25519 public key, the private key is subject to modulo <code>l</code>,
+where <code>l</code> is the maximum scalar allowed by <a href="../../../cryptography/asymmetric/ed25519">Ed25519 scheme</a>.</p>
+<p>The <code>l</code> is on the order of 2^252, so the effective key strength is technically 252 bits, not 256 bits.
+This is standard for EC cryptography and is more of a cosmetic nuance than any real concern.</p>
                 
                   
                 
@@ -664,7 +589,7 @@ l = 2^252 + 27742317777372353535851937790883648493
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../public-key/" title="Public keys" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../intro/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -673,19 +598,19 @@ l = 2^252 + 27742317777372353535851937790883648493
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Public keys
+                Overview
               </span>
             </div>
           </a>
         
         
-          <a href="../../base58/" title="Base58" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../public-key/" title="Public keys" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Base58
+                Public keys
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
