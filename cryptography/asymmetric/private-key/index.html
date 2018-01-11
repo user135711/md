@@ -390,6 +390,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#encoding" title="Encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#private-spend-key" title="Private spend key" class="md-nav__link">
     Private spend key
   </a>
@@ -439,6 +446,18 @@
   <li class="md-nav__item">
     <a href="../ed25519/" title="Ed25519 curve" class="md-nav__link">
       Ed25519 curve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../key-image/" title="Key image" class="md-nav__link">
+      Key image
     </a>
   </li>
 
@@ -578,6 +597,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#encoding" title="Encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#private-spend-key" title="Private spend key" class="md-nav__link">
     Private spend key
   </a>
@@ -627,8 +653,6 @@
 <p>Private key is 256 bits long. </p>
 <p>Private key is a <strong>scalar</strong>, meaning it is a single value.</p>
 <p>In equations scalars are represented by <strong>lowercase letters</strong>. </p>
-<p>In user-facing contexts, private key is encoded in a <a href="https://en.wikipedia.org/wiki/Endianness#Little">little-endian</a> hexadecimal form, like:
-<code>b3588a87056fb21dc4d052d59e83b54293882e646b543c29478e4cf45c28a402</code></p>
 <h2 id="relation-to-ed25519">Relation to Ed25519<a class="headerlink" href="#relation-to-ed25519" title="Permanent link">&para;</a></h2>
 <p>Being simply a random integer, private key is not specific to any particular asymmetric cryptography scheme.</p>
 <p>In context of Monero EC cryptography the private key is a number the base point <code>G</code> is multiplied by.
@@ -640,6 +664,13 @@ See this <a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-pr
 where <code>l</code> is the maximum scalar allowed by the <a href="../../../cryptography/asymmetric/ed25519">Ed25519 scheme</a>.</p>
 <p>The <code>l</code> is on the order of 2^252, so the effective key strength is technically 252 bits, not 256 bits.
 This is standard for EC cryptography and is more of a cosmetic nuance than any concern.</p>
+<h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
+<p>In user-facing contexts, the private key integer is:</p>
+<ol>
+<li>Taken modulo <code>l</code> to avoid malleability</li>
+<li>Put as array of 32 bytes in a <a href="https://en.wikipedia.org/wiki/Endianness#Little">little-endian</a> direction (the first byte is the least significant)</li>
+<li>Converted to hexadecimal form, like: <code>b3588a87056fb21dc4d052d59e83b54293882e646b543c29478e4cf45c28a402</code></li>
+</ol>
 <h2 id="private-spend-key">Private spend key<a class="headerlink" href="#private-spend-key" title="Permanent link">&para;</a></h2>
 <p>Private spend key is used to spend moneros.</p>
 <p>More specifically, it is used to build one-time private keys which allow to spend related outputs.</p>
