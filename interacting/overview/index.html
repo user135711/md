@@ -295,13 +295,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#separation-of-node-and-wallet" title="Separation of node and wallet" class="md-nav__link">
-    Separation of node and wallet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interacting" title="Interacting" class="md-nav__link">
     Interacting
   </a>
@@ -587,13 +580,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#separation-of-node-and-wallet" title="Separation of node and wallet" class="md-nav__link">
-    Separation of node and wallet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#interacting" title="Interacting" class="md-nav__link">
     Interacting
   </a>
@@ -623,11 +609,10 @@
 <p>You can interact with Monero via desktop GUI, commandline interface, and programming API.</p>
 <p>On top of that, Monero nodes interact with each other in a peer-to-peer network. </p>
 <h2 id="installation-directory-overview">Installation directory overview<a class="headerlink" href="#installation-directory-overview" title="Permanent link">&para;</a></h2>
-<p>This considers the released version of Monero software. Once unpacked, you will notice six executable files:</p>
-<p><img alt="Monero Directory" src="../../images/monero-dir.png" title="Logo Title Text 1" /></p>
-<h2 id="separation-of-node-and-wallet">Separation of node and wallet<a class="headerlink" href="#separation-of-node-and-wallet" title="Permanent link">&para;</a></h2>
+<p><a href="https://getmonero.org/downloads">Download Monero</a>. Once unpacked you will see several executable files.</p>
 <p>Monero project nicely decouples node logic <code>monerod</code> from wallet logic <code>monero-wallet-*</code>.
 Wallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.</p>
+<p><img alt="Monero Directory" src="../../images/monero-dir.png" title="Monero Unpacked" /></p>
 <table>
 <thead>
 <tr>
@@ -642,15 +627,15 @@ Wallet logic is offered through three independent user interfaces - the GUI, the
 </tr>
 <tr>
 <td><code>monero-wallet-gui</code></td>
-<td align="left">Wallet logic and <strong>graphical</strong> user interface. Requires <code>monerod</code> running.</td>
+<td align="left">Wallet logic and <strong>graphical</strong> user interface. <br />Requires <code>monerod</code> running.</td>
 </tr>
 <tr>
 <td><code>monero-wallet-cli</code></td>
-<td align="left">Wallet logic and <strong>commandline</strong> user interface. Requires <code>monerod</code> running.</td>
+<td align="left">Wallet logic and <strong>commandline</strong> user interface. <br />Requires <code>monerod</code> running.</td>
 </tr>
 <tr>
 <td><code>monero-wallet-rpc</code></td>
-<td align="left">Wallet logic and <strong>HTTP API</strong> (JSON-RPC protocol). Requires <code>monerod</code> running.</td>
+<td align="left">Wallet logic and <strong>HTTP API</strong> (JSON-RPC protocol). <br />Requires <code>monerod</code> running.</td>
 </tr>
 <tr>
 <td><code>monero-blockchain-export</code></td>
@@ -659,6 +644,18 @@ Wallet logic is offered through three independent user interfaces - the GUI, the
 <tr>
 <td><code>monero-blockchain-import</code></td>
 <td align="left">Tool to import <a href="https://downloads.getmonero.org/blockchain.raw">blockchain.raw</a> - ideally your own trusted copy.</td>
+</tr>
+<tr>
+<td><code>monero-gen-trusted-multisig</code></td>
+<td align="left">Tool to generate a set of multisig wallets. <br />See chapter on <a href="/multisignature">multisignatures</a>.</td>
+</tr>
+<tr>
+<td><code>monero-blockchain-blackball</code></td>
+<td align="left">Advanced tool to mitigate privacy issues related to Monero forks. <br />See the <a href="https://github.com/monero-project/monero/commit/df6fad4c627b99a5c3e2b91b69a0a1cc77c4be14#diff-0410fba131d9a7024ed4dcf9fb4a4e07">commit</a> and <a href="https://github.com/monero-project/monero/pull/3322">pull request</a>.</td>
+</tr>
+<tr>
+<td><code>monero-blockchain-usage</code></td>
+<td align="left">Advanced tool to mitigate privacy issues related to Monero forks. <br />See the <a href="https://github.com/monero-project/monero/commit/0590f62ab64cf023d397b995072035986931a6b4">commit</a> and the <a href="https://github.com/monero-project/monero/pull/3322">pull request</a>.</td>
 </tr>
 </tbody>
 </table>
