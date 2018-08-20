@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/asymmetric/ed25519/">
+        <link rel="canonical" href="https://monerodocs.org/cryptography/asymmetric/edwards25519/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Ed25519 curve - Monero Docs</title>
+        <title>Edwards25519 curve - Monero Docs</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#ed25519-curve" tabindex="1" class="md-skip">
+      <a href="../../../#edwards25519-elliptic-curve" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +132,7 @@
                 Monero Docs
               </span>
               <span class="md-header-nav__topic">
-                Ed25519 curve
+                Edwards25519 curve
               </span>
             
           
@@ -408,11 +408,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ed25519 curve
+        Edwards25519 curve
       </label>
     
-    <a href="./" title="Ed25519 curve" class="md-nav__link md-nav__link--active">
-      Ed25519 curve
+    <a href="./" title="Edwards25519 curve" class="md-nav__link md-nav__link--active">
+      Edwards25519 curve
     </a>
     
       
@@ -441,15 +441,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#base-point-g" title="Base point G" class="md-nav__link">
-    Base point G
+  <a href="#base-point-g" title="Base point: G" class="md-nav__link">
+    Base point: G
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#prime-order-of-the-base-point-l" title="Prime order of the base point l" class="md-nav__link">
-    Prime order of the base point l
+  <a href="#prime-order-of-the-base-point-l" title="Prime order of the base point: l" class="md-nav__link">
+    Prime order of the base point: l
   </a>
   
 </li>
@@ -645,15 +645,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#base-point-g" title="Base point G" class="md-nav__link">
-    Base point G
+  <a href="#base-point-g" title="Base point: G" class="md-nav__link">
+    Base point: G
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#prime-order-of-the-base-point-l" title="Prime order of the base point l" class="md-nav__link">
-    Prime order of the base point l
+  <a href="#prime-order-of-the-base-point-l" title="Prime order of the base point: l" class="md-nav__link">
+    Prime order of the base point: l
   </a>
   
 </li>
@@ -700,10 +700,10 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/asymmetric/ed25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/asymmetric/edwards25519.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ed25519-curve">Ed25519 curve<a class="headerlink" href="#ed25519-curve" title="Permanent link">&para;</a></h1>
+                <h1 id="edwards25519-elliptic-curve">Edwards25519 elliptic curve<a class="headerlink" href="#edwards25519-elliptic-curve" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Author is nowhere close to being a cryptographer. Be sceptical on accuracy.</p>
@@ -712,10 +712,11 @@
 <p class="admonition-title">Note</p>
 <p>This article is only about the underlying curve. Public key derivation and signing algorithm will be treated separately. </p>
 </div>
-<p>Monero employs Ed25519 elliptic curve as a basis for its key pair generation.</p>
-<p>However, Monero does not exactly follow EdDSA reference signature scheme.</p>
+<p>Monero employs edwards25519 elliptic curve as a basis for its key pair generation.</p>
+<p>The curve comes from the Ed25519 signature scheme. While Monero takes the curve unchanged, it does not exactly follow rest of the Ed25519.</p>
+<p>The edwards25519 curve is <a href="https://tools.ietf.org/html/rfc7748#section-4.1">birationally equivalent to Curve25519</a>.</p>
 <h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
-<p>This is the standard Ed25519 curve definition, no Monero specific stuff here,
+<p>This is the standard edwards25519 curve definition, no Monero specific stuff here,
 except the naming convention. The convention comes from the CryptoNote
 whitepaper and is widely used in Monero literature.</p>
 <h3 id="curve-equation">Curve equation<a class="headerlink" href="#curve-equation" title="Permanent link">&para;</a></h3>
@@ -728,7 +729,7 @@ whitepaper and is widely used in Monero literature.</p>
 <li>curve is in two dimensions (nothing fancy, like all the curves is high school)</li>
 <li>curve is mirrored below y axis due to <code>y^2</code> part of the equation (not a polynomial)</li>
 </ul>
-<h3 id="base-point-g">Base point <code>G</code><a class="headerlink" href="#base-point-g" title="Permanent link">&para;</a></h3>
+<h3 id="base-point-g">Base point: <code>G</code><a class="headerlink" href="#base-point-g" title="Permanent link">&para;</a></h3>
 <p>The base point is a specific point on the curve. It is used
 as a basis for further calculations. It is an arbitrary choice
 by the curve authors, just to standardize the scheme.</p>
@@ -741,12 +742,13 @@ That's because the specific x can be calculated from the curve equation.</p>
 </pre></div>
 
 
-<h3 id="prime-order-of-the-base-point-l">Prime order of the base point <code>l</code><a class="headerlink" href="#prime-order-of-the-base-point-l" title="Permanent link">&para;</a></h3>
+<h3 id="prime-order-of-the-base-point-l">Prime order of the base point: <code>l</code><a class="headerlink" href="#prime-order-of-the-base-point-l" title="Permanent link">&para;</a></h3>
 <p>In layment terms, the "canvas" where the curve is drawn is assumed
 to have a finite "resolution", so point coordinates must "wrap around"
 at some point. This is achieved by modulo the <code>l</code> value (lowercase L).
 In other words, the <code>l</code> defines the maximum scalar we can use.</p>
 <div class="codehilite"><pre><span></span>l = 2^252 + 27742317777372353535851937790883648493
+# =&gt; 7237005577332262213973186563042994240857116359379907606001950938285454250989
 </pre></div>
 
 
@@ -763,12 +765,13 @@ In other words, the <code>l</code> defines the maximum scalar we can use.</p>
 <p>Monero uses (apparently modified) Ref10 implementation by Daniel J. Bernstein.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">A (Relatively Easy To Understand) Primer on Elliptic Curve Cryptography</a></li>
+<li><a href="https://tools.ietf.org/html/rfc8032">RFC 8032 defining EdDSA</a></li>
 <li><a href="https://steemit.com/monero/@luigi1111/understanding-monero-cryptography-privacy-introduction">Understanding Monero Cryptography</a> - excellent writeup by Luigi</li>
 <li><a href="https://monero.stackexchange.com/questions/2290/why-how-does-monero-generate-public-ed25519-keys-without-using-the-standard-publ">StackOverflow answer</a></li>
 <li><a href="https://github.com/monero-project/mininero/blob/master/ed25519.py">Python implementation</a> - not the reference one but easier to understand</li>
 <li><a href="https://monero.stackexchange.com/questions/6050/what-is-the-base-point-g-from-the-whitepaper-and-how-is-it-represented-as-a">Encoding point to hex</a></li>
-<li><a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">Ed25519 on Wikipedia</a></li>
-<li><a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">A (Relatively Easy To Understand) Primer on Elliptic Curve Cryptography</a></li>
+<li><a href="https://en.wikipedia.org/wiki/EdDSA">EdDSA on Wikipedia</a></li>
 </ul>
                 
                   

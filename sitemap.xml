@@ -46,7 +46,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://monerodocs.org/cryptography/asymmetric/ed25519/</loc>
+     <loc>https://monerodocs.org/cryptography/asymmetric/edwards25519/</loc>
      <lastmod>2018-08-20</lastmod>
      <changefreq>daily</changefreq>
     </url>

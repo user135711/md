@@ -478,8 +478,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ed25519/" title="Ed25519 curve" class="md-nav__link">
-      Ed25519 curve
+    <a href="../edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+      Edwards25519 curve
     </a>
   </li>
 
@@ -708,8 +708,8 @@ The result of the multiplication is the public key <code>P</code> (another point
 Multiplication of a point by a number has a very special definition in EC cryptography.
 See this <a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">this guide</a> for details.</p>
 <h3 id="key-strength">Key strength<a class="headerlink" href="#key-strength" title="Permanent link">&para;</a></h3>
-<p>Before deriving Ed25519 public key, the private key is subject to modulo <code>l</code>,
-where <code>l</code> is the maximum scalar allowed by the <a href="/cryptography/asymmetric/ed25519">Ed25519 scheme</a>.</p>
+<p>Before deriving the public key, private key is subject to modulo <code>l</code>,
+where <code>l</code> is the maximum scalar allowed by the <a href="/cryptography/asymmetric/edwards25519">edwards25519 curve</a>.</p>
 <p>The <code>l</code> is on the order of 2^252, so the effective key strength is technically 252 bits, not 256 bits.
 This is standard for EC cryptography and is more of a cosmetic nuance than any concern.</p>
 <h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>

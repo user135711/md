@@ -444,8 +444,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ed25519/" title="Ed25519 curve" class="md-nav__link">
-      Ed25519 curve
+    <a href="../edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+      Edwards25519 curve
     </a>
   </li>
 
@@ -626,7 +626,7 @@
 <p class="admonition-title">Note</p>
 <p>Author is nowhere close to being a cryptographer. Be sceptical on accuracy.</p>
 </div>
-<p>Public key is deterministically derived from private key based on <a href="/cryptography/asymmetric/ed25519">Ed25519 curve</a> with a little Monero-specific twist.</p>
+<p>Public key is deterministically derived from private key based on <a href="/cryptography/asymmetric/edwards25519">edwards25519 curve</a> with a little Monero-specific twist.</p>
 <p>Public key is meant to be shared. Assuming correct implementation, it is not practically possible to recover private key from public key. </p>
 <p>Public key is a <strong>point (x,y)</strong> on the elliptic curve.</p>
 <p>In equations points are represented by <strong>uppercase letters</strong>.</p>
@@ -637,7 +637,7 @@
 <ul>
 <li>P is a public key</li>
 <li>x is a private key</li>
-<li>G is a "base point"; this is simply a constant specific to <a href="/cryptography/asymmetric/ed25519">Ed25519</a>; this point lies on the elliptic curve</li>
+<li>G is a "base point"; this is simply a constant specific to <a href="/cryptography/asymmetric/edwards25519">edwards25519</a>; this point lies on the elliptic curve</li>
 </ul>
 <p>Then:</p>
 <div class="codehilite"><pre><span></span>P = xG
@@ -688,13 +688,13 @@ These keys are used to build stealth addresses to receive payments.  </p>
           </a>
         
         
-          <a href="../ed25519/" title="Ed25519 curve" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../edwards25519/" title="Edwards25519 curve" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Ed25519 curve
+                Edwards25519 curve
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
