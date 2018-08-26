@@ -66,12 +66,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://monerodocs.org/public-address/integrated-address/</loc>
+     <loc>https://monerodocs.org/public-address/subaddress/</loc>
      <lastmod>2018-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://monerodocs.org/public-address/subaddress/</loc>
+     <loc>https://monerodocs.org/public-address/integrated-address/</loc>
      <lastmod>2018-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

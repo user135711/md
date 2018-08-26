@@ -526,8 +526,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../integrated-address/" title="Integrated" class="md-nav__link">
-      Integrated
+    <a href="../subaddress/" title="Subaddress" class="md-nav__link">
+      Subaddress
     </a>
   </li>
 
@@ -538,8 +538,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../subaddress/" title="Subaddress" class="md-nav__link">
-      Subaddress
+    <a href="../integrated-address/" title="Integrated" class="md-nav__link">
+      Integrated
     </a>
   </li>
 
@@ -637,16 +637,23 @@
 <p>Monero public address is what you publish to get paid.</p>
 <p>An address can be generated offline and for free. It boils down to generating a large random number representing your private spending key.</p>
 <p>Publishing your Monero address does <strong>not</strong> endanger your privacy. That's because in Monero transactions go to stealth addresses which are decoupled from your public address.</p>
-<p>There are a few types of public addresses in Monero:</p>
+<p>There are a few <strong>types of public addresses</strong> in Monero:</p>
 <ul>
-<li>Standard address - the basic type of the address, also refered to as raw address</li>
-<li>Integrated address - embeds payment ID so you can learn for what you are being paid</li>
-<li>Subaddress - slightly enhances privacy and allows for organizing your funds in subaccounts within a single wallet</li>
+<li>Standard address - basic type of an address, also refered to as raw address</li>
+<li>Subaddress - what you should be using by default</li>
+<li>Integrated address - relevant for exchanges, merchants, and other businesses accepting Monero in a fully automated way</li>
 </ul>
 <h2 id="standard-address">Standard address<a class="headerlink" href="#standard-address" title="Permanent link">&para;</a></h2>
-<p>The raw address is useful for things like donations (where you don't care who donated)
-or exchange withdrawals (where you know the payer out of band). Its strength is simplicity.</p>
-<p>Monero standard address is composed of two public keys:</p>
+<p>Historicaly, raw address was the only available option. For that reason it is the most widely adopted and supported address type.</p>
+<p>Its strength is simplicity. However, these days users should prefer receiving to subaddresses instead.</p>
+<p>Technically, raw address is also a basis for creating subaddresses and integrated addresses.</p>
+<p>Raw address is <strong>still useful for</strong>:</p>
+<ul>
+<li>accepting block reward in a solo-mining scenario as other addresses are not supported</li>
+<li>accepting from senders who batch payouts (like mining pools); in this scenario the sender is paying multiple parties using a single transaction; such transaction has multiple outputs; subaddresses do not work in this scenario</li>
+<li>accepting from senders who use legacy wallets (can't send to subaddress)</li>
+</ul>
+<p>Monero raw address is composed of two public keys:</p>
 <ul>
 <li>public spend key</li>
 <li>public view key</li>
@@ -728,13 +735,13 @@ or exchange withdrawals (where you know the payer out of band). Its strength is 
           </a>
         
         
-          <a href="../integrated-address/" title="Integrated" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../subaddress/" title="Subaddress" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Integrated
+                Subaddress
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
