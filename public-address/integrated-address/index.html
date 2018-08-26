@@ -462,8 +462,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../standard-address/" title="Standard" class="md-nav__link">
-      Standard
+    <a href="../main-address/" title="Main" class="md-nav__link">
+      Main
     </a>
   </li>
 
@@ -511,6 +511,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integrated-addresses-vs-subaddresses" title="Integrated addresses vs subaddresses" class="md-nav__link">
+    Integrated addresses vs subaddresses
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#caveats" title="Caveats" class="md-nav__link">
@@ -587,6 +594,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#integrated-addresses-vs-subaddresses" title="Integrated addresses vs subaddresses" class="md-nav__link">
+    Integrated addresses vs subaddresses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#caveats" title="Caveats" class="md-nav__link">
     Caveats
   </a>
@@ -620,15 +634,12 @@
                 
                 
                 <h1 id="integrated-address">Integrated address<a class="headerlink" href="#integrated-address" title="Permanent link">&para;</a></h1>
-<p>Monero integrated address embeds a compact payment ID.</p>
-<p>Use integrated address to learn for what you are being paid. It is ideal for accepting Monero in an automated fashion,
-like online stores and exchanges.    </p>
-<p>You should allow Monero software to generate integrated addresses for you (instead of forcing your own payment IDs).
-Please note these are Monero technical payment IDs and must not be confused with business identifiers like order number or invoice number.</p>
+<p>Integrated addresses are ideal for accepting Monero in an automated fashion - like in online stores and exchanges.</p>
+<p>Monero integrated address embeds a payment ID. This allows you to learn for what you are being paid.</p>
+<p>Please note these are Monero technical payment IDs and must not be confused with business identifiers like order number or invoice number.</p>
 <p>The transaction to integrated address will not reveal the payment ID publicly.
 Payment ID in a transaction will be encrypted with a shared secret (one-time random key known only to sender and recipient).
-Only the recipient will be able to match the transaction against payment ID.
-TODO: explain how exactly payment IDs are encoded in transactions.</p>
+Only the recipient will be able to match the transaction against payment ID.</p>
 <p>Monero integrated address obsoletes the former practice of using full 32-bytes payment ID in a transaction extra field (where it was not encrypted).</p>
 <p>Data structure (<a href="https://github.com/monero-project/monero/blob/f7b9f44c1b0d53170fd7f53d37fc67648f3247a2/src/cryptonote_basic/cryptonote_basic_impl.cpp#L172">src</a>):</p>
 <table>
@@ -669,8 +680,34 @@ TODO: explain how exactly payment IDs are encoded in transactions.</p>
 </table>
 <p>It totals to 77 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="/cryptography/base58">Monero specific Base58</a> format, resulting in a 106 chars long string. Example integrated address:</p>
 <p><code>4LL9oSLmtpccfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2bYXZKKQePHES9khPK</code></p>
+<h2 id="integrated-addresses-vs-subaddresses">Integrated addresses vs subaddresses<a class="headerlink" href="#integrated-addresses-vs-subaddresses" title="Permanent link">&para;</a></h2>
+<p>Both types allow you to learn for what you are being paid.</p>
+<p><strong>Individuals</strong> should prefer <strong>subaddresses</strong> to receive payments. This is to improve privacy in certain scenarios. See article on <a href="/public-address/subaddress">subaddresses</a> for details.</p>
+<p><strong>Businesses</strong> accepting payments in an automated way should prefer <strong>integrated addresses</strong>. The rationale is as follows:</p>
+<ul>
+<li>
+<p>Scenario where subaddresses improve privacy is not applicable for businesses b/c businesses have the same identity over time. Consequently, subaddresses provide no benefits over integrated addresses.</p>
+</li>
+<li>
+<p>No private key is necessary to generate integrated address. This provides a strong security advantage because services that generate integrated addresses need no access to wallet. In contrast, to generate a subaddress, one needs a private view key.</p>
+</li>
+<li>
+<p>No shared counter is necessary to generate integrated address. This allows individual services to independently generate integrated addresses w/o synchronizing on a common sequence. In contrast, subaddresses are generated sequentially, and so the sequence (the counter or index) is a coupling point between the wallet and all services that need to generate the address. Back to integrated addresses, note that embedded payment IDs are 64-bit. This means the space is large enough that one can simply generate them randomly and reliably assume uniqueness.</p>
+</li>
+<li>
+<p>In very specific scenarios, preparation effort to monitor a very huge number of subaddresses, could became an issue. See <a href="https://www.reddit.com/r/Monero/comments/9aevri/is_it_fair_to_say_integrated_addresses_are/e4vf47p">this reddit thread</a> for details.</p>
+</li>
+</ul>
 <h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
+<p>There are some caveates:</p>
+<ul>
+<li>
 <p>Single transaction cannot pay to multiple integrated addresses.</p>
+</li>
+<li>
+<p>As individual running a wallet you should generally prefer subaddresses. However, if you happen to use integrated addresses, you should allow Monero software to generate integrated addresses for you (instead of forcing your own payment IDs).</p>
+</li>
+</ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li>question on <a href="https://monero.stackexchange.com/questions/3179/what-is-an-integrated-address">StackExchange</a> </li>
