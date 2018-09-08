@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/interacting/monerod/running/">
+        <link rel="canonical" href="https://monerodocs.org/interacting/monerod/reference/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -354,6 +354,47 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pick-network" title="Pick network" class="md-nav__link">
+    Pick network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" title="Logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" title="Server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" title="Reference" class="md-nav__link">
     Reference
   </a>
@@ -654,6 +695,47 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pick-network" title="Pick network" class="md-nav__link">
+    Pick network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" title="Logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server" title="Server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" title="Reference" class="md-nav__link">
     Reference
   </a>
@@ -676,10 +758,84 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/monerod/running.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/monerod/reference.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="monerod-reference"><code>monerod</code> - reference<a class="headerlink" href="#monerod-reference" title="Permanent link">&para;</a></h1>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p><code>./monerod [options] [command]</code> </p>
+<p>Options affect how daemon should be working. Commands assume the daemon is already running. Commands give access to specific services provided by the daemon.</p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="pick-network">Pick network<a class="headerlink" href="#pick-network" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(missing)</td>
+<td>By default monerod assumes <a href="/networks">mainnet</a>.</td>
+</tr>
+<tr>
+<td><code>--stagenet</code></td>
+<td>Run on <a href="/networks">stagenet</a>. Remember to run your wallet with <code>--stagenet</code> as well.</td>
+</tr>
+<tr>
+<td><code>--testnet</code></td>
+<td>Run on <a href="/networks">testnet</a>. Remember to run your wallet with <code>--testnet</code> as well.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--log-file</code></td>
+<td>Full path to the log file. Example (mind file permissions): <br/><code>./monerod --log-file=/var/log/monero/mainnet/monerod.log</code></td>
+</tr>
+<tr>
+<td><code>--log-level</code></td>
+<td><code>0-4</code> with <code>0</code> being minimal logging and <code>4</code> being full tracing. Defaults to <code>0</code>. These are general presets and do not directly map to severity levels. For example, even with minimal <code>0</code>, you may see some most important <code>INFO</code> entries. Temporarily changing to <code>1</code> allows for much better understanding of how the full node operates. Example: <br /><code>./monerod --log-level=1</code></td>
+</tr>
+<tr>
+<td><code>--max-log-file-size</code></td>
+<td>Soft limit in bytes for the log file (=104850000 by default, which is just under 100MB). Once log file grows past that limit, <code>monerod</code> creates next log file with a <code>-YYYY-MM-DD-HH-MM-SS</code> UTC timestamp postfix. In production deployments, you would probably prefer to use established solutions like logrotate instead.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--detach</code></td>
+<td>Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage <code>monerod</code> daemon with systemd or similar.</td>
+</tr>
+<tr>
+<td><code>--non-interactive</code></td>
+<td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty getss assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
+</tr>
+<tr>
+<td><code>--pidfile</code></td>
+<td>Full path to the PID file. Works only with <code>--detach</code>. Example: <br /><code>./monerod --detach --pidfile=/run/monero/monerod.pid</code></td>
+</tr>
+</tbody>
+</table>
+<p>TO BE CONTINUED</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.reddit.com/r/Monero/comments/3jhyqc/0mq_help_share_this_exciting_news/">Reddit answer</a></li>
