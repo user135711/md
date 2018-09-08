@@ -389,6 +389,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
+    Help and Version
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -730,6 +737,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
+    Help and Version
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -766,6 +780,7 @@
 <p><code>./monerod [options] [command]</code> </p>
 <p>Options affect how daemon should be working. Commands assume the daemon is already running. Commands give access to specific services provided by the daemon.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<p>Following option groups are only to make the reference easier to follow. The daemon itself does not group options in any way.</p>
 <h4 id="pick-network">Pick network<a class="headerlink" href="#pick-network" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -813,6 +828,8 @@
 </tbody>
 </table>
 <h4 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h4>
+<p>The <code>monerod</code> defaults are adjusted for running it occasionally on the same computer as your Monero wallet.</p>
+<p>The following options will be helpful if you intend to have an always running node - most likely on a remote server or your own separate PC.</p>
 <table>
 <thead>
 <tr>
@@ -822,16 +839,43 @@
 </thead>
 <tbody>
 <tr>
+<td><code>--config-file</code></td>
+<td>Full path to the configuration file. By default <code>monerod</code> looks for <code>bitmonero.conf</code> in Monero <a href="/interacting/monerod/overview/#data-directory">data directory</a>. TODO: describe configuration file syntax.</td>
+</tr>
+<tr>
+<td><code>--data-dir</code></td>
+<td>Full path to data directory. This is where the blockchain, log files, and p2p network memory are stored. For defaults and details see <a href="/interacting/monerod/overview/#data-directory">data directory</a>.</td>
+</tr>
+<tr>
+<td><code>--pidfile</code></td>
+<td>Full path to the PID file. Works only with <code>--detach</code>. Example: <br /><code>./monerod --detach --pidfile=/run/monero/monerod.pid</code></td>
+</tr>
+<tr>
 <td><code>--detach</code></td>
-<td>Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage <code>monerod</code> daemon with systemd or similar.</td>
+<td>Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage <code>monerod</code> daemon with systemd or similar. By default <code>monerod</code> runs in a foreground.</td>
 </tr>
 <tr>
 <td><code>--non-interactive</code></td>
 <td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty getss assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
 </tr>
+</tbody>
+</table>
+<h4 id="help-and-version">Help and Version<a class="headerlink" href="#help-and-version" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
 <tr>
-<td><code>--pidfile</code></td>
-<td>Full path to the PID file. Works only with <code>--detach</code>. Example: <br /><code>./monerod --detach --pidfile=/run/monero/monerod.pid</code></td>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>Enlists available options.</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
 </tr>
 </tbody>
 </table>
