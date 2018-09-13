@@ -42,7 +42,7 @@
     
     
       
-        <title>Reference - Monero Documentation</title>
+        <title>monerod - reference | Monero Documentation</title>
       
     
     
@@ -385,6 +385,13 @@
           <li class="md-nav__item">
   <a href="#server" title="Server" class="md-nav__link">
     Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p-network" title="P2P network" class="md-nav__link">
+    P2P network
   </a>
   
 </li>
@@ -738,6 +745,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#p2p-network" title="P2P network" class="md-nav__link">
+    P2P network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#help-and-version" title="Help and Version" class="md-nav__link">
     Help and Version
   </a>
@@ -828,7 +842,7 @@
 </tbody>
 </table>
 <h4 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h4>
-<p>The <code>monerod</code> defaults are adjusted for running it occasionally on the same computer as your Monero wallet.</p>
+<p><code>monerod</code> defaults are adjusted for running it occasionally on the same computer as your Monero wallet.</p>
 <p>The following options will be helpful if you intend to have an always running node - most likely on a remote server or your own separate PC.</p>
 <table>
 <thead>
@@ -857,6 +871,51 @@
 <tr>
 <td><code>--non-interactive</code></td>
 <td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty getss assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="p2p-network">P2P network<a class="headerlink" href="#p2p-network" title="Permanent link">&para;</a></h4>
+<p>(WORK IN PROGRESS)</p>
+<p>The following options define how your node participates in Monero peer-to-peer network. This is for node-to-node communication. It does <strong>not</strong> affect wallet-to-node interface.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--p2p-bind-ip</code></td>
+<td>Network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. You must change this if you want to constrain binding, for example to configure connection through TOR.</td>
+</tr>
+<tr>
+<td><code>--p2p-bind-port</code></td>
+<td>TCP port to listen for p2p network connections. Defaults to <code>18080</code> for mainnet, <code>28080</code> for testnet, and 38080 for stagenet. You normally wouldn't change that.</td>
+</tr>
+<tr>
+<td><code>--hide-my-port</code></td>
+<td><code>monerod</code> will still open and listen on the p2p port. However, it will not announce itself as a peerlist candidate. Technically, it will return port <code>0</code> in a response to p2p handshake (<code>node_data.my_port = 0</code> in <code>get_local_node_data</code> function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".</td>
+</tr>
+<tr>
+<td><code>--add-priority-node</code></td>
+<td>Specify list of peers to connect to and</td>
+</tr>
+<tr>
+<td><code>--add-exclusive-node</code></td>
+<td>Specify list of peers to connect to options add-priority-node and seed-node</td>
+</tr>
+<tr>
+<td><code>--seed-node</code></td>
+<td>Connect to a node to retrieve peer</td>
+</tr>
+<tr>
+<td><code>--p2p-external-port</code></td>
+<td>External port for p2p network protocol (if port forwarding used with NAT). Default is <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>--no-igd</code></td>
+<td>Disable UPnP port mapping.</td>
 </tr>
 </tbody>
 </table>
