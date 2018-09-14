@@ -587,8 +587,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-incoming-payments" title="Group incoming payments" class="md-nav__link">
-    Group incoming payments
+  <a href="#group-funds-into-accounts" title="Group funds into accounts" class="md-nav__link">
+    Group funds into accounts
   </a>
   
 </li>
@@ -722,8 +722,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-incoming-payments" title="Group incoming payments" class="md-nav__link">
-    Group incoming payments
+  <a href="#group-funds-into-accounts" title="Group funds into accounts" class="md-nav__link">
+    Group funds into accounts
   </a>
   
 </li>
@@ -798,19 +798,24 @@
 <p>To prevent the payer from linking your payouts together simply generate a new subaddress for each payout.
 This way services like <a href="https://shapeshift.io">Shapeshift</a> wouldn't know it is you again receving Monero.</p>
 <p>Note it won't help if you have an account with the service. Then your payouts are already linked in the service database, regardless of Monero.</p>
-<h2 id="group-incoming-payments">Group incoming payments<a class="headerlink" href="#group-incoming-payments" title="Permanent link">&para;</a></h2>
-<p>Think income streams.</p>
-<p>Subaddresses allow to group incoming transactions within a single wallet.</p>
-<p>User interface allows to assign convenience labels to subaddresses.</p>
-<p>You may want to organize your incoming funds into a streams like "donations", "work", etc.</p>
-<p>This is similar to subaccounts in your bank account. There is a very important difference though.</p>
-<p>In Monero funds don't really sit on public addresses. Public addresses are conceptually a gateway or a routing mechanism. Funds sit on the unspent outputs. Thus, a single transaction can aggregate and spend outputs from multiple addresses.</p>
+<h2 id="group-funds-into-accounts">Group funds into accounts<a class="headerlink" href="#group-funds-into-accounts" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feel free to skip this if your are new to Monero. Accounts are not essential and currently not supported by the GUI.</p>
+</div>
+<p><strong>Accounts</strong> are a convenience wallet-level feature to group subaddresses under one label and balance.</p>
+<p>You may want to organize your funds into accounts like "cash", "work", "trading", "mining", "donations", etc.</p>
+<p>As accounts are only groupings of subaddresses, they themselves do not have an address.</p>
+<p>Accounts are deterministically derived from the root private key along with subaddresses.</p>
+<p>As of September 2018 accounts are only supported by the CLI wallet and missing from GUI wallet.</p>
+<p>Accounts are similar to subaccounts in your classic bank account. There is a very important difference though. In Monero funds don't really sit on accounts or public addresses. Public addresses are conceptually a gateway or a routing mechanism. Funds sit on transactions' unspent outputs. Thus, a single transaction can - in principle - aggregate and spend outputs from multiple addresses (and by extension from multiple accounts). The CLI or GUI wallet may not directly support creating such transactions for simplicity.</p>
+<p>In short, think of accounts as a <strong>soft</strong> grouping of your funds.</p>
 <h2 id="why-not-multiple-wallets">Why not multiple wallets?<a class="headerlink" href="#why-not-multiple-wallets" title="Permanent link">&para;</a></h2>
 <p>The advantage over creating multiple wallets is that you only have a <strong>single seed</strong> to manage.
 All subaddresses can be derived from the wallet seed.</p>
 <p>Additionally, you conveniently manage your subaddresses within a single user interface.</p>
 <h2 id="wallet-level-feature">Wallet level feature<a class="headerlink" href="#wallet-level-feature" title="Permanent link">&para;</a></h2>
-<p>Subaddresses are a wallet-level feature to construct and interpret transactions. They do not affect the consensus. </p>
+<p>Subaddresses and accounts are a wallet-level feature to construct and interpret transactions. They do not affect the consensus. </p>
 <h2 id="data-structure">Data structure<a class="headerlink" href="#data-structure" title="Permanent link">&para;</a></h2>
 <p>Subaddress has a dedicated "network byte":</p>
 <table>
