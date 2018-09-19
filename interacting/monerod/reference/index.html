@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.1, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.1, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
@@ -69,6 +69,8 @@
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
       <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../overrides.css">
     
     
   </head>
@@ -876,7 +878,9 @@
 </table>
 <h4 id="p2p-network">P2P network<a class="headerlink" href="#p2p-network" title="Permanent link">&para;</a></h4>
 <p>(WORK IN PROGRESS)</p>
-<p>The following options define how your node participates in Monero peer-to-peer network. This is for node-to-node communication. It does <strong>not</strong> affect wallet-to-node interface.</p>
+<p>The following options define how your node participates in Monero peer-to-peer network.
+This is for node-to-node communication. It does <strong>not</strong> affect wallet-to-node interface.</p>
+<p>The node and peer words are used interchangeably.</p>
 <table>
 <thead>
 <tr>
@@ -887,11 +891,19 @@
 <tbody>
 <tr>
 <td><code>--p2p-bind-ip</code></td>
-<td>Network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. You must change this if you want to constrain binding, for example to configure connection through TOR.</td>
+<td>Network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. <br /><br />You must change this if you want to constrain binding, for example to configure connection through Tor via torsocks: <br /><code>DNS_PUBLIC=tcp://1.1.1.1 TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --hide-my-port</code></td>
 </tr>
 <tr>
 <td><code>--p2p-bind-port</code></td>
-<td>TCP port to listen for p2p network connections. Defaults to <code>18080</code> for mainnet, <code>28080</code> for testnet, and 38080 for stagenet. You normally wouldn't change that.</td>
+<td>TCP port to listen for p2p network connections. Defaults to <code>18080</code> for mainnet, <code>28080</code> for testnet, and <code>38080</code> for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private Monero p2p network (likely using private Testnet). Example: <br/><code>./monerod --p2p-bind-port=48080</code></td>
+</tr>
+<tr>
+<td><code>--p2p-external-port</code></td>
+<td>TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let <code>monerod</code> know what to advertise on the network. Default is <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>--no-igd</code></td>
+<td>Disable UPnP port mapping. Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
 </tr>
 <tr>
 <td><code>--hide-my-port</code></td>
@@ -899,23 +911,19 @@
 </tr>
 <tr>
 <td><code>--add-priority-node</code></td>
-<td>Specify list of peers to connect to and</td>
+<td>Specify list of peers to connect to and attempt to keep the connection open. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-priority-node=178.128.192.138:18081 --add-priority-node=144.76.202.167:18081</code></td>
 </tr>
 <tr>
 <td><code>--add-exclusive-node</code></td>
-<td>Specify list of peers to connect to options add-priority-node and seed-node</td>
+<td>Specify list of peers to connect to only. If this option is given the options <code>--add-priority-node</code> and <code>--seed-node</code> are ignored. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-exclusive-node=178.128.192.138:18081 --add-exclusive-node=144.76.202.167:18081</code></td>
 </tr>
 <tr>
 <td><code>--seed-node</code></td>
-<td>Connect to a node to retrieve peer</td>
+<td>Connect to a node to retrieve peer addresses, and disconnect. If not specified, <code>monerod</code> will use hardcoded seed nodes on the first run, and peers cached on disk on subsequent runs.</td>
 </tr>
 <tr>
-<td><code>--p2p-external-port</code></td>
-<td>External port for p2p network protocol (if port forwarding used with NAT). Default is <code>0</code>.</td>
-</tr>
-<tr>
-<td><code>--no-igd</code></td>
-<td>Disable UPnP port mapping.</td>
+<td><code>--add-peer</code></td>
+<td>Manually add peer to local peerlist.</td>
 </tr>
 </tbody>
 </table>
@@ -936,9 +944,12 @@
 <td><code>--version</code></td>
 <td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
 </tr>
+<tr>
+<td><code>--os-version</code></td>
+<td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
+</tr>
 </tbody>
 </table>
-<p>TO BE CONTINUED</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.reddit.com/r/Monero/comments/3jhyqc/0mq_help_share_this_exciting_news/">Reddit answer</a></li>
