@@ -405,6 +405,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -760,6 +767,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -794,9 +808,11 @@
                 <h1 id="monerod-reference"><code>monerod</code> - reference<a class="headerlink" href="#monerod-reference" title="Permanent link">&para;</a></h1>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p><code>./monerod [options] [command]</code> </p>
-<p>Options affect how daemon should be working. Commands assume the daemon is already running. Commands give access to specific services provided by the daemon.</p>
+<p>Options define how daemon should be working. Their names follow the <code>--option-name</code> pattern.</p>
+<p>Commands give access to specific services provided by the daemon. Commands are executed against a running daemon.
+Their names follow the <code>command_name</code> pattern.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<p>Following option groups are only to make the reference easier to follow. The daemon itself does not group options in any way.</p>
+<p>Following option groups are only to make this reference easier to follow. The daemon itself does not group options in any way.</p>
 <h4 id="pick-network">Pick network<a class="headerlink" href="#pick-network" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -845,7 +861,7 @@
 </table>
 <h4 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h4>
 <p><code>monerod</code> defaults are adjusted for running it occasionally on the same computer as your Monero wallet.</p>
-<p>The following options will be helpful if you intend to have an always running node - most likely on a remote server or your own separate PC.</p>
+<p>The following options will be helpful if you intend to have an always running node &mdash; most likely on a remote server or your own separate PC.</p>
 <table>
 <thead>
 <tr>
@@ -873,6 +889,10 @@
 <tr>
 <td><code>--non-interactive</code></td>
 <td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty getss assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
+</tr>
+<tr>
+<td><code>--no-igd</code></td>
+<td>Disable UPnP port mapping. Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
 </tr>
 </tbody>
 </table>
@@ -902,28 +922,40 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 <td>TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let <code>monerod</code> know what to advertise on the network. Default is <code>0</code>.</td>
 </tr>
 <tr>
-<td><code>--no-igd</code></td>
-<td>Disable UPnP port mapping. Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
-</tr>
-<tr>
 <td><code>--hide-my-port</code></td>
 <td><code>monerod</code> will still open and listen on the p2p port. However, it will not announce itself as a peerlist candidate. Technically, it will return port <code>0</code> in a response to p2p handshake (<code>node_data.my_port = 0</code> in <code>get_local_node_data</code> function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".</td>
 </tr>
 <tr>
-<td><code>--add-priority-node</code></td>
-<td>Specify list of peers to connect to and attempt to keep the connection open. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-priority-node=178.128.192.138:18081 --add-priority-node=144.76.202.167:18081</code></td>
-</tr>
-<tr>
-<td><code>--add-exclusive-node</code></td>
-<td>Specify list of peers to connect to only. If this option is given the options <code>--add-priority-node</code> and <code>--seed-node</code> are ignored. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-exclusive-node=178.128.192.138:18081 --add-exclusive-node=144.76.202.167:18081</code></td>
-</tr>
-<tr>
 <td><code>--seed-node</code></td>
-<td>Connect to a node to retrieve peer addresses, and disconnect. If not specified, <code>monerod</code> will use hardcoded seed nodes on the first run, and peers cached on disk on subsequent runs.</td>
+<td>Connect to a node to retrieve other nodes' addresses, and disconnect. If not specified, <code>monerod</code> will use hardcoded seed nodes on the first run, and peers cached on disk on subsequent runs.</td>
 </tr>
 <tr>
 <td><code>--add-peer</code></td>
-<td>Manually add peer to local peerlist.</td>
+<td>Manually add node to local peerlist.</td>
+</tr>
+<tr>
+<td><code>--add-priority-node</code></td>
+<td>Specify list of nodes to connect to and then attempt to keep the connection open. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-priority-node=178.128.192.138:18081 --add-priority-node=144.76.202.167:18081</code></td>
+</tr>
+<tr>
+<td><code>--add-exclusive-node</code></td>
+<td>Specify list of nodes to connect to only. If this option is given the options <code>--add-priority-node</code> and <code>--seed-node</code> are ignored. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-exclusive-node=178.128.192.138:18081 --add-exclusive-node=144.76.202.167:18081</code></td>
+</tr>
+<tr>
+<td><code>--offline</code></td>
+<td>Do not listen for peers, nor connect to any. Useful for working with a stable local blockchain.</td>
+</tr>
+<tr>
+<td><code>--allow-local-ip</code></td>
+<td>Allow local ip add to peer list, mostly in debug purposes. TODO: verify</td>
+</tr>
+<tr>
+<td><code>--out-peers arg</code> (=-1)</td>
+<td>Set max number of outgoing connections to other peers. TODO: verify</td>
+</tr>
+<tr>
+<td><code>--in-peers arg</code> (=-1)</td>
+<td>Set max number of incoming connections (peers actively connecting). TODO: verify</td>
 </tr>
 </tbody>
 </table>
@@ -947,6 +979,30 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 <tr>
 <td><code>--os-version</code></td>
 <td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">&para;</a></h4>
+<p>These options should no longer be necessary. They are still present in <code>monerod</code> for backwards compatibility.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--fluffy-blocks</code></td>
+<td>Relay compact blocks. Default. Compact block is just a header and a list of transaction IDs.</td>
+</tr>
+<tr>
+<td><code>--no-fluffy-blocks</code></td>
+<td>Relay classic full blocks. Classic block contains all transactions.</td>
+</tr>
+<tr>
+<td><code>--db-type</code></td>
+<td>Specify database type. The default and only available: <code>lmdb</code>.</td>
 </tr>
 </tbody>
 </table>
