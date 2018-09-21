@@ -399,15 +399,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
-    Help and Version
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy" title="Legacy" class="md-nav__link">
-    Legacy
+  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
+    Help and Version
   </a>
   
 </li>
@@ -761,15 +761,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
-    Help and Version
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy" title="Legacy" class="md-nav__link">
-    Legacy
+  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
+    Help and Version
   </a>
   
 </li>
@@ -894,10 +894,13 @@ Their names follow the <code>command_name</code> pattern.</p>
 <td><code>--no-igd</code></td>
 <td>Disable UPnP port mapping. Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
 </tr>
+<tr>
+<td><code>--max-txpool-size arg</code></td>
+<td>Set maximum transactions pool size in bytes. By default 648000000 (~618MB). These are transactions pending for confirmations (not included in any block).</td>
+</tr>
 </tbody>
 </table>
 <h4 id="p2p-network">P2P network<a class="headerlink" href="#p2p-network" title="Permanent link">&para;</a></h4>
-<p>(WORK IN PROGRESS)</p>
 <p>The following options define how your node participates in Monero peer-to-peer network.
 This is for node-to-node communication. It does <strong>not</strong> affect wallet-to-node interface.</p>
 <p>The node and peer words are used interchangeably.</p>
@@ -923,7 +926,7 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 </tr>
 <tr>
 <td><code>--hide-my-port</code></td>
-<td><code>monerod</code> will still open and listen on the p2p port. However, it will not announce itself as a peerlist candidate. Technically, it will return port <code>0</code> in a response to p2p handshake (<code>node_data.my_port = 0</code> in <code>get_local_node_data</code> function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".</td>
+<td><code>monerod</code> will still open and listen on the p2p port. However, it will not announce itself as a peer list candidate. Technically, it will return port <code>0</code> in a response to p2p handshake (<code>node_data.my_port = 0</code> in <code>get_local_node_data</code> function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".</td>
 </tr>
 <tr>
 <td><code>--seed-node</code></td>
@@ -931,7 +934,7 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 </tr>
 <tr>
 <td><code>--add-peer</code></td>
-<td>Manually add node to local peerlist.</td>
+<td>Manually add node to local peer list.</td>
 </tr>
 <tr>
 <td><code>--add-priority-node</code></td>
@@ -942,43 +945,32 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 <td>Specify list of nodes to connect to only. If this option is given the options <code>--add-priority-node</code> and <code>--seed-node</code> are ignored. <br /><br />To add multiple nodes use the option several times. Example: <br /><code>./monerod --add-exclusive-node=178.128.192.138:18081 --add-exclusive-node=144.76.202.167:18081</code></td>
 </tr>
 <tr>
+<td><code>--out-peers</code></td>
+<td>Set max number of outgoing connections to other nodes. By default 8. Value <code>-1</code> represents the code default.</td>
+</tr>
+<tr>
+<td><code>--in-peers</code></td>
+<td>Set max number of incoming connections (nodes actively connecting to you). By default unlimited. Value <code>-1</code> represents the code default.</td>
+</tr>
+<tr>
+<td><code>--limit-rate-up</code></td>
+<td>Set outgoing data transfer limit [kB/s]. By default 2048 kB/s. Value <code>-1</code> represents the code default.</td>
+</tr>
+<tr>
+<td><code>--limit-rate-down</code></td>
+<td>Set incoming data transfer limit [kB/s]. By default 8192 kB/s. Value <code>-1</code> represents the code default.</td>
+</tr>
+<tr>
+<td><code>--limit-rate</code></td>
+<td>Set the same limit value for incoming and outgoing data transfer. By default (<code>-1</code>) the individual up/down default limits will be used. It is better to use <code>--limit-rate-up</code> and <code>--limit-rate-down</code> instead to avoid confusion.</td>
+</tr>
+<tr>
 <td><code>--offline</code></td>
-<td>Do not listen for peers, nor connect to any. Useful for working with a stable local blockchain.</td>
+<td>Do not listen for peers, nor connect to any. Useful for working with a local, archival blockchain.</td>
 </tr>
 <tr>
 <td><code>--allow-local-ip</code></td>
-<td>Allow local ip add to peer list, mostly in debug purposes. TODO: verify</td>
-</tr>
-<tr>
-<td><code>--out-peers arg</code> (=-1)</td>
-<td>Set max number of outgoing connections to other peers. TODO: verify</td>
-</tr>
-<tr>
-<td><code>--in-peers arg</code> (=-1)</td>
-<td>Set max number of incoming connections (peers actively connecting). TODO: verify</td>
-</tr>
-</tbody>
-</table>
-<h4 id="help-and-version">Help and Version<a class="headerlink" href="#help-and-version" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--help</code></td>
-<td>Enlists available options.</td>
-</tr>
-<tr>
-<td><code>--version</code></td>
-<td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
-</tr>
-<tr>
-<td><code>--os-version</code></td>
-<td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
+<td>Allow adding local IP to peer list. Useful mostly for debug purposes when you may want to have multiple nodes on a single machine.</td>
 </tr>
 </tbody>
 </table>
@@ -1003,6 +995,29 @@ This is for node-to-node communication. It does <strong>not</strong> affect wall
 <tr>
 <td><code>--db-type</code></td>
 <td>Specify database type. The default and only available: <code>lmdb</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="help-and-version">Help and Version<a class="headerlink" href="#help-and-version" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>Enlists available options.</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
+</tr>
+<tr>
+<td><code>--os-version</code></td>
+<td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
 </tr>
 </tbody>
 </table>
