@@ -799,7 +799,7 @@
                 
                 <h1 id="moneropulse">MoneroPulse<a class="headerlink" href="#moneropulse" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-moneropulse">What is MoneroPulse?<a class="headerlink" href="#what-is-moneropulse" title="Permanent link">&para;</a></h2>
-<p>MoneroPulse is infrastructure for emergency checkpointing of the blockchain.</p>
+<p>MoneroPulse is infrastructure for emergency checkpointing the blockchain.</p>
 <p>It aims to mitigate chain-splits resulting from consensus bugs (like <a href="https://monero.stackexchange.com/questions/421/what-happened-at-block-202612/424#424">this one from 2014</a>).</p>
 <p>Effectively, MoneroPulse operators can publish which fork they consider the valid one. Technically, the "checkpoint" they publish is a block hash and the block height.</p>
 <p>By default, Monero full node will simply warn users when MoneroPulse checkpoint does not match the fork it is on. The error will be present in the log and on the console in red. Users are free to discard it. Ideally though, users should consult community on what is going on, and make educated decission on whether to follow the checkpoint-compatible fork or the default fork.</p>
