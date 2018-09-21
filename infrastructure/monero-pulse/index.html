@@ -868,7 +868,7 @@ testpoints.moneropulse.co
 
 <h2 id="moneropulse-as-attack-vector">MoneroPulse as attack vector<a class="headerlink" href="#moneropulse-as-attack-vector" title="Permanent link">&para;</a></h2>
 <p>It is worth noting that MoneroPulse does not produce blocks and cannot split the chain on its own. It only suggests the valid fork.</p>
-<p>Should MoneroPulse got entirely compromised, attacker could stop all auto-enforcing nodes from advancing, by feeding them with the fake checkpoint. This is partially mitigated by DNSSEC and by having multiple DNS servers. Monero expects checkpoints are consistent across DNS servers. Thus, compromising a single DNS server should not lead to any disruption.</p>
+<p>Should MoneroPulse got entirely compromised, attacker could stop all auto-enforcing nodes from advancing, by feeding them with the fake checkpoint. This is partially mitigated by DNSSEC and by operating multiple domains. Monero expects checkpoints are consistent across domains. Thus, compromising a single domain or registrar should not lead to any disruption.</p>
 <p>MoneroPulse also increases the say of its operators in case of possible contentious hard forks. While well intended, this effectively centralizes more power in hands of core developers, or whomever is at the time running MoneroPulse infrastructure.</p>
 <h3 id="who-are-moneropulse-operators">Who are MoneroPulse operators?<a class="headerlink" href="#who-are-moneropulse-operators" title="Permanent link">&para;</a></h3>
 <p>MoneroPulse is operated by selected core developers.</p>
