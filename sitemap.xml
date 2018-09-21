@@ -91,7 +91,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://monerodocs.org/networks/</loc>
+     <loc>https://monerodocs.org/infrastructure/networks/</loc>
+     <lastmod>2018-09-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://monerodocs.org/infrastructure/monero-pulse/</loc>
      <lastmod>2018-09-21</lastmod>
      <changefreq>daily</changefreq>
     </url>

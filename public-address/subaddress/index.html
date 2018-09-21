@@ -682,10 +682,46 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../networks/" title="Mainnet, stagenet, testnet" class="md-nav__link">
+    <a href="../../infrastructure/networks/" title="Mainnet, stagenet, testnet" class="md-nav__link">
       Mainnet, stagenet, testnet
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/monero-pulse/" title="MoneroPulse" class="md-nav__link">
+      MoneroPulse
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -852,7 +888,6 @@ The index is not directly included in subaddress structure but is used as input 
 <li><code>i</code> is a subaddress index</li>
 </ul>
 <p>Deriving "sub view keys" from the "base view key" allows for creating a view only wallet that monitors entire wallet including subaddresses.</p>
-<p>TODO: describe rest of the procedure.</p>
 <h2 id="caveates">Caveates<a class="headerlink" href="#caveates" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Subaddress <strong>cannot</strong> be used to receive transactions having multiple destinations (e.g. pool payouts). Only the main address (the one with index == 0) can receive such transactions.</li>
