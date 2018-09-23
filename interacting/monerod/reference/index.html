@@ -399,8 +399,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy" title="Legacy" class="md-nav__link">
-    Legacy
+  <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
+    Speed nad Reliability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mining" title="Mining" class="md-nav__link">
+    Mining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-or-irrelevant" title="Legacy or irrelevant" class="md-nav__link">
+    Legacy or irrelevant
   </a>
   
 </li>
@@ -797,8 +811,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy" title="Legacy" class="md-nav__link">
-    Legacy
+  <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
+    Speed nad Reliability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mining" title="Mining" class="md-nav__link">
+    Mining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-or-irrelevant" title="Legacy or irrelevant" class="md-nav__link">
+    Legacy or irrelevant
   </a>
   
 </li>
@@ -936,11 +964,11 @@ Their names follow the <code>command_name</code> pattern.</p>
 </tr>
 <tr>
 <td><code>--enforce-dns-checkpointing</code></td>
-<td>The emergency checkpoints set by MoneroPulse operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br /><br />If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  <code>ERROR</code> <code>Local blockchain failed to pass a checkpoint, rolling back!</code> Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br /><br />By default checkpointing only notifies about discrepancy by producing the following log entry: <code>ERROR</code> <code>WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option</code>.<br /><br />Reference: <a href="https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614">source code</a>.</td>
+<td>The emergency checkpoints set by <a href="../../../infrastructure/monero-pulse/">MoneroPulse</a> operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br /><br />If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  <code>ERROR</code> <code>Local blockchain failed to pass a checkpoint, rolling back!</code> Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br /><br />By default checkpointing only notifies about discrepancy by producing the following log entry: <code>ERROR</code> <code>WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option</code>.<br /><br />Reference: <a href="https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614">source code</a>.</td>
 </tr>
 <tr>
 <td><code>--disable-dns-checkpoints</code></td>
-<td>The MoneroPulse checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.</td>
+<td>The <a href="../../../infrastructure/monero-pulse/">MoneroPulse</a> checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.</td>
 </tr>
 </tbody>
 </table>
@@ -1018,7 +1046,84 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
-<h4 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">&para;</a></h4>
+<h4 id="speed-nad-reliability">Speed nad Reliability<a class="headerlink" href="#speed-nad-reliability" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--max-concurrency</code></td>
+<td>Max number of threads to use for a parallel jobs. The default value <code>0</code> uses the number of CPU threads.</td>
+</tr>
+<tr>
+<td><code>--prep-blocks-threads</code></td>
+<td>Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want <code>monerod</code> hog your computer when syncing.</td>
+</tr>
+<tr>
+<td><code>--bootstrap-daemon-address</code></td>
+<td>The host:port of a "bootstrap" remote open node that the connected wallets can use while this node is still not fully synced. Example:<br/><code>./monerod --bootstrap-daemon-address=opennode.xmr-tw.org:18089</code>. The node will forward selected RPC calls to the bootstrap node. The wallet will handle this automatically and transparently. Obviously, such bootstraping phase has privacy implications similar to directly using a remote node.</td>
+</tr>
+<tr>
+<td><code>--bootstrap-daemon-login</code></td>
+<td>Specify username:password for the bootstrap daemon login (if required). This considers the RPC interface used by the wallet. Normally, open nodes do not require any credentials.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mining">Mining<a class="headerlink" href="#mining" title="Permanent link">&para;</a></h4>
+<p>The following options configure <strong>solo mining</strong> using <strong>CPU</strong> with the standard software stack <code>monerod</code>. This is mostly useful for:</p>
+<ul>
+<li>generating your <a href="/infrastructure/networks#stagenet">stagenet</a> or <a href="/infrastructure/networks#testnet">testnet</a> coins</li>
+<li>experimentation and learning</li>
+<li>if you have super cheap access to vast CPU resources</li>
+</ul>
+<p>Be advised though that real mining happens <strong>in pools</strong> and with high-end <strong>GPU-s</strong> instead of CPU-s.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--start-mining</code></td>
+<td>Specify wallet address to mining for. <strong>This must be a <a href="/public-address/main-address">main address</a>!</strong> It can be neither a subaddres nor integrated address.</td>
+</tr>
+<tr>
+<td><code>--mining-threads</code></td>
+<td>Specify mining threads count. By default ony one thread will be used. For best results, set it to number of your physical cores.</td>
+</tr>
+<tr>
+<td><code>--extra-messages-file</code></td>
+<td>Specify file for extra messages to include into coinbase transactions.</td>
+</tr>
+<tr>
+<td><code>--bg-mining-enable</code></td>
+<td>Enable unobtrusive mining. In this mode mininig will use a small percentage of your system resources to never noticeably slow down your computer. This is intended to encourage people to mine to improve decentralization. That being said chances of finding a block are diminishingly small with solo CPU mining, and even lesser with its unobtrusive version. You can tweak the unobtrusivness / power trade-offs with the further <code>--bg-*</code> options below.</td>
+</tr>
+<tr>
+<td><code>--bg-mining-ignore-battery</code></td>
+<td>If true, assumes plugged in when unable to query system power status.</td>
+</tr>
+<tr>
+<td><code>--bg-mining-min-idle-interval</code></td>
+<td>Specify min lookback interval in seconds for determining idle state.</td>
+</tr>
+<tr>
+<td><code>--bg-mining-idle-threshold</code></td>
+<td>Specify minimum avg idle percentage over lookback interval.</td>
+</tr>
+<tr>
+<td><code>--bg-mining-miner-target</code></td>
+<td>Specify maximum percentage cpu use by miner(s).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="legacy-or-irrelevant">Legacy or irrelevant<a class="headerlink" href="#legacy-or-irrelevant" title="Permanent link">&para;</a></h4>
 <p>These options should no longer be necessary. They are still present in <code>monerod</code> for backwards compatibility.</p>
 <table>
 <thead>
@@ -1035,6 +1140,18 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--no-fluffy-blocks</code></td>
 <td>Relay classic full blocks. Classic block contains all transactions.</td>
+</tr>
+<tr>
+<td><code>--show-time-stats</code></td>
+<td>Official docs say "Show time-stats when processing blocks/txs and disk synchronization." but it does not seem to produce any output during usual blockchain synchronization.</td>
+</tr>
+<tr>
+<td><code>--zmq-rpc-bind-ip</code></td>
+<td>IP for ZMQ RPC server to listen on. This is not widely used as ZMQ interface currently does not provide meaningful advantage over classic JSON-RPC interface.</td>
+</tr>
+<tr>
+<td><code>--zmq-rpc-bind-port</code></td>
+<td>Port for ZMQ RPC server to listen on. Defaults to <code>18082</code>, or <code>28082</code> for testnet, or <code>38082</code> for stagenet.</td>
 </tr>
 <tr>
 <td><code>--db-type</code></td>
