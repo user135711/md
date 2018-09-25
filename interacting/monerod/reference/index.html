@@ -873,7 +873,7 @@
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p><code>./monerod [options] [command]</code> </p>
 <p>Options define how daemon should be working. Their names follow the <code>--option-name</code> pattern.</p>
-<p>Commands give access to specific services provided by the daemon. Commands are executed against a running daemon.
+<p>Commands give access to specific services provided by the daemon. Commands are executed against the running daemon.
 Their names follow the <code>command_name</code> pattern.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <p>Following option groups are only to make this reference easier to follow. The daemon itself does not group options in any way.</p>
@@ -1062,6 +1062,14 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--prep-blocks-threads</code></td>
 <td>Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want <code>monerod</code> hog your computer when syncing.</td>
+</tr>
+<tr>
+<td><code>--fast-block-sync</code></td>
+<td>Sync up most of the way by using embedded, "known" block hashes. Pass <code>1</code> to turn on and <code>0</code> to turn off. This is on (<code>1</code>) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work. Because the CryptoNight PoW used in Monero is very expensive (even for verification), <code>monerod</code> offers skipping these calculations for old blocks. In other words, it's a mechanism to trust <code>monerod</code> binary regarding old blocks' PoW validity, to sync up faster.</td>
+</tr>
+<tr>
+<td><code>--block-sync-size</code></td>
+<td>How many blocks are processed in a single batch during chaing synchronization. By default this is 20 blocks for newer history and 100 blocks for older history ("pre v4"). Default behavior is represented by value <code>0</code>. Intuitively, the more resources you have, the bigger batch size you may want to try out. Example:<br /><code>./monerod --block-sync-size=500</code></td>
 </tr>
 <tr>
 <td><code>--bootstrap-daemon-address</code></td>
