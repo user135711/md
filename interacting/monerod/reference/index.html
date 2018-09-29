@@ -1155,11 +1155,11 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--zmq-rpc-bind-ip</code></td>
-<td>IP for ZMQ RPC server to listen on. This is not widely used as ZMQ interface currently does not provide meaningful advantage over classic JSON-RPC interface.</td>
+<td>IP for ZMQ RPC server to listen on. By default <code>127.0.0.1</code>. This is not yet widely used as ZMQ interface currently does not provide meaningful advantage over classic JSON-RPC interface. Unfortunately, currently there is no way to disable the ZMQ server.</td>
 </tr>
 <tr>
 <td><code>--zmq-rpc-bind-port</code></td>
-<td>Port for ZMQ RPC server to listen on. Defaults to <code>18082</code>, or <code>28082</code> for testnet, or <code>38082</code> for stagenet.</td>
+<td>Port for ZMQ RPC server to listen on. By default <code>18082</code> for mainnet, <code>38082</code> for stagenet, and <code>28082</code> for testnet.</td>
 </tr>
 <tr>
 <td><code>--db-type</code></td>
@@ -1190,6 +1190,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
+<p>--zmq-rpc-bind-ip</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.reddit.com/r/Monero/comments/3jhyqc/0mq_help_share_this_exciting_news/">Reddit answer</a></li>
