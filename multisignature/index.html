@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.1, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -839,7 +839,6 @@
 <p>Let's consider the 2-of-3 scheme. We have 3 participants. Each participant is granted exactly 2 private keys in a way that pairs do not repeat between participants. This way any 2 participants together have all 3 private keys required to create the private spend key.</p>
 <p>Multi-signing is a wallet-level feature. There is no way to learn from the blockchain which transactions were created using multiple signatures.</p>
 <p>It is also worth noting in Monero there is no multisig addresses as such. <a href="Public-Address">Address structure</a> does not care how the underlying private spend key got created.</p>
-<p>In Monero, only N-of-N and (N-1)-of-N multisignature schemes are supported. This covers all common scenarios mentioned above but does not allow for arbitrary voting (like "3-of-5 board members").</p>
 <p>After multisig wallet setup every participant ends up knowing the public address and private view key. This is necessary for participants to recognize and decipher transactions they are supposed to co-sign.</p>
 <h2 id="multisig-wallet-setup">Multisig wallet setup<a class="headerlink" href="#multisig-wallet-setup" title="Permanent link">&para;</a></h2>
 <p>Let's consider a 2-of-3 scheme as it generalizes well. There will be three CLI wallet commands involved:</p>
@@ -943,7 +942,7 @@ show_transfers
     
       <script src="../assets/javascripts/application.e72fd936.js"></script>
       
-      <script>app.initialize({version:"1.0.1",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
     

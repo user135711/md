@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.1, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -964,11 +964,11 @@ Their names follow the <code>command_name</code> pattern.</p>
 </tr>
 <tr>
 <td><code>--enforce-dns-checkpointing</code></td>
-<td>The emergency checkpoints set by <a href="../../../infrastructure/monero-pulse/">MoneroPulse</a> operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br /><br />If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  <code>ERROR</code> <code>Local blockchain failed to pass a checkpoint, rolling back!</code> Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br /><br />By default checkpointing only notifies about discrepancy by producing the following log entry: <code>ERROR</code> <code>WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option</code>.<br /><br />Reference: <a href="https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614">source code</a>.</td>
+<td>The emergency checkpoints set by <a href="/infrastructure/monero-pulse.md">MoneroPulse</a> operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br /><br />If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  <code>ERROR</code> <code>Local blockchain failed to pass a checkpoint, rolling back!</code> Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br /><br />By default checkpointing only notifies about discrepancy by producing the following log entry: <code>ERROR</code> <code>WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option</code>.<br /><br />Reference: <a href="https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614">source code</a>.</td>
 </tr>
 <tr>
 <td><code>--disable-dns-checkpoints</code></td>
-<td>The <a href="../../../infrastructure/monero-pulse/">MoneroPulse</a> checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.</td>
+<td>The <a href="/infrastructure/monero-pulse.md">MoneroPulse</a> checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.</td>
 </tr>
 </tbody>
 </table>
@@ -1270,7 +1270,7 @@ This is for node-to-node communication. The following options do <strong>not</st
     
       <script src="../../../assets/javascripts/application.e72fd936.js"></script>
       
-      <script>app.initialize({version:"1.0.1",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
     
