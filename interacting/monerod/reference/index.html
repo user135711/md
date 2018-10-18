@@ -399,6 +399,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#node-rpc-api" title="Node RPC API" class="md-nav__link">
+    Node RPC API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
     Speed nad Reliability
   </a>
@@ -811,6 +818,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#node-rpc-api" title="Node RPC API" class="md-nav__link">
+    Node RPC API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
     Speed nad Reliability
   </a>
@@ -921,6 +935,10 @@ Their names follow the <code>command_name</code> pattern.</p>
 <td><code>--max-log-file-size</code></td>
 <td>Soft limit in bytes for the log file (=104850000 by default, which is just under 100MB). Once log file grows past that limit, <code>monerod</code> creates next log file with a <code>-YYYY-MM-DD-HH-MM-SS</code> UTC timestamp postfix. In production deployments, you would probably prefer to use established solutions like logrotate instead.</td>
 </tr>
+<tr>
+<td><code>--max-log-files</code></td>
+<td>Limit on the number of log files (=50 by default). The oldest log files are removed. In production deployments, you would probably prefer to use established solutions like logrotate instead.</td>
+</tr>
 </tbody>
 </table>
 <h4 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h4>
@@ -952,14 +970,14 @@ Their names follow the <code>command_name</code> pattern.</p>
 </tr>
 <tr>
 <td><code>--non-interactive</code></td>
-<td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty getss assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
+<td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
 </tr>
 <tr>
 <td><code>--no-igd</code></td>
 <td>Disable UPnP port mapping on the router ("Internet Gateway Device"). Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
 </tr>
 <tr>
-<td><code>--max-txpool-size arg</code></td>
+<td><code>--max-txpool-weight</code></td>
 <td>Set maximum transactions pool size in bytes. By default 648000000 (~618MB). These are transactions pending for confirmations (not included in any block).</td>
 </tr>
 <tr>
@@ -974,7 +992,7 @@ Their names follow the <code>command_name</code> pattern.</p>
 </table>
 <h4 id="p2p-network">P2P network<a class="headerlink" href="#p2p-network" title="Permanent link">&para;</a></h4>
 <p>The following options define how your node participates in Monero peer-to-peer network.
-This is for node-to-node communication. The following options do <strong>not</strong> affect wallet-to-node interface.</p>
+This is for node-to-node communication. The following options do <strong>not</strong> affect <a href="#node-rpc-api">wallet-to-node</a> interface.</p>
 <p>The node and peer words are used interchangeably.</p>
 <table>
 <thead>
@@ -1043,6 +1061,53 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--allow-local-ip</code></td>
 <td>Allow adding local IP to peer list. Useful mostly for debug purposes when you may want to have multiple nodes on a single machine.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="node-rpc-api">Node RPC API<a class="headerlink" href="#node-rpc-api" title="Permanent link">&para;</a></h4>
+<p><code>monerod</code> node offers powerful API. It serves 3 purposes:</p>
+<ul>
+<li>provides network data (stats, blocks, transactions, ...)</li>
+<li>provides local node information (peer list, hash rate if mining, ...)</li>
+<li>provides interface for wallets (send transactions, ...)</li>
+</ul>
+<p>This API is typically referred to as "RPC" because it is mostly based on JSON/RPC standard.</p>
+<p>The following options define how the API behaves.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--rpc-bind-ip</code></td>
+<td>IP to listen on. By default <code>127.0.0.1</code> because API gives full administrative capabilities over the node. Set it to <code>0.0.0.0</code> to listen on all interfaces - but only in connection with one of <code>*-restricted-*</code> options <strong>and</strong>  <code>--confirm-external-bind</code>.</td>
+</tr>
+<tr>
+<td><code>--rpc-bind-port</code></td>
+<td>TCP port to listen on. By default <code>18081</code> (mainnet), <code>28081</code> (testnet), <code>38081</code> (stagenet).</td>
+</tr>
+<tr>
+<td><code>--rpc-restricted-bind-port</code></td>
+<td>TCP port to listen on with the limited version of API. The limited API can be made public to create an Open Node. At the same time, you may firewall the full API port to still enjoy local querying and administration.</td>
+</tr>
+<tr>
+<td><code>--confirm-external-bind</code></td>
+<td>Confirm you consciously set <code>--rpc-bind-ip</code> to non-localhost IP and you understand the consequences.</td>
+</tr>
+<tr>
+<td><code>--restricted-rpc</code></td>
+<td>Restrict API to view only commands and do not return privacy sensitive data. Note this does not make sense with <code>--rpc-restricted-bind-port</code> because you would end up with two restricted APIs.</td>
+</tr>
+<tr>
+<td><code>--rpc-login</code></td>
+<td>Specify <code>username[:password]</code> required to connect to API. Practical usage seems limited because API communication is in plain text over HTTP.</td>
+</tr>
+<tr>
+<td><code>--rpc-access-control-origins</code></td>
+<td>Specify a comma separated list of origins to allow cross origin resource sharing.</td>
 </tr>
 </tbody>
 </table>
@@ -1151,7 +1216,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--show-time-stats</code></td>
-<td>Official docs say "Show time-stats when processing blocks/txs and disk synchronization." but it does not seem to produce any output during usual blockchain synchronization.</td>
+<td>Official docs say "Show time-stats when processing blocks/txs and disk synchronization" but it does not seem to produce any output during usual blockchain synchronization.</td>
 </tr>
 <tr>
 <td><code>--zmq-rpc-bind-ip</code></td>
@@ -1190,7 +1255,6 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
-<p>--zmq-rpc-bind-ip</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.reddit.com/r/Monero/comments/3jhyqc/0mq_help_share_this_exciting_news/">Reddit answer</a></li>
