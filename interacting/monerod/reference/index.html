@@ -371,6 +371,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#help-and-version" title="Help and version" class="md-nav__link">
+    Help and version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pick-network" title="Pick network" class="md-nav__link">
     Pick network
   </a>
@@ -406,8 +413,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
-    Speed nad Reliability
+  <a href="#accepting-monero" title="Accepting Monero" class="md-nav__link">
+    Accepting Monero
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" title="Performance" class="md-nav__link">
+    Performance
   </a>
   
 </li>
@@ -420,28 +434,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy-or-irrelevant" title="Legacy or irrelevant" class="md-nav__link">
-    Legacy or irrelevant
+  <a href="#testing-monero-itself" title="Testing Monero itself" class="md-nav__link">
+    Testing Monero itself
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
-    Help and Version
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
-  </a>
   
 </li>
       
@@ -790,6 +797,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#help-and-version" title="Help and version" class="md-nav__link">
+    Help and version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pick-network" title="Pick network" class="md-nav__link">
     Pick network
   </a>
@@ -825,8 +839,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#speed-nad-reliability" title="Speed nad Reliability" class="md-nav__link">
-    Speed nad Reliability
+  <a href="#accepting-monero" title="Accepting Monero" class="md-nav__link">
+    Accepting Monero
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" title="Performance" class="md-nav__link">
+    Performance
   </a>
   
 </li>
@@ -839,28 +860,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#legacy-or-irrelevant" title="Legacy or irrelevant" class="md-nav__link">
-    Legacy or irrelevant
+  <a href="#testing-monero-itself" title="Testing Monero itself" class="md-nav__link">
+    Testing Monero itself
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#help-and-version" title="Help and Version" class="md-nav__link">
-    Help and Version
+  <a href="#legacy" title="Legacy" class="md-nav__link">
+    Legacy
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
-  </a>
   
 </li>
       
@@ -891,6 +905,29 @@
 Their names follow the <code>command_name</code> pattern.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <p>Following option groups are only to make this reference easier to follow. The daemon itself does not group options in any way.</p>
+<h4 id="help-and-version">Help and version<a class="headerlink" href="#help-and-version" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>Enlists available options.</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
+</tr>
+<tr>
+<td><code>--os-version</code></td>
+<td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="pick-network">Pick network<a class="headerlink" href="#pick-network" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -1111,7 +1148,23 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
-<h4 id="speed-nad-reliability">Speed nad Reliability<a class="headerlink" href="#speed-nad-reliability" title="Permanent link">&para;</a></h4>
+<h4 id="accepting-monero">Accepting Monero<a class="headerlink" href="#accepting-monero" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--block-notify</code></td>
+<td>Run a program for each new block. The argument must be a full path. If the argument contains <code>%s</code> it will be replaced by the block hash. Example: <br /><code>./monerod --block-notify="/usr/bin/echo %s"</code><br /><br />Couple of notes:<br />1) Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up.<br />2) Mind blockchain reorganizations. Block notifications can revert to same and past heights. This actually happens pretty often.<br />3) See also <code>--tx-notify</code> option of <code>monero-wallet-rpc</code> daemon <a href="https://github.com/monero-project/monero/pull/4333">here</a>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h4>
+<p>These are advanced options that allow you to optimize performance of your <code>monerod</code> node, sometimes at the expense of reliability.</p>
 <table>
 <thead>
 <tr>
@@ -1196,7 +1249,39 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
-<h4 id="legacy-or-irrelevant">Legacy or irrelevant<a class="headerlink" href="#legacy-or-irrelevant" title="Permanent link">&para;</a></h4>
+<h4 id="testing-monero-itself">Testing Monero itself<a class="headerlink" href="#testing-monero-itself" title="Permanent link">&para;</a></h4>
+<p>These options are useful for Monero project developers and testers. Normal users shouldn't be concerned with these.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--test-drop-download</code></td>
+<td>For net tests: in download, discard ALL blocks instead checking/saving them (very fast).</td>
+</tr>
+<tr>
+<td><code>--test-drop-download-height</code></td>
+<td>Like test-drop-download but discards only after around certain height. By default <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>--regtest</code></td>
+<td>Run in a regression testing mode.</td>
+</tr>
+<tr>
+<td><code>--fixed-difficulty</code></td>
+<td>Fixed difficulty used for testing. By default <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>--test-dbg-lock-sleep</code></td>
+<td>Sleep time in ms, defaults to 0 (off), used to debug before/after locking mutex. Values 100 to 1000 are good for tests.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">&para;</a></h4>
 <p>These options should no longer be necessary. They are still present in <code>monerod</code> for backwards compatibility.</p>
 <table>
 <thead>
@@ -1232,35 +1317,6 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
-<h4 id="help-and-version">Help and Version<a class="headerlink" href="#help-and-version" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--help</code></td>
-<td>Enlists available options.</td>
-</tr>
-<tr>
-<td><code>--version</code></td>
-<td>Shows <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Lithium Luna' (v0.12.3.0-release)</code></td>
-</tr>
-<tr>
-<td><code>--os-version</code></td>
-<td>Shows build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.reddit.com/r/Monero/comments/3jhyqc/0mq_help_share_this_exciting_news/">Reddit answer</a></li>
-<li><a href="https://monero.stackexchange.com/questions/1482/how-much-information-is-passed-from-the-daemon-to-simplewallet-when-scanning-for?rq=1">SE 1</a></li>
-<li><a href="https://monero.stackexchange.com/questions/1134/is-it-safe-to-share-a-daemon-with-a-roommate?noredirect=1&amp;lq=1">SE 2</a></li>
-</ul>
                 
                   
                 
