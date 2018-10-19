@@ -1107,7 +1107,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--rpc-access-control-origins</code></td>
-<td>Specify a comma separated list of origins to allow cross origin resource sharing.</td>
+<td>Specify a comma separated list of origins to allow cross origin resource sharing. This is useful if you want to use <code>monerod</code> API directly from a web browser via JavaScript (say in a pure-fronted web appp scenario). With this option <code>monerod</code> will put proper HTTP CORS headers to its responses. You will also need to set <code>--rpc-login</code> if you use this option. Normally though, the API is used by backend app and this option isn't necessary.</td>
 </tr>
 </tbody>
 </table>
