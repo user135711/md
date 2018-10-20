@@ -331,6 +331,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-directory" title="Data directory" class="md-nav__link">
+    Data directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -347,46 +354,10 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
+  <li class="md-nav__item">
+    <a href="../monerod-reference/" title="monerod" class="md-nav__link">
       monerod
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        monerod
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../monerod/overview/" title="Overview" class="md-nav__link">
-      Overview
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../monerod/reference/" title="Reference" class="md-nav__link">
-      Reference
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -724,6 +695,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#data-directory" title="Data directory" class="md-nav__link">
+    Data directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -897,6 +875,30 @@ This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
 </tr>
 </tbody>
 </table>
+<h2 id="data-directory">Data directory<a class="headerlink" href="#data-directory" title="Permanent link">&para;</a></h2>
+<p>This is where the blockchain, log files, and p2p network memory are stored.</p>
+<p>By default data directory is at:</p>
+<ul>
+<li><code>$HOME/.bitmonero/</code> on Linux</li>
+<li><code>$HOME/Library/Application\ Support/</code> on macOS</li>
+<li><code>C:\ProgramData\bitmonero\</code> on Windows</li>
+</ul>
+<p>Please mind:</p>
+<ul>
+<li>data directory is hidden as per OS convention</li>
+<li>the <code>bitmonero</code> directory name is historical artefact from before Monero forked away from Bitmonero, about 2000 years Before Christ</li>
+</ul>
+<p>Data directory contains:</p>
+<ul>
+<li><code>lmdb/</code> - the blockchain database directory</li>
+<li><code>p2pstate.bin</code> - saved memory of discovered and rated peers</li>
+<li><code>bitmonero.log</code> - log file</li>
+</ul>
+<p>It can also contain subdirectories for stagenet and testnet, mirroring the same structure:</p>
+<ul>
+<li><code>stagenet/</code> - data directory for Stagenet</li>
+<li><code>testnet/</code> - data directory for Testnet</li>
+</ul>
                 
                   
                 
@@ -932,13 +934,13 @@ This follows the node-logic vs wallet-logic split mentioned earlier.   </p>
           </a>
         
         
-          <a href="../monerod/overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../monerod-reference/" title="monerod" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                monerod
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
