@@ -1571,10 +1571,6 @@ You can also type commands directly in the console of the running <code>monerod<
 <td>Show connected peers with connection initiative (incoming/outgoing) and other stats.</td>
 </tr>
 <tr>
-<td><code>sync_info</code></td>
-<td>Show connected peers along with download / upload stats. Useful mostly when syncing up the blockchain.</td>
-</tr>
-<tr>
 <td><code>ban &lt;IP&gt; [&lt;seconds&gt;]</code></td>
 <td>Ban a given <IP> for a given amount of <seconds>. By default the ban is for 24h. Example:<br /><code>./monerod ban 187.63.135.161</code>.</td>
 </tr>
@@ -1645,16 +1641,28 @@ You can also type commands directly in the console of the running <code>monerod<
 </thead>
 <tbody>
 <tr>
+<td><code>print_height</code></td>
+<td>Show local blockchain height.</td>
+</tr>
+<tr>
+<td><code>sync_info</code></td>
+<td>Show blockchain sync progress and connected peers along with download / upload stats.</td>
+</tr>
+<tr>
 <td><code>print_bc &lt;begin_height&gt; [&lt;end_height&gt;]</code></td>
 <td>Show blocks in range <code>&lt;begin_height&gt;</code>..<code>&lt;end_height&gt;</code>. The information will include block id, height, timestamp, version, size, weight, number of non-coinbase transactions, difficulty, nonce, and reward.</td>
 </tr>
 <tr>
-<td><code>print_block &lt;block_hash&gt; \| &lt;block_height&gt;</code></td>
+<td><code>print_block &lt;block_hash&gt; | &lt;block_height&gt;</code></td>
 <td>Show detailed data of specified block.</td>
 </tr>
 <tr>
-<td><code>print_height</code></td>
-<td>Show blockchain height.</td>
+<td><code>hard_fork_info</code></td>
+<td>Show current consensus version and future hard fork block height, if any.</td>
+</tr>
+<tr>
+<td><code>is_key_image_spent</code></td>
+<td>Check if specified <a href="/cryptography/asymmetric/key-image/">key image</a> is spent.</td>
 </tr>
 </tbody>
 </table>
@@ -1725,9 +1733,12 @@ You can also type commands directly in the console of the running <code>monerod<
 <td><code>save</code></td>
 <td>Flush blockchain data to disk. This is normally no longer necessary as <code>monerod</code> saves the blockchain automatically on exit.</td>
 </tr>
+<tr>
+<td><code>output_histogram [@&lt;amount&gt;] &lt;min_count&gt; [&lt;max_count&gt;]</code></td>
+<td>Show number of outputs for each amount denomination. This was only relevant in the pre-RingCT era. With RingCT denominations are irrelevant as amounts are hidden.</td>
+</tr>
 </tbody>
 </table>
-<!-- https://monero.stackexchange.com/questions/2663/how-do-i-start-using-monero-with-the-command-line-tools -->
                 
                   
                 
