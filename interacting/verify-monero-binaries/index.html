@@ -42,7 +42,7 @@
     
     
       
-        <title>Verify Monero Binaries Signature | Monero Documentation</title>
+        <title>Verifying Monero Binaries Signature | Monero Documentation</title>
       
     
     
@@ -733,7 +733,7 @@
                 
                 <h1 id="verify-monero-binaries">Verify Monero Binaries<a class="headerlink" href="#verify-monero-binaries" title="Permanent link">&para;</a></h1>
 <p>Verification must be carried on <strong>before extracting the archive and before using Monero</strong>.</p>
-<p>Instructions are for Linux but should also work on macOS with cosmetic modifications. </p>
+<p>Instructions were tested on Linux. They should also work on macOS with slight modifications. </p>
 <h2 id="0-import-core-dev-pgp-key">0. Import core dev PGP key<a class="headerlink" href="#0-import-core-dev-pgp-key" title="Permanent link">&para;</a></h2>
 <p>This is a one time action. Skip this step for subsequent Monero releases.</p>
 <p>Monero core developers sign a list of hashes of released binaries.</p>
@@ -741,13 +741,18 @@
 Riccardo's public key is available on GitHub in the project source code.
 Import Riccardo's public key to your keyring:</p>
 <p><code>curl https://raw.githubusercontent.com/monero-project/monero/master/utils/gpg_keys/fluffypony.asc | gpg --import</code></p>
-<p>Trust Riccardo's public key:</p>
-<div class="codehilite"><pre><span></span>gpg --edit-key &#39;7455C5E3C0CDCEB9&#39;
+<p>Trust Riccardo's public key (fingerprint must be exactly this):</p>
+<div class="codehilite"><pre><span></span>gpg --edit-key &#39;BDA6BD7042B721C467A9759D7455C5E3C0CDCEB9&#39;
 trust
 4
 </pre></div>
 
 
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
+That would mean the key changed (likely was compromised).</p>
+</div>
 <h2 id="1-verify-signature-of-hash-list">1. Verify signature of hash list<a class="headerlink" href="#1-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
 <p>The list of binaries and their hashes is published on <a href="https://www.getmonero.org/downloads/hashes.txt">getmonero.org</a> and a few other places like release notes on <a href="https://reddit.com/r/monero">r/monero</a>.
 Please note the publication channel does not matter as long as you properly verify the signature!  </p>
@@ -761,23 +766,27 @@ gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [ful
 
 <h2 id="2-verify-the-hash">2. Verify the hash<a class="headerlink" href="#2-verify-the-hash" title="Permanent link">&para;</a></h2>
 <p>By this step we checked that published hashes were not tampered with.</p>
-<p>The last step is to compare published hash with hash of downloaded archive.</p>
+<p>The last step is to compare published hash with downloaded archive SHA-256 hash.</p>
 <p>Replace file name with yours:</p>
 <div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.13.0.4.tar.bz2
 
-file_hash=`sha256sum $filename | cut -c 1-64`
+file_hash=`sha256sum $file_name | cut -c 1-64`
 
 curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.txt
 
 # verify the signature (previous step repeated here)
 gpg --verify /tmp/reference-hashes.txt
 
+# Grep must print the hash (output cannot be empty)
 grep $file_hash /tmp/reference-hashes.txt
 </pre></div>
 
 
-<p>If grep displayed a line containing your binary name and a hash then all is fine!</p>
-<p>If the output is empty then double check everything because apparently the hashes don't match.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>If the grep output is empty then double check everything because apparently the hashes don't match.</p>
+</div>
+<p>If grep printed filename and a hash then everything is alright.</p>
                 
                   
                 
