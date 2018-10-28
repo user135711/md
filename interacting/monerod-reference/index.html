@@ -489,6 +489,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#transactions" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#blockchain" title="Blockchain" class="md-nav__link">
     Blockchain
   </a>
@@ -505,6 +512,13 @@
           <li class="md-nav__item">
   <a href="#mining_1" title="Mining" class="md-nav__link">
     Mining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-monero-itself_1" title="Testing Monero itself" class="md-nav__link">
+    Testing Monero itself
   </a>
   
 </li>
@@ -1012,6 +1026,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#transactions" title="Transactions" class="md-nav__link">
+    Transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#blockchain" title="Blockchain" class="md-nav__link">
     Blockchain
   </a>
@@ -1028,6 +1049,13 @@
           <li class="md-nav__item">
   <a href="#mining_1" title="Mining" class="md-nav__link">
     Mining
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-monero-itself_1" title="Testing Monero itself" class="md-nav__link">
+    Testing Monero itself
   </a>
   
 </li>
@@ -1572,11 +1600,11 @@ You can also type commands directly in the console of the running <code>monerod<
 </tr>
 <tr>
 <td><code>ban &lt;IP&gt; [&lt;seconds&gt;]</code></td>
-<td>Ban a given <IP> for a given amount of <seconds>. By default the ban is for 24h. Example:<br /><code>./monerod ban 187.63.135.161</code>.</td>
+<td>Ban a given <code>&lt;IP&gt;</code> for a given amount of <code>&lt;seconds&gt;</code>. By default the ban is for 24h. Example:<br /><code>./monerod ban 187.63.135.161</code>.</td>
 </tr>
 <tr>
 <td><code>unban &lt;IP&gt;</code></td>
-<td>Unban a given <IP>.</td>
+<td>Unban a given <code>&lt;IP&gt;</code>.</td>
 </tr>
 <tr>
 <td><code>bans</code></td>
@@ -1631,6 +1659,29 @@ You can also type commands directly in the console of the running <code>monerod<
 </tr>
 </tbody>
 </table>
+<h4 id="transactions">Transactions<a class="headerlink" href="#transactions" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>print_coinbase_tx_sum &lt;start_height&gt; [&lt;block_count&gt;]</code></td>
+<td>Show a sum of all emitted coins and paid fees within specified range. Example:<br /><code>./monerod print_coinbase_tx_sum 0 1000000000000</code></td>
+</tr>
+<tr>
+<td><code>print_tx &lt;transaction_hash&gt; [+hex] [+json]</code></td>
+<td>Show specified transaction as JSON and/or HEX.</td>
+</tr>
+<tr>
+<td><code>relay_tx &lt;txid&gt;</code></td>
+<td>Force relaying the transaction. Useful if you want to rebroadcast the transaction for any reason or if transaction was previously created with "do_not_relay":true.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="blockchain">Blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -1661,8 +1712,8 @@ You can also type commands directly in the console of the running <code>monerod<
 <td>Show current consensus version and future hard fork block height, if any.</td>
 </tr>
 <tr>
-<td><code>is_key_image_spent</code></td>
-<td>Check if specified <a href="/cryptography/asymmetric/key-image/">key image</a> is spent.</td>
+<td><code>is_key_image_spent &lt;key_image&gt;</code></td>
+<td>Check if specified <a href="/cryptography/asymmetric/key-image/">key image</a> is spent. Key image is a hash.</td>
 </tr>
 </tbody>
 </table>
@@ -1689,7 +1740,7 @@ You can also type commands directly in the console of the running <code>monerod<
 </tr>
 <tr>
 <td><code>update (check|download)</code></td>
-<td>Check if update is available. The downloading is recommended to be done manually (you should check signature etc).</td>
+<td>Check if update is available and optionally download it. The hash is SHA-256. On linux use <code>sha256sum</code> to verify. Example output:<br /><code>Update available: v0.13.0.4: https://downloads.getmonero.org/cli/monero-linux-x64-v0.13.0.4.tar.bz2, hash 693e1a0210201f65138ace679d1ab1928aca06bb6e679c20d8b4d2d8717e50d6</code><br/><code>Update downloaded to: /opt/monero-v0.13.0.2/monero-linux-x64-v0.13.0.4.tar.bz2</code></td>
 </tr>
 </tbody>
 </table>
@@ -1717,6 +1768,25 @@ You can also type commands directly in the console of the running <code>monerod<
 <tr>
 <td><code>stop_mining</code></td>
 <td>Ask <code>monerod</code> daemon to stop mining.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="testing-monero-itself_1">Testing Monero itself<a class="headerlink" href="#testing-monero-itself_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start_save_graph</code></td>
+<td>Start saving data for dr Monero.</td>
+</tr>
+<tr>
+<td><code>stop_save_graph</code></td>
+<td>Stop saving data for dr Monero.</td>
 </tr>
 </tbody>
 </table>

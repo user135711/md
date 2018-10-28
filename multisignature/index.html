@@ -581,6 +581,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#0-open-your-wallet" title="0. Open your wallet" class="md-nav__link">
+    0. Open your wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1-prepare_multisig" title="1. prepare_multisig" class="md-nav__link">
     1. prepare_multisig
   </a>
@@ -722,6 +729,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#0-open-your-wallet" title="0. Open your wallet" class="md-nav__link">
+    0. Open your wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1-prepare_multisig" title="1. prepare_multisig" class="md-nav__link">
     1. prepare_multisig
   </a>
@@ -788,7 +802,7 @@
                 
                 
                 <h1 id="multisignature">Multisignature<a class="headerlink" href="#multisignature" title="Permanent link">&para;</a></h1>
-<p>In cryptocurrencies, multisig feature allows to sign transaction with more than one private key. Funds protected with multisig can only be spent by signing with M-of-N keys.</p>
+<p>In cryptocurrencies, multisig feature allows to sign a transaction with more than one private key. Funds protected with multisig can only be spent by signing with M-of-N keys.</p>
 <p>Example use cases:</p>
 <ul>
 <li>shared account (1-of-2; both husband and wife individually have full access to their funds)</li>
@@ -802,10 +816,18 @@
 <p>Transactions are still signed with a single spend key. The spend key is a sum of all N private keys. The rationale for such design is to decouple multisig from ring signatures.</p>
 <p>Let's consider the 2-of-3 scheme. We have 3 participants. Each participant is granted exactly 2 private keys in a way that pairs do not repeat between participants. This way any 2 participants together have all 3 private keys required to create the private spend key.</p>
 <p>Multi-signing is a wallet-level feature. There is no way to learn from the blockchain which transactions were created using multiple signatures.</p>
-<p>It is also worth noting in Monero there is no multisig addresses as such. <a href="Public-Address">Address structure</a> does not care how the underlying private spend key got created.</p>
+<p>It is also worth noting in Monero there is no multisig addresses as such. <a href="/public-address/main-address/">Address structure</a> does not care how the underlying private spend key got created.</p>
 <p>After multisig wallet setup every participant ends up knowing the public address and private view key. This is necessary for participants to recognize and decipher transactions they are supposed to co-sign.</p>
 <h2 id="multisig-wallet-setup">Multisig wallet setup<a class="headerlink" href="#multisig-wallet-setup" title="Permanent link">&para;</a></h2>
-<p>Let's consider a 2-of-3 scheme as it generalizes well. There will be three CLI wallet commands involved:</p>
+<p>Multisig feature is only available via a command line wallet. You should be familiar with the CLI wallet before playing with multisig.</p>
+<p>Let's consider a 2-of-3 scheme as it generalizes well.</p>
+<h3 id="0-open-your-wallet">0. Open your wallet<a class="headerlink" href="#0-open-your-wallet" title="Permanent link">&para;</a></h3>
+<p>Access your (stagenet) wallet:</p>
+<div class="codehilite"><pre><span></span>./monerod --stagenet --daemon                     # Run your full node; make sure it is fully synced    
+./monero-wallet-cli --stagenet --wallet-file=...  # Run your wallet; make sure you have some funds to play with    
+</pre></div>
+
+
 <h3 id="1-prepare_multisig">1. prepare_multisig<a class="headerlink" href="#1-prepare_multisig" title="Permanent link">&para;</a></h3>
 <p>Every participant independently generates <strong>initialization data</strong>. This is <strong>not</strong> an address.</p>
 <p>Every participant sends his initialization data manually to all other participants over secure channel.</p>
