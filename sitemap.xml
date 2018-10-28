@@ -6,6 +6,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://monerodocs.org/interacting/download-monero-binaries/</loc>
+     <lastmod>2018-10-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://monerodocs.org/interacting/verify-monero-binaries/</loc>
+     <lastmod>2018-10-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://monerodocs.org/interacting/overview/</loc>
      <lastmod>2018-10-28</lastmod>
      <changefreq>daily</changefreq>
