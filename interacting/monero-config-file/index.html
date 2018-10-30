@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/pedersen-commitment/">
+        <link rel="canonical" href="https://monerodocs.org/interacting/monero-config-file/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Pedersen Commitment | Monero Documentation</title>
+        <title>Monero Configuration File | Monero Documentation</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#pedersen-commitment" tabindex="1" class="md-skip">
+      <a href="../../#monero-configuration-file" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -134,7 +134,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Pedersen Commitment | Monero Documentation
+                Config
               </span>
             
           
@@ -261,10 +261,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Interacting
@@ -282,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/download-monero-binaries/" title="Download" class="md-nav__link">
+    <a href="../download-monero-binaries/" title="Download" class="md-nav__link">
       Download
     </a>
   </li>
@@ -294,7 +296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/verify-monero-binaries/" title="Verify" class="md-nav__link">
+    <a href="../verify-monero-binaries/" title="Verify" class="md-nav__link">
       Verify
     </a>
   </li>
@@ -306,7 +308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/overview/" title="Overview" class="md-nav__link">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -316,11 +318,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../interacting/monero-config-file/" title="Config" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Config
+      </label>
+    
+    <a href="./" title="Config" class="md-nav__link md-nav__link--active">
       Config
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applicability" title="Applicability" class="md-nav__link">
+    Applicability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -330,7 +391,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/monerod-reference/" title="monerod" class="md-nav__link">
+    <a href="../monerod-reference/" title="monerod" class="md-nav__link">
       monerod
     </a>
   </li>
@@ -378,7 +439,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -390,7 +451,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../prng/" title="PRNG" class="md-nav__link">
+    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -402,7 +463,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
+    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
       Keccak-256
     </a>
   </li>
@@ -433,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -445,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/private-key/" title="Private keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/private-key/" title="Private keys" class="md-nav__link">
       Private keys
     </a>
   </li>
@@ -457,7 +518,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/public-key/" title="Public keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/public-key/" title="Public keys" class="md-nav__link">
       Public keys
     </a>
   </li>
@@ -469,7 +530,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
       Edwards25519 curve
     </a>
   </li>
@@ -481,7 +542,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/key-image/" title="Key image" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/key-image/" title="Key image" class="md-nav__link">
       Key image
     </a>
   </li>
@@ -498,7 +559,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../base58/" title="Base58" class="md-nav__link">
+    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
       Base58
     </a>
   </li>
@@ -646,6 +707,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#applicability" title="Applicability" class="md-nav__link">
+    Applicability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -656,12 +754,73 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/pedersen-commitment.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/monero-config-file.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pedersen-commitment">Pedersen Commitment<a class="headerlink" href="#pedersen-commitment" title="Permanent link">&para;</a></h1>
-<p>https://www.reddit.com/r/Monero/comments/9ed7vb/pedersen_commitment/</p>
-<p>https://monero.stackexchange.com/questions/10177/who-generates-parameters-g-h-for-pedersen-commitment-in-monero</p>
+                <h1 id="monero-configuration-file">Monero Configuration File<a class="headerlink" href="#monero-configuration-file" title="Permanent link">&para;</a></h1>
+<h2 id="applicability">Applicability<a class="headerlink" href="#applicability" title="Permanent link">&para;</a></h2>
+<p>By default Monero does not read configuration file.</p>
+<p>To use config file add <code>--config-file</code> option:</p>
+<p><code>./monerod --config-file=/etc/monero.conf</code></p>
+<p>The <code>--config-file</code> option is available for: </p>
+<ul>
+<li><code>monerod</code></li>
+<li><code>monero-wallet-cli</code></li>
+<li><code>monero-wallet-rpc</code></li>
+<li><code>monero-gen-trusted-multisig</code></li>
+</ul>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>option-name=value</code></li>
+<li><code>valueless-option-name=1</code> for options that don't expect value</li>
+<li><code># I am a comment</code></li>
+<li>whitespace is ignored</li>
+</ul>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>All command line options work as configuration file options. See <a href="/interacting/monerod-reference">monerod reference</a>.</p>
+<p>Skip the <code>--</code> from <code>--option-name</code>.</p>
+<p>Example:</p>
+<p><code>./monerod --log-level=4 --stagenet</code></p>
+<p>translates to:</p>
+<div class="codehilite"><pre><span></span>log-level=4
+stagenet=1     # use value &quot;1&quot; for
+</pre></div>
+
+
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span># /etc/monero.conf
+
+# Data directory (blockchain db and indices)
+data-dir=/home/monero/.monero
+
+# Log file
+log-file=/var/log/monero/monero.log
+max-log-file-size=1073741824   # Set to 1GB to mitigate log trimming by monerod; we prefer logrotate
+
+# P2P full node
+p2p-bind-ip=0.0.0.0            # Bind to all interfaces (the default)
+p2p-bind-port=18080            # Bind to default port
+
+# RPC open node
+rpc-bind-ip=0.0.0.0            # Bind to all interfaces
+rpc-bind-port=18081            # Bind on default port
+confirm-external-bind=1        # Open node (confirm)
+restricted-rpc=1               # Prevent unsafe RPC calls
+no-igd=1                       # Disable UPnP port mapping
+
+# Slow but reliable db writes
+db-sync-mode=safe
+
+# Emergency checkpoints set by MoneroPulse operators will be enforced to workaround potential consensus bugs
+# Check https://monerodocs.org/infrastructure/monero-pulse/ for explanation and trade-offs
+enforce-dns-checkpointing=1
+
+out-peers=64              # This will enable much faster sync and tx awareness; the default 8 is suboptimal nowadays
+in-peers=1024             # The default is unlimited; we prefer to put a cap on this
+
+limit-rate-up=1048576     # 1048576 kB/s == 1GB/s; a raise from default 2048 kB/s; contribute more to p2p network
+limit-rate-down=1048576   # 1048576 kB/s == 1GB/s; a raise from default 8192 kB/s; allow for faster initial sync
+</pre></div>
                 
                   
                 
@@ -678,6 +837,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../monerod-reference/" title="monerod" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                monerod
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
