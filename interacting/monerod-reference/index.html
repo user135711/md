@@ -1227,7 +1227,7 @@ tail -f ~/.bitmonero/bitmonero.log           # watch the logs
 </tr>
 <tr>
 <td><code>--max-log-file-size</code></td>
-<td>Soft limit in bytes for the log file (=104850000 by default, which is just under 100MB). Once log file grows past that limit, <code>monerod</code> creates next log file with a <code>-YYYY-MM-DD-HH-MM-SS</code> UTC timestamp postfix. In production deployments, you would probably prefer to use established solutions like logrotate instead.</td>
+<td>Soft limit in bytes for the log file (=104850000 by default, which is just under 100MB). Once log file grows past that limit, <code>monerod</code> creates the next log file with a UTC timestamp postfix <code>-YYYY-MM-DD-HH-MM-SS</code>.<br /><br />In production deployments, you would probably prefer to use established solutions like logrotate instead. In that case, set <code>--max-log-file-size=0</code> to prevent monerod from managing the log files.</td>
 </tr>
 <tr>
 <td><code>--max-log-files</code></td>
