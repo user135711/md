@@ -779,7 +779,7 @@ That would mean the key changed (likely was compromised).</p>
 </div>
 <h2 id="1-verify-signature-of-hash-list">1. Verify signature of hash list<a class="headerlink" href="#1-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
 <p>The list of binaries and their hashes is published on <a href="https://www.getmonero.org/downloads/hashes.txt">getmonero.org</a> and a few other places like release notes on <a href="https://reddit.com/r/monero">r/monero</a>.
-Please note the publication channel does not matter as long as you properly verify the signature!  </p>
+Please note the publication channel does not matter as long as you properly verify the signature!                                                                        u </p>
 <p>To verify these are real hashes (not tampered with) run: </p>
 <p><code>curl https://www.getmonero.org/downloads/hashes.txt | gpg --verify</code> </p>
 <p>The expected output is:</p>
@@ -791,7 +791,8 @@ gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [ful
 <h2 id="2-verify-the-hash">2. Verify the hash<a class="headerlink" href="#2-verify-the-hash" title="Permanent link">&para;</a></h2>
 <p>By this step we checked that published hashes were not tampered with.</p>
 <p>The last step is to compare published hash with downloaded archive SHA-256 hash.</p>
-<p>Replace file name with yours:</p>
+<p><a href="/interacting/download-monero-binaries">Download Monero</a> if you didn't already (but do not unpack).</p>
+<p>Replace the example file name with actual one:</p>
 <div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.13.0.4.tar.bz2
 
 file_hash=`sha256sum $file_name | cut -c 1-64`
@@ -801,7 +802,7 @@ curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.t
 # verify the signature (previous step repeated here)
 gpg --verify /tmp/reference-hashes.txt
 
-# Grep must print the hash (output cannot be empty)
+# grep must print the hash (output cannot be empty)
 grep $file_hash /tmp/reference-hashes.txt
 </pre></div>
 
@@ -810,7 +811,7 @@ grep $file_hash /tmp/reference-hashes.txt
 <p class="admonition-title">Danger</p>
 <p>If the grep output is empty then double check everything because apparently the hashes don't match.</p>
 </div>
-<p>If grep printed filename and a hash then everything is alright.</p>
+<p>If grep printed filename and a hash then everything is alright!</p>
                 
                   
                 
