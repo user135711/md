@@ -799,7 +799,7 @@ file_hash=`sha256sum $file_name | cut -c 1-64`
 
 curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.txt
 
-# verify the signature (previous step repeated here)
+# verify the signature (previous step is repeated here for completeness)
 gpg --verify /tmp/reference-hashes.txt
 
 # grep must print the hash (output cannot be empty)
