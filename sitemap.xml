@@ -31,6 +31,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://monerodocs.org/interacting/monero-wallet-gui-reference/</loc>
+     <lastmod>2018-10-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://monerodocs.org/technical-specs/</loc>
      <lastmod>2018-10-31</lastmod>
      <changefreq>daily</changefreq>

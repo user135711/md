@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/interacting/verify-monero-binaries/">
+        <link rel="canonical" href="https://monerodocs.org/todo/p2p/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Verifying Monero Binaries Signature | Monero Documentation</title>
+        <title>P2p - Monero Documentation</title>
       
     
     
@@ -108,10 +108,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#verify-monero-binaries" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -134,7 +130,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Verify
+                P2p
               </span>
             
           
@@ -261,12 +257,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Interacting
@@ -284,7 +278,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../download-monero-binaries/" title="Download" class="md-nav__link">
+    <a href="../../interacting/download-monero-binaries/" title="Download" class="md-nav__link">
       Download
     </a>
   </li>
@@ -294,63 +288,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Verify
-      </label>
-    
-    <a href="./" title="Verify" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../interacting/verify-monero-binaries/" title="Verify" class="md-nav__link">
       Verify
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -360,7 +302,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../overview/" title="Overview" class="md-nav__link">
+    <a href="../../interacting/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -372,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../monero-config-file/" title="Config" class="md-nav__link">
+    <a href="../../interacting/monero-config-file/" title="Config" class="md-nav__link">
       Config
     </a>
   </li>
@@ -384,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../monerod-reference/" title="monerod" class="md-nav__link">
+    <a href="../../interacting/monerod-reference/" title="monerod" class="md-nav__link">
       monerod
     </a>
   </li>
@@ -396,7 +338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
+    <a href="../../interacting/monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
       monero-wallet-gui
     </a>
   </li>
@@ -702,115 +644,17 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/verify-monero-binaries.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/todo/p2p.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="verify-monero-binaries">Verify Monero Binaries<a class="headerlink" href="#verify-monero-binaries" title="Permanent link">&para;</a></h1>
-<p>Verification must be carried on <strong>before extracting the archive and before using Monero</strong>.</p>
-<p>Instructions were tested on Linux. They should also work on macOS with slight modifications. </p>
-<h2 id="0-import-core-dev-pgp-key">0. Import core dev PGP key<a class="headerlink" href="#0-import-core-dev-pgp-key" title="Permanent link">&para;</a></h2>
-<p>This is a one time action. Skip this step for subsequent Monero releases.</p>
-<p>Monero core developers sign a list of hashes of released binaries.</p>
-<p>Riccardo "fluffypony" Spagni is Monero core developer who signs the releases.
-Riccardo's public key is available on GitHub in the project source code.
-Import Riccardo's public key to your keyring:</p>
-<p><code>curl https://raw.githubusercontent.com/monero-project/monero/master/utils/gpg_keys/fluffypony.asc | gpg --import</code></p>
-<p>Trust Riccardo's public key (fingerprint must be exactly this):</p>
-<div class="codehilite"><pre><span></span>gpg --edit-key &#39;BDA6BD7042B721C467A9759D7455C5E3C0CDCEB9&#39;
-trust
-4
-</pre></div>
-
-
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
-That would mean the key changed (likely was compromised).</p>
-</div>
-<h2 id="1-verify-signature-of-hash-list">1. Verify signature of hash list<a class="headerlink" href="#1-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
-<p>The list of binaries and their hashes is published on <a href="https://www.getmonero.org/downloads/hashes.txt">getmonero.org</a> and a few other places like release notes on <a href="https://reddit.com/r/monero">r/monero</a>.
-Please note the publication channel does not matter as long as you properly verify the signature!  </p>
-<p>To verify these are real hashes (not tampered with) run: </p>
-<p><code>curl https://www.getmonero.org/downloads/hashes.txt | gpg --verify</code> </p>
-<p>The expected output is:</p>
-<div class="codehilite"><pre><span></span>...
-gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [full]
-</pre></div>
-
-
-<h2 id="2-verify-the-hash">2. Verify the hash<a class="headerlink" href="#2-verify-the-hash" title="Permanent link">&para;</a></h2>
-<p>By this step we checked that published hashes were not tampered with.</p>
-<p>The last step is to compare published hash with downloaded archive SHA-256 hash.</p>
-<p>Replace file name with yours:</p>
-<div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.13.0.4.tar.bz2
-
-file_hash=`sha256sum $file_name | cut -c 1-64`
-
-curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.txt
-
-# verify the signature (previous step repeated here)
-gpg --verify /tmp/reference-hashes.txt
-
-# Grep must print the hash (output cannot be empty)
-grep $file_hash /tmp/reference-hashes.txt
-</pre></div>
-
-
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>If the grep output is empty then double check everything because apparently the hashes don't match.</p>
-</div>
-<p>If grep printed filename and a hash then everything is alright.</p>
+                  <h1>P2p</h1>
+                
+                
                 
                   
                 
@@ -827,41 +671,6 @@ grep $file_hash /tmp/reference-hashes.txt
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../download-monero-binaries/" title="Download" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Download
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Overview
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/interacting/verify-monero-binaries/">
+        <link rel="canonical" href="https://monerodocs.org/interacting/monero-wallet-gui-reference/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Verifying Monero Binaries Signature | Monero Documentation</title>
+        <title>monero-wallet-gui - Reference | Monero Documentation</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#verify-monero-binaries" tabindex="1" class="md-skip">
+      <a href="../../#monero-wallet-gui-reference" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -134,7 +134,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Verify
+                monero-wallet-gui
               </span>
             
           
@@ -294,63 +294,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Verify
-      </label>
-    
-    <a href="./" title="Verify" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../verify-monero-binaries/" title="Verify" class="md-nav__link">
       Verify
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -394,11 +342,97 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        monero-wallet-gui
+      </label>
+    
+    <a href="./" title="monero-wallet-gui" class="md-nav__link md-nav__link--active">
       monero-wallet-gui
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desktop-gui-wallet" title="Desktop GUI wallet" class="md-nav__link">
+    Desktop GUI wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depends-on-the-full-node" title="Depends on the full node" class="md-nav__link">
+    Depends on the full node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-guide-pdf" title="User guide PDF" class="md-nav__link">
+    User guide PDF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -716,22 +750,56 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desktop-gui-wallet" title="Desktop GUI wallet" class="md-nav__link">
+    Desktop GUI wallet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depends-on-the-full-node" title="Depends on the full node" class="md-nav__link">
+    Depends on the full node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-guide-pdf" title="User guide PDF" class="md-nav__link">
+    User guide PDF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
   </a>
   
 </li>
@@ -752,65 +820,57 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/verify-monero-binaries.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/monero-wallet-gui-reference.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="verify-monero-binaries">Verify Monero Binaries<a class="headerlink" href="#verify-monero-binaries" title="Permanent link">&para;</a></h1>
-<p>Verification must be carried on <strong>before extracting the archive and before using Monero</strong>.</p>
-<p>Instructions were tested on Linux. They should also work on macOS with slight modifications. </p>
-<h2 id="0-import-core-dev-pgp-key">0. Import core dev PGP key<a class="headerlink" href="#0-import-core-dev-pgp-key" title="Permanent link">&para;</a></h2>
-<p>This is a one time action. Skip this step for subsequent Monero releases.</p>
-<p>Monero core developers sign a list of hashes of released binaries.</p>
-<p>Riccardo "fluffypony" Spagni is Monero core developer who signs the releases.
-Riccardo's public key is available on GitHub in the project source code.
-Import Riccardo's public key to your keyring:</p>
-<p><code>curl https://raw.githubusercontent.com/monero-project/monero/master/utils/gpg_keys/fluffypony.asc | gpg --import</code></p>
-<p>Trust Riccardo's public key (fingerprint must be exactly this):</p>
-<div class="codehilite"><pre><span></span>gpg --edit-key &#39;BDA6BD7042B721C467A9759D7455C5E3C0CDCEB9&#39;
-trust
-4
-</pre></div>
-
-
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
-That would mean the key changed (likely was compromised).</p>
-</div>
-<h2 id="1-verify-signature-of-hash-list">1. Verify signature of hash list<a class="headerlink" href="#1-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
-<p>The list of binaries and their hashes is published on <a href="https://www.getmonero.org/downloads/hashes.txt">getmonero.org</a> and a few other places like release notes on <a href="https://reddit.com/r/monero">r/monero</a>.
-Please note the publication channel does not matter as long as you properly verify the signature!  </p>
-<p>To verify these are real hashes (not tampered with) run: </p>
-<p><code>curl https://www.getmonero.org/downloads/hashes.txt | gpg --verify</code> </p>
-<p>The expected output is:</p>
-<div class="codehilite"><pre><span></span>...
-gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [full]
-</pre></div>
-
-
-<h2 id="2-verify-the-hash">2. Verify the hash<a class="headerlink" href="#2-verify-the-hash" title="Permanent link">&para;</a></h2>
-<p>By this step we checked that published hashes were not tampered with.</p>
-<p>The last step is to compare published hash with downloaded archive SHA-256 hash.</p>
-<p>Replace file name with yours:</p>
-<div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.13.0.4.tar.bz2
-
-file_hash=`sha256sum $file_name | cut -c 1-64`
-
-curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.txt
-
-# verify the signature (previous step repeated here)
-gpg --verify /tmp/reference-hashes.txt
-
-# Grep must print the hash (output cannot be empty)
-grep $file_hash /tmp/reference-hashes.txt
-</pre></div>
-
-
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>If the grep output is empty then double check everything because apparently the hashes don't match.</p>
-</div>
-<p>If grep printed filename and a hash then everything is alright.</p>
+                <h1 id="monero-wallet-gui-reference"><code>monero-wallet-gui</code> - Reference<a class="headerlink" href="#monero-wallet-gui-reference" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="desktop-gui-wallet">Desktop GUI wallet<a class="headerlink" href="#desktop-gui-wallet" title="Permanent link">&para;</a></h3>
+<p>The "official" desktop wallet for Monero. Available for Linux, macOS and Windows.</p>
+<p>Wallet uses your private keys to understand your total balance,
+transactions history, and to facilitate creating transactions.</p>
+<p>However, wallet does not store the blockchain and does not directly participate in the p2p network.</p>
+<h3 id="depends-on-the-full-node">Depends on the full node<a class="headerlink" href="#depends-on-the-full-node" title="Permanent link">&para;</a></h3>
+<p>Wallet connects to <a href="/interacting/monerod-reference">full node</a> to scan the blockchain for your transaction outputs and to send your transactions out to the network.   </p>
+<p>The full node can be either local (same computer) or remote.</p>
+<p>Normally, you run the full node on the same computer as wallet (or within your home network).</p>
+<p>Connection happens over HTTP and uses <a href="https://www.getmonero.org/resources/developer-guides/wallet-rpc.html">this API</a>.</p>
+<p>Any transaction leaving the wallet is already blinded by all Monero privacy features.
+This means plain text HTTP communication isn't an issue on its own even if you connect to a remote node.</p>
+<p>However, connecting to a remote node has other nuanced trade-offs, which is a topic for a separate article. TODO: write an article or link the best available source. </p>
+<h3 id="user-guide-pdf">User guide PDF<a class="headerlink" href="#user-guide-pdf" title="Permanent link">&para;</a></h3>
+<p>A nice PDF guide is available in the catalog you unpacked Monero. Make sure to check it out!</p>
+<p>The online living version is also available:<br />
+<a href="https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md">https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md</a></p>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p><code>./monero-wallet-gui [options]</code></p>
+<p>Example:</p>
+<p><code>./monero-wallet-gui --log-file=/dev/null</code></p>
+<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
+<p>Go to directory where you unpacked Monero.</p>
+<p>Run the full node and wait until it syncs up with the network (may take up to a few days):</p>
+<p><code>./monerod</code></p>
+<p>In a separate terminal window, run the wallet:</p>
+<p><code>./monero-wallet-gui</code></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>Enlists available options.</td>
+</tr>
+<tr>
+<td><code>--log-file</code></td>
+<td>Full path to the log file. Example (mind file permissions): <br/><code>./monerod --log-file=/var/log/monero/mainnet/monerod.log</code></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -831,7 +891,7 @@ grep $file_hash /tmp/reference-hashes.txt
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../download-monero-binaries/" title="Download" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../monerod-reference/" title="monerod" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -840,19 +900,19 @@ grep $file_hash /tmp/reference-hashes.txt
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Download
+                monerod
               </span>
             </div>
           </a>
         
         
-          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../technical-specs/" title="Technical specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Technical specs
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
