@@ -469,6 +469,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monero-blockchain-import-reference/" title="monero-blockchain-import" class="md-nav__link">
+      monero-blockchain-import
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -880,13 +892,13 @@
                 <h1 id="monero-blockchain-export-reference"><code>monero-blockchain-export</code> - Reference<a class="headerlink" href="#monero-blockchain-export-reference" title="Permanent link">&para;</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Nowadays, there is little usage for raw blockchain export / import. In the past the p2p blockchain download was much slower. Back than blockchain.raw file was used to speed up the process at the expense of trusting the source. </p>
+<p>Nowadays, there is little usage for raw blockchain export / import. In the past the p2p blockchain download was much slower. Back than blockchain.raw file was used to speed up the process of bootstrapping a node. </p>
 </div>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The tool dumps local blockchain to raw format, known as the <code>blockchain.raw</code> file.</p>
 <p>This could be useful if you want to process blockchain efficiently with your custom tools,
 as the raw format is probably easier to work with than Monero's custom lmdb database.</p>
-<p>The tool works on your local copy of the blockchain. It does <strong>not</strong> require <code>monerod</code> running.</p>
+<p>The tool works on your local copy of the blockchain. It does not require <code>monerod</code> running.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p><code>./monero-blockchain-export [options]</code></p>
 <p>Example:</p>
@@ -921,7 +933,7 @@ as the raw format is probably easier to work with than Monero's custom lmdb data
 <tbody>
 <tr>
 <td>(missing)</td>
-<td>By default monero-blockchain-export assumes <a href="/infrastructure/networks#mainnet">mainnet</a>.</td>
+<td>By default <code>monero-blockchain-export</code> assumes <a href="/infrastructure/networks#mainnet">mainnet</a>.</td>
 </tr>
 <tr>
 <td><code>--stagenet</code></td>
@@ -963,8 +975,8 @@ as the raw format is probably easier to work with than Monero's custom lmdb data
 <td>Full path to data directory. This is where the blockchain, log files, and p2p network memory are stored. For defaults and details see <a href="/interacting/overview/#data-directory">data directory</a>.</td>
 </tr>
 <tr>
-<td><code>--database</code></td>
-<td>The only valid value seems to be <code>lmdb</code> (the default).</td>
+<td><code>--database</code>, <code>--db-type</code></td>
+<td>The default and only valid value is <code>lmdb</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -987,7 +999,7 @@ as the raw format is probably easier to work with than Monero's custom lmdb data
 </tr>
 <tr>
 <td><code>--block-stop</code></td>
-<td>Block number to stop the export at. Value <code>0</code> means full export (the default).</td>
+<td>Only export up to this block number. By default do the full export (value <code>0</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -1030,13 +1042,13 @@ as the raw format is probably easier to work with than Monero's custom lmdb data
           </a>
         
         
-          <a href="../../technical-specs/" title="Technical specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../monero-blockchain-import-reference/" title="monero-blockchain-import" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Technical specs
+                monero-blockchain-import
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

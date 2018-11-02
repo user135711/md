@@ -41,6 +41,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://monerodocs.org/interacting/monero-blockchain-import-reference/</loc>
+     <lastmod>2018-11-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://monerodocs.org/technical-specs/</loc>
      <lastmod>2018-11-02</lastmod>
      <changefreq>daily</changefreq>

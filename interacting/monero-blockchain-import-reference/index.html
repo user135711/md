@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/todo/p2p/">
+        <link rel="canonical" href="https://monerodocs.org/interacting/monero-blockchain-import-reference/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>P2p - Monero Documentation</title>
+        <title>monero-blockchain-import - Reference | Monero Documentation</title>
       
     
     
@@ -108,6 +108,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="../../#monero-blockchain-import-reference" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -130,7 +134,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                P2p
+                monero-blockchain-import
               </span>
             
           
@@ -257,10 +261,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Interacting
@@ -278,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/download-monero-binaries/" title="Download" class="md-nav__link">
+    <a href="../download-monero-binaries/" title="Download" class="md-nav__link">
       Download
     </a>
   </li>
@@ -290,7 +296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/verify-monero-binaries/" title="Verify" class="md-nav__link">
+    <a href="../verify-monero-binaries/" title="Verify" class="md-nav__link">
       Verify
     </a>
   </li>
@@ -302,7 +308,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/overview/" title="Overview" class="md-nav__link">
+    <a href="../overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -314,7 +320,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/monero-config-file/" title="Config" class="md-nav__link">
+    <a href="../monero-config-file/" title="Config" class="md-nav__link">
       Config
     </a>
   </li>
@@ -326,7 +332,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/monerod-reference/" title="monerod" class="md-nav__link">
+    <a href="../monerod-reference/" title="monerod" class="md-nav__link">
       monerod
     </a>
   </li>
@@ -338,7 +344,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
+    <a href="../monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
       monero-wallet-gui
     </a>
   </li>
@@ -350,7 +356,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interacting/monero-blockchain-export-reference/" title="monero-blockchain-export" class="md-nav__link">
+    <a href="../monero-blockchain-export-reference/" title="monero-blockchain-export" class="md-nav__link">
       monero-blockchain-export
     </a>
   </li>
@@ -360,11 +366,125 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../interacting/monero-blockchain-import-reference/" title="monero-blockchain-import" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        monero-blockchain-import
+      </label>
+    
+    <a href="./" title="monero-blockchain-import" class="md-nav__link md-nav__link--active">
       monero-blockchain-import
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" title="Help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-network" title="Pick network" class="md-nav__link">
+    Pick network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" title="Logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" title="Input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" title="Performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -668,17 +788,277 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" title="Syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" title="Help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-network" title="Pick network" class="md-nav__link">
+    Pick network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" title="Logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" title="Input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" title="Performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/todo/p2p.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/interacting/monero-blockchain-import-reference.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>P2p</h1>
-                
-                
+                <h1 id="monero-blockchain-import-reference"><code>monero-blockchain-import</code> - Reference<a class="headerlink" href="#monero-blockchain-import-reference" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Nowadays, there is little usage for raw blockchain export/import. In the past the p2p blockchain download was much slower. Back than blockchain.raw file was used to speed up download process of bootstrapping a node. </p>
+</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The tool imports bootstrap file <code>blockchain.raw</code> to your full node.</p>
+<p>This could be useful if you want to decouple download from verification for any reason (like testing performance in isolation).
+In this case, you may download the <code>blockchain.raw</code> file from <a href="https://downloads.getmonero.org/blockchain.raw">https://downloads.getmonero.org/blockchain.raw</a>.</p>
+<p>Ideally though, you should use your own trusted <code>blockchain.raw</code> file that you <a href="/interacting/monero-blockchain-export-reference">exported</a> earlier.</p>
+<p>Please note that importing <code>blockchain.raw</code> will <strong>not</strong> speed up the process over syncing up from p2p network.
+This is because usual bottlenecks are disk IO and verification, not the download.  </p>
+<p>The tool works on your local files. It does not require <code>monerod</code> running.</p>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
+<p><code>./monero-blockchain-import [options]</code></p>
+<p>Example:</p>
+<p><code>./monero-blockchain-import --help</code></p>
+<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
+<p>Go to directory where you unpacked Monero.</p>
+<p><code>./monero-blockchain-import --stagenet --output-file=/tmp/blockchain.raw</code></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code></td>
+<td>Enlist available options.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pick-network">Pick network<a class="headerlink" href="#pick-network" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(missing)</td>
+<td>By default <code>monero-blockchain-import</code> assumes the <a href="/infrastructure/networks#mainnet">mainnet</a> blockchain.</td>
+</tr>
+<tr>
+<td><code>--stagenet</code></td>
+<td>Import <a href="/infrastructure/networks#stagenet">stagenet</a> blockchain.</td>
+</tr>
+<tr>
+<td><code>--testnet</code></td>
+<td>Import <a href="/infrastructure/networks#testnet">testnet</a> blockchain.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<p>Specifying the log file path is not supported.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--log-level</code></td>
+<td><code>0-4</code> with <code>0</code> being minimal logging and <code>4</code> being full tracing. Defaults to <code>0</code>. These are general presets and do not directly map to severity levels. For example, even with minimal <code>0</code>, you may see some most important <code>INFO</code> entries. Example: <br /><code>./monero-blockchain-import --log-level=1</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--input-file</code></td>
+<td>Full path to raw blockchain file. The default is <code>$DATA_DIR/export/blockchain.raw</code>.</td>
+</tr>
+<tr>
+<td><code>--block-stop</code></td>
+<td>Only import up to this block height. By default import all blocks (value <code>0</code>).</td>
+</tr>
+<tr>
+<td><code>--pop-blocks</code></td>
+<td>Discard specified number of blocks from the tip of the bootstrapped blockchain. By default don't discard anything (value <code>0</code>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--data-dir</code></td>
+<td>Full path to data directory. This is where the blockchain, log files, and p2p network memory are stored. For defaults and details see <a href="/interacting/overview/#data-directory">data directory</a>.</td>
+</tr>
+<tr>
+<td><code>--count-blocks</code></td>
+<td>Count blocks in the bootstrap file and exit.</td>
+</tr>
+<tr>
+<td><code>--drop-hard-fork</code></td>
+<td>Whether to drop hard fork data. Off by default (<code>0</code>).</td>
+</tr>
+<tr>
+<td><code>--database</code></td>
+<td>The only valid value seems to be <code>lmdb</code> (the default).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dangerous-unverified-import</code></td>
+<td>The safe default is to run verification (value <code>0</code>). You can enable <code>--dangerous-unverified-import</code> if you are importing from your own and trusted blockchain.raw (which we assume was already verified). The "dangerous" mode will greatly speed up the process.</td>
+</tr>
+<tr>
+<td><code>--batch</code></td>
+<td>Whether to save to disk on an ongoing basis (the default, value <code>1</code>) or maybe do everything in RAM and save everything in the end (value <code>0</code>). No batching is only effective in combination with no verification (<code>--dangerous-unverified-import</code>). See also <code>--batch-size</code>.</td>
+</tr>
+<tr>
+<td><code>--batch-size</code></td>
+<td>How often to save to disk expressed in number of blocks. By default save every <code>5000</code> blocks (when verifying) or every <code>20000</code> blocks (when not verifying). Big batches are faster but require more RAM.</td>
+</tr>
+<tr>
+<td><code>--resume</code></td>
+<td>Resume from current height if output database already exists (the default, value <code>1</code>). Changing to <code>--resume=0</code> doesn't change much &mdash; existing blocks are skipped pretty quickly and the process is resumed anyway.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/monero-project/monero/tree/master/src/blockchain_utilities">https://github.com/monero-project/monero/tree/master/src/blockchain_utilities</a></li>
+</ul>
                 
                   
                 
@@ -695,6 +1075,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../monero-blockchain-export-reference/" title="monero-blockchain-export" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                monero-blockchain-export
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../technical-specs/" title="Technical specs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Technical specs
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
