@@ -1048,7 +1048,7 @@ This goal has since failed, as it inevitably happens with "ASIC hard" algorithms
 Efficient CryptoNight ASIC was developed in 2017 by Bitmain. </p>
 <p>Monero inherited CryptoNight as its proof of work in 2014.
 Since then Monero slightly evolved the algorithm to intentionally break compatibility with released ASIC-s.
-Currently Monero implements CryptoNight v2, a third iteration of original CryptoNight.</p>
+Currently Monero implements CryptoNight v2, a third iteration of original CryptoNight (v0, v1, v2).</p>
 <h2 id="the-goal-is-to-find-small-enough-hash">The goal is to find small-enough hash<a class="headerlink" href="#the-goal-is-to-find-small-enough-hash" title="Permanent link">&para;</a></h2>
 <p>In hashing based PoW algorithms the goal is to find small-enough hash.</p>
 <p>Hash is simply an integer (normally, a very large integer).
@@ -1065,7 +1065,7 @@ They also have a power over which transactions are included in the block and how
 <p>CryptoNight is based on:</p>
 <ul>
 <li>AES encryption</li>
-<li>5 hashing functions, all of which were finalist in NIST SHA-3 competition:<ul>
+<li>5 hashing functions, all of which were finalists in NIST SHA-3 competition:<ul>
 <li>Keccak (the primary one)</li>
 <li>BLAKE</li>
 <li>Groestl</li>
@@ -1093,7 +1093,7 @@ See references at the bottom. </p>
 <p>CryptoNight attempts to make memory access a bottleneck for performance ("memory hardness"). It has three steps:</p>
 <ol>
 <li>Initialize large area of memory with pseudo-random data. This memory is known as the scratchpad.</li>
-<li>Perform numerous read/write operations at pseudo-random addresses on the scratchpad.</li>
+<li>Perform numerous read/write operations at pseudo-random (but deterministic) addresses on the scratchpad.</li>
 <li>Hash the entire scratchpad to produce the resulting value.</li>
 </ol>
 <h3 id="step-1-scratchpad-initialization">Step 1: scratchpad initialization<a class="headerlink" href="#step-1-scratchpad-initialization" title="Permanent link">&para;</a></h3>
@@ -1105,7 +1105,7 @@ by applying AES-256 encryption.</p>
 The first payload are Keccak-1600 bytes 66..191.
 The next payload is encryption result of the previous payload.</p>
 <p>Each 128-byte payload is actually encrypted 10 times.</p>
-<p>The details are a bit more nuanced, see "Scratchpad Initialization" on <a href="https://cryptonote.org/cns/cns008.txt">CryptoNote Standard</a>.  </p>
+<p>The details are a bit more nuanced, see "Scratchpad Initialization" in <a href="https://cryptonote.org/cns/cns008.txt">CryptoNote Standard</a>.  </p>
 <h3 id="step-2-memory-hard-loop">Step 2: memory-hard loop<a class="headerlink" href="#step-2-memory-hard-loop" title="Permanent link">&para;</a></h3>
 <p>The second step is basically 524288 iterations of a simple stateful algorithm.</p>
 <p>Each algorithm iteration reads from and writes back to the scratchpad,
@@ -1130,7 +1130,7 @@ It is not possible to directly calculate state of future iterations.</p>
 <p>The resulting 256-bit hash is the final output of CryptoNight algorithm.</p>
 <h2 id="monero-specific-modifications">Monero specific modifications<a class="headerlink" href="#monero-specific-modifications" title="Permanent link">&para;</a></h2>
 <h3 id="cryptonight-v0">CryptoNight v0<a class="headerlink" href="#cryptonight-v0" title="Permanent link">&para;</a></h3>
-<p>This is how Monero refers to original implementation of CryptoNight.</p>
+<p>This is how Monero community refers to original implementation of CryptoNight.</p>
 <h3 id="cryptonight-v1">CryptoNight v1<a class="headerlink" href="#cryptonight-v1" title="Permanent link">&para;</a></h3>
 <p>See the <a href="https://github.com/monero-project/monero/pull/3253/files">source code diff</a> for CryptoNight v1 modifications. </p>
 <h3 id="cryptonight-v2">CryptoNight v2<a class="headerlink" href="#cryptonight-v2" title="Permanent link">&para;</a></h3>
