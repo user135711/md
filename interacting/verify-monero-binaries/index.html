@@ -868,7 +868,7 @@ Please note the publication channel does not matter as long as you properly veri
 <p><code>curl https://www.getmonero.org/downloads/hashes.txt | gpg --verify</code> </p>
 <p>The expected output is:</p>
 <div class="codehilite"><pre><span></span>...
-gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [full]
+gpg: Good signature from &quot;Riccardo Spagni &amp;lt;ric@spagni.net&amp;gt;&quot; [full]
 </pre></div>
 
 
@@ -881,7 +881,7 @@ gpg: Good signature from &quot;Riccardo Spagni &lt;ric@spagni.net&gt;&quot; [ful
 
 file_hash=`sha256sum $file_name | cut -c 1-64`
 
-curl https://www.getmonero.org/downloads/hashes.txt &gt; /tmp/reference-hashes.txt
+curl https://www.getmonero.org/downloads/hashes.txt &amp;gt; /tmp/reference-hashes.txt
 
 # verify the signature (previous step is repeated here for completeness)
 gpg --verify /tmp/reference-hashes.txt
