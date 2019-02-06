@@ -607,6 +607,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#data-structure" title="Data structure" class="md-nav__link">
+    Data structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generating" title="Generating" class="md-nav__link">
     Generating
   </a>
@@ -844,6 +851,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#data-structure" title="Data structure" class="md-nav__link">
+    Data structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#generating" title="Generating" class="md-nav__link">
     Generating
   </a>
@@ -902,7 +916,7 @@
 <li>public view key</li>
 </ul>
 <p>It also contains a checksum and a "network byte" which actually identifies both the network and the address type.</p>
-<p>Data structure (<a href="https://github.com/monero-project/monero/blob/f7b9f44c1b0d53170fd7f53d37fc67648f3247a2/src/cryptonote_basic/cryptonote_basic_impl.cpp#L159">src</a>):</p>
+<h2 id="data-structure">Data structure<a class="headerlink" href="#data-structure" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -936,6 +950,7 @@
 </table>
 <p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="/cryptography/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example main address:</p>
 <p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
+<p>See the <a href="https://github.com/monero-project/monero/blob/f7b9f44c1b0d53170fd7f53d37fc67648f3247a2/src/cryptonote_basic/cryptonote_basic_impl.cpp#L159">source code</a>.</p>
 <h2 id="generating">Generating<a class="headerlink" href="#generating" title="Permanent link">&para;</a></h2>
 <p>Main address is derived from the root private key.</p>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>

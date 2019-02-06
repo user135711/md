@@ -658,11 +658,52 @@
     Generating
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-view-key" title="Private view key" class="md-nav__link">
+    Private view key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-spend-key" title="Public spend key" class="md-nav__link">
+    Public spend key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-view-key" title="Public view key" class="md-nav__link">
+    Public view key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-case-for-0-0" title="Special case for (0, 0)" class="md-nav__link">
+    Special case for (0, 0)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-address-string" title="Building the address string" class="md-nav__link">
+    Building the address string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#caveates" title="Caveates" class="md-nav__link">
-    Caveates
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
   </a>
   
 </li>
@@ -925,11 +966,52 @@
     Generating
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-view-key" title="Private view key" class="md-nav__link">
+    Private view key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-spend-key" title="Public spend key" class="md-nav__link">
+    Public spend key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-view-key" title="Public view key" class="md-nav__link">
+    Public view key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-case-for-0-0" title="Special case for (0, 0)" class="md-nav__link">
+    Special case for (0, 0)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-the-address-string" title="Building the address string" class="md-nav__link">
+    Building the address string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#caveates" title="Caveates" class="md-nav__link">
-    Caveates
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
   </a>
   
 </li>
@@ -1001,35 +1083,75 @@ All subaddresses can be derived from the wallet seed.</p>
 <tr>
 <td>0</td>
 <td>1</td>
-<td>identifies the network and address type; <a href="https://github.com/monero-project/monero/blob/784f7b07f05a645d43f62ed3a9cefda4b0c57825/src/cryptonote_config.h#L153">42</a> - main chain; <a href="https://github.com/monero-project/monero/blob/784f7b07f05a645d43f62ed3a9cefda4b0c57825/src/cryptonote_config.h#L167">63</a> - test chain</td>
+<td>identifies the network and address type; <a href="https://github.com/monero-project/monero/blob/31bdf7bd113c2576fe579ef3a25a2d8fef419ffc/src/cryptonote_config.h#L171">42</a> - mainnet; <a href="https://github.com/monero-project/monero/blob/31bdf7bd113c2576fe579ef3a25a2d8fef419ffc/src/cryptonote_config.h#L200">36</a> - stagenet; <a href="https://github.com/monero-project/monero/blob/31bdf7bd113c2576fe579ef3a25a2d8fef419ffc/src/cryptonote_config.h#L185">63</a> - testnet</td>
 </tr>
 </tbody>
 </table>
-<p>Otherwise the data structure is the same as for <a href="/public-address/main-address/">main address</a>.</p>
-<p>Each subaddress conceptually has an index (with 0 being the main address).
-The index is not directly included in subaddress structure but is used as input to create the private view key.</p>
+<p>Otherwise the data structure is the same as for the <a href="/public-address/main-address/#data-structure">main address</a>.</p>
 <h2 id="generating">Generating<a class="headerlink" href="#generating" title="Permanent link">&para;</a></h2>
-<p>The private view key <code>m</code> for a subaddress is derived as follows:</p>
-<div class="codehilite"><pre><span></span>m = Hs(a || i)
+<p>Each subaddress conceptually has:</p>
+<ul>
+<li>account index (also known as "major" index)</li>
+<li>subaddress index within the account (also known as "minor" index)</li>
+</ul>
+<p>The indexes are 0-based. By default wallets use account index 0.</p>
+<p>The indexes are not directly included in the subaddress data structure.
+Instead, they are used as input to generating subaddress keys.</p>
+<h3 id="private-view-key">Private view key<a class="headerlink" href="#private-view-key" title="Permanent link">&para;</a></h3>
+<p>The subaddress private view key <code>m</code> is derived as follows:</p>
+<div class="codehilite"><pre><span></span>m = Hs(&quot;SubAddr&quot; || a || account_index || subaddress_index_within_account)
 </pre></div>
 
 
 <p>Where:</p>
 <ul>
 <li><code>Hs</code> is a Keccak-256 hash function interpreted as integer and modulo <code>l</code> (maximum edwards25519 scalar)</li>
-<li><code>a</code> is a private view key of the base address</li>
-<li><code>i</code> is a subaddress index</li>
+<li><code>||</code> is a byte array concatenation operator</li>
+<li><code>SubAddr</code> is a 0-terminated fixed string (8 bytes total)</li>
+<li><code>a</code> is a private view key of the main address (a 32 byte little endian unsigned integer)</li>
+<li><code>account_index</code> is index of an account (a 32 bit little endian unsigned integer)</li>
+<li><code>subaddress_index_within_account</code> is index of the subaddress within the account (a 32 bit little endian unsigned integer)</li>
 </ul>
-<p>Deriving "sub view keys" from the "base view key" allows for creating a view only wallet that monitors entire wallet including subaddresses.</p>
-<h2 id="caveates">Caveates<a class="headerlink" href="#caveates" title="Permanent link">&para;</a></h2>
+<p>Deriving "sub view keys" from the main view key allows for creating a view only wallet that monitors the entire wallet including subaddresses.</p>
+<h3 id="public-spend-key">Public spend key<a class="headerlink" href="#public-spend-key" title="Permanent link">&para;</a></h3>
+<p>The subaddress public spend key <code>D</code> is derived as follows:</p>
+<div class="codehilite"><pre><span></span>D = B + m*G
+</pre></div>
+
+
+<p>Where:</p>
+<ul>
+<li><code>B</code> is main address public spend key</li>
+<li><code>m</code> is subaddress private view key</li>
+<li><code>G</code> is the "base point"; this is simply a constant specific to <a href="/cryptography/asymmetric/edwards25519">edwards25519</a></li>
+</ul>
+<h3 id="public-view-key">Public view key<a class="headerlink" href="#public-view-key" title="Permanent link">&para;</a></h3>
+<p>The subaddress public view key <code>C</code> is derived as follows:</p>
+<div class="codehilite"><pre><span></span>C = a*D
+</pre></div>
+
+
+<p>Where:</p>
+<ul>
+<li><code>a</code> is a private view key of the main address</li>
+<li><code>D</code> is a public spend key of the subaddress</li>
+</ul>
+<h3 id="special-case-for-0-0">Special case for (0, 0)<a class="headerlink" href="#special-case-for-0-0" title="Permanent link">&para;</a></h3>
+<p>The subaddress #0 on the account #0 is the <a href="/public-address/main-address">main address</a>.
+As main address has different generation rules, this is simply implemented via an <code>if</code> statement.</p>
+<h3 id="building-the-address-string">Building the address string<a class="headerlink" href="#building-the-address-string" title="Permanent link">&para;</a></h3>
+<p>The procedure is the same as for the <a href="/public-address/main-address">main address</a>.</p>
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
 <ul>
 <li>It is not recommended to sweep all the balances of subaddress to main address in a single transaction. That links the subaddresses together on the blockchain. However, this only concerns privacy against specific sender and the situation will never get worse than not using subaddresses in the first place. If you need to join funds while preserving maximum privacy do it with individual transactions (one per subaddress).</li>
 <li>Convenience labels are not preserved when recreating from seed.</li>
 </ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://github.com/monero-project/monero/pull/2056">https://github.com/monero-project/monero/pull/2056</a></li>
-<li><a href="https://www.reddit.com/r/Monero/comments/5vgjs2/subaddresses_and_disposable_addresses/">https://www.reddit.com/r/Monero/comments/5vgjs2/subaddresses_and_disposable_addresses/</a></li>
+<li><a href="https://github.com/emesik/monero-python/blob/125d5eac0d4583b586b98e21b28fb9a291db26e5/monero/wallet.py#L195">monero-python</a> - the easiest to follow implementation by Michał Sałaban</li>
+<li><a href="https://github.com/monero-project/monero/blob/16dc6900fb556b61edaba5e323497e9b8c677ae2/src/device/device_default.cpp#L143">get_subaddress_spend_public_key()</a> - Monero reference implementation</li>
+<li><a href="https://github.com/monero-project/monero/pull/2056">historical discussion on Github</a> - gives context but is not up to date with all details</li>
+<li><a href="https://monero.stackexchange.com/questions/10674/how-are-subaddresses-and-account-addresses-generated-from-master-wallet-keys/10676#10676">StackExchange answer</a> - excellent summary by knaccc</li>
 </ul>
                 
                   
