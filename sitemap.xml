@@ -21,11 +21,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://monerodocs.org/interacting/monero-config-file/</loc>
-     <lastmod>2019-02-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://monerodocs.org/interacting/monerod-reference/</loc>
      <lastmod>2019-02-21</lastmod>
      <changefreq>daily</changefreq>
@@ -47,6 +42,11 @@
     </url>
     <url>
      <loc>https://monerodocs.org/interacting/monero-blockchain-import-reference/</loc>
+     <lastmod>2019-02-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://monerodocs.org/interacting/monero-config-file/</loc>
      <lastmod>2019-02-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
