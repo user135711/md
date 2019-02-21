@@ -343,6 +343,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../interacting/monero-wallet-cli-reference/" title="monero-wallet-cli" class="md-nav__link">
+      monero-wallet-cli
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../interacting/monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
       monero-wallet-gui
     </a>
@@ -426,39 +438,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../cryptography/prng/" title="PRNG" class="md-nav__link">
-      PRNG
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
-      Keccak-256
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
-    <label class="md-nav__link" for="nav-4-4">
+    <label class="md-nav__link" for="nav-4-2">
       Asymmetric
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-4">
+      <label class="md-nav__title" for="nav-4-2">
         Asymmetric
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -541,6 +529,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/prng/" title="PRNG" class="md-nav__link">
+      PRNG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+      Keccak-256
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -571,8 +583,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../public-address/main-address/" title="Main" class="md-nav__link">
-      Main
+    <a href="../public-address/standard-address/" title="Standard" class="md-nav__link">
+      Standard
     </a>
   </li>
 
@@ -985,7 +997,7 @@
 <p>Transactions are still signed with a single spend key. The spend key is a sum of all N private keys. The rationale for such design is to decouple multisig from ring signatures.</p>
 <p>Let's consider the 2-of-3 scheme. We have 3 participants. Each participant is granted exactly 2 private keys in a way that pairs do not repeat between participants. This way any 2 participants together have all 3 private keys required to create the private spend key.</p>
 <p>Multi-signing is a wallet-level feature. There is no way to learn from the blockchain which transactions were created using multiple signatures.</p>
-<p>It is also worth noting in Monero there is no multisig addresses as such. <a href="/public-address/main-address/">Address structure</a> does not care how the underlying private spend key got created.</p>
+<p>It is also worth noting in Monero there is no multisig addresses as such. <a href="/public-address/standard-address/">Address structure</a> does not care how the underlying private spend key got created.</p>
 <p>After multisig wallet setup every participant ends up knowing the public address and private view key. This is necessary for participants to recognize and decipher transactions they are supposed to co-sign.</p>
 <h2 id="multisig-wallet-setup">Multisig wallet setup<a class="headerlink" href="#multisig-wallet-setup" title="Permanent link">&para;</a></h2>
 <p>Multisig feature is only available via a command line wallet. You should be familiar with the CLI wallet before playing with multisig.</p>

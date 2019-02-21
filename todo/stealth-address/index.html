@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/base58/">
+        <link rel="canonical" href="https://monerodocs.org/todo/stealth-address/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Base58 | Monero Documentation</title>
+        <title>Stealth Address | Monero Documentation</title>
       
     
     
@@ -109,7 +109,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#base58" tabindex="1" class="md-skip">
+      <a href="#stealth-address" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Base58
+                Stealth Address | Monero Documentation
               </span>
             
           
@@ -406,12 +406,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Cryptography
@@ -429,7 +427,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -460,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -472,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/private-key/" title="Private keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/private-key/" title="Private keys" class="md-nav__link">
       Private keys
     </a>
   </li>
@@ -484,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/public-key/" title="Public keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/public-key/" title="Public keys" class="md-nav__link">
       Public keys
     </a>
   </li>
@@ -496,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
       Edwards25519 curve
     </a>
   </li>
@@ -508,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/key-image/" title="Key image" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/key-image/" title="Key image" class="md-nav__link">
       Key image
     </a>
   </li>
@@ -523,49 +521,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Base58
-      </label>
-    
-    <a href="./" title="Base58" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
       Base58
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -575,7 +535,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../prng/" title="PRNG" class="md-nav__link">
+    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -587,7 +547,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
+    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
       Keccak-256
     </a>
   </li>
@@ -835,8 +795,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
+  <a href="#hides-recipient" title="Hides recipient" class="md-nav__link">
+    Hides recipient
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-time-per-payment" title="One-time, per payment" class="md-nav__link">
+    One-time, per payment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wallet-level-feature" title="Wallet level feature" class="md-nav__link">
+    Wallet level feature
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elliptic-curves-magic-properties" title="Elliptic curves magic properties" class="md-nav__link">
+    Elliptic curves magic properties
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#it-is-possible-to-establish-a-shared-secret-without-sharing-a-secret" title="It is possible to establish a shared secret without sharing a secret" class="md-nav__link">
+    It is possible to establish a shared secret without sharing a secret
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-new-key-pair-can-be-derived-by-multiplying-both-keys" title="A new key pair can be derived by multiplying both keys" class="md-nav__link">
+    A new key pair can be derived by multiplying both keys
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stealth-address-protocol" title="Stealth address protocol" class="md-nav__link">
+    Stealth address protocol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -857,19 +872,67 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/base58.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/todo/stealth-address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="base58">Base58<a class="headerlink" href="#base58" title="Permanent link">&para;</a></h1>
-<p>Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: <code>IOl0+/</code></p>
-<p>Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.</p>
-<p>For details, see <a href="https://en.wikipedia.org/wiki/Base58">Wikipedia</a>.</p>
-<h2 id="base58-in-monero">Base58 in Monero<a class="headerlink" href="#base58-in-monero" title="Permanent link">&para;</a></h2>
-<p>Monero has its own variant of Base58.</p>
-<p>In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .</p>
-<p>The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with "1"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.</p>
-<p>The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.</p>
-<p>For details, see <a href="https://github.com/monero-project/monero/blob/master/src/common/base58.cpp">reference C++ Base58</a> implementation and <a href="https://github.com/bigreddmachine/MoneroPy/blob/master/moneropy/base58.py">unofficial Python Base58</a> implementation.</p>
+                <h1 id="stealth-address">Stealth Address<a class="headerlink" href="#stealth-address" title="Permanent link">&para;</a></h1>
+<h2 id="hides-recipient">Hides recipient<a class="headerlink" href="#hides-recipient" title="Permanent link">&para;</a></h2>
+<p>Stealth address is a privacy technique to hide the recipient.</p>
+<p>Even though blockchain is public, observer has no way to link the payment to the recipient.</p>
+<p>Payments simply do <strong>not</strong> go to recipient address. Instead payments go to one-time "stealth" addresses.     </p>
+<h2 id="one-time-per-payment">One-time, per payment<a class="headerlink" href="#one-time-per-payment" title="Permanent link">&para;</a></h2>
+<p>Stealth address is generated for each individual payment and must not be reused.</p>
+<p>In Bitcoin, should stealth address be reused, the payments are linked.
+Observer would learn these payments were to the same person.
+This wouldn't be end of the world though, as most users would link the outputs anyway when spending from the wallet.  </p>
+<p>In Monero, stealth address reuse leads to lose of funds.
+If sender re-uses stealth address, then recipient will only be able to claim one of the payments.
+See <a href="/cryptography/asymmetric/key-image">key image</a> to learn why this is the case.
+Practically, to re-use stealth address, sender would have to manually craft a malicious transaction.
+Recipient would simply not acknowledge receiving the payment, as if sender never paid.</p>
+<h2 id="wallet-level-feature">Wallet level feature<a class="headerlink" href="#wallet-level-feature" title="Permanent link">&para;</a></h2>
+<p>Stealth addresses are not part of the consensus layer. For transaction to be valid,
+it does not matter how the key pairs were generated.</p>
+<p>Stealth address is non-interactive protocol between sender and recipient.</p>
+<h2 id="elliptic-curves-magic-properties">Elliptic curves magic properties<a class="headerlink" href="#elliptic-curves-magic-properties" title="Permanent link">&para;</a></h2>
+<p>Before going further understand the following properties of elliptic curves.</p>
+<p>Once you internalize these critical properties,
+you will be able to easily come up with a stealth address scheme yourself. </p>
+<h3 id="it-is-possible-to-establish-a-shared-secret-without-sharing-a-secret">It is possible to establish a shared secret without sharing a secret<a class="headerlink" href="#it-is-possible-to-establish-a-shared-secret-without-sharing-a-secret" title="Permanent link">&para;</a></h3>
+<p>Two parties can come up with the same secret number w/o sending anything except their public keys.</p>
+<p>Specifically, having 2 unrelated key pairs, you can exchange public keys, and then each party can independently calculate the same secret number, simply by multiplying own private key with other party's public key:</p>
+<p><code>s = aB = bA</code>, where:</p>
+<ul>
+<li>s - the secret (256-bit number)</li>
+<li>a - Alice private key</li>
+<li>A - Alice public key</li>
+<li>b - Bob private key</li>
+<li>B - Bob public key</li>
+</ul>
+<h3 id="a-new-key-pair-can-be-derived-by-multiplying-both-keys">A new key pair can be derived by multiplying both keys<a class="headerlink" href="#a-new-key-pair-can-be-derived-by-multiplying-both-keys" title="Permanent link">&para;</a></h3>
+<p>Having a key pair, you can derive a new key pair, simply by multiplying both keys by an integer.</p>
+<p>Surprisingly, the new key pair will be valid, i.e. the private key will match the public key.  </p>
+<h2 id="stealth-address-protocol">Stealth address protocol<a class="headerlink" href="#stealth-address-protocol" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Sender Alice generates a new key pair. Note this is entirely local to the sender. </p>
+</li>
+<li>
+<p>a - private key</p>
+</li>
+<li>
+<p>A - public key</p>
+</li>
+<li>
+<p>Sender Alice gets receiver's (Bob) public key from his address, <code>B</code>.</p>
+</li>
+<li>
+<p>Sender calculates the secret:</p>
+</li>
+</ol>
+<p><code>s = rB</code></p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>http://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0006270005590566</p>
                 
                   
                 
@@ -886,41 +949,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../asymmetric/key-image/" title="Key image" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Key image
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../prng/" title="PRNG" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                PRNG
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

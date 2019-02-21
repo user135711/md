@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/pedersen-commitment/">
+        <link rel="canonical" href="https://monerodocs.org/public-address/standard-address/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Pedersen Commitment | Monero Documentation</title>
+        <title>Standard Address | Monero Documentation</title>
       
     
     
@@ -109,7 +109,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#pedersen-commitment" tabindex="1" class="md-skip">
+      <a href="#address" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Pedersen Commitment | Monero Documentation
+                Standard
               </span>
             
           
@@ -343,6 +343,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../interacting/monero-wallet-cli-reference/" title="monero-wallet-cli" class="md-nav__link">
+      monero-wallet-cli
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../interacting/monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
       monero-wallet-gui
     </a>
@@ -415,32 +427,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/introduction/" title="Introduction" class="md-nav__link">
       Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../prng/" title="PRNG" class="md-nav__link">
-      PRNG
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
-      Keccak-256
     </a>
   </li>
 
@@ -452,13 +440,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
-    <label class="md-nav__link" for="nav-4-4">
+    <label class="md-nav__link" for="nav-4-2">
       Asymmetric
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-4">
+      <label class="md-nav__title" for="nav-4-2">
         Asymmetric
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -470,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -482,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/private-key/" title="Private keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/private-key/" title="Private keys" class="md-nav__link">
       Private keys
     </a>
   </li>
@@ -494,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/public-key/" title="Public keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/public-key/" title="Public keys" class="md-nav__link">
       Public keys
     </a>
   </li>
@@ -506,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
       Edwards25519 curve
     </a>
   </li>
@@ -518,7 +506,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/key-image/" title="Key image" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/key-image/" title="Key image" class="md-nav__link">
       Key image
     </a>
   </li>
@@ -535,8 +523,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../base58/" title="Base58" class="md-nav__link">
+    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
       Base58
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
+      PRNG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+      Keccak-256
     </a>
   </li>
 
@@ -550,10 +562,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Address
@@ -569,11 +583,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../public-address/main-address/" title="Main" class="md-nav__link">
-      Main
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Standard
+      </label>
+    
+    <a href="./" title="Standard" class="md-nav__link md-nav__link--active">
+      Standard
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-address" title="Standard address" class="md-nav__link">
+    Standard address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" title="Data structure" class="md-nav__link">
+    Data structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating" title="Generating" class="md-nav__link">
+    Generating
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -583,7 +656,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/subaddress/" title="Subaddress" class="md-nav__link">
+    <a href="../subaddress/" title="Subaddress" class="md-nav__link">
       Subaddress
     </a>
   </li>
@@ -595,7 +668,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/integrated-address/" title="Integrated" class="md-nav__link">
+    <a href="../integrated-address/" title="Integrated" class="md-nav__link">
       Integrated
     </a>
   </li>
@@ -779,6 +852,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-address" title="Standard address" class="md-nav__link">
+    Standard address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structure" title="Data structure" class="md-nav__link">
+    Data structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating" title="Generating" class="md-nav__link">
+    Generating
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -789,12 +899,77 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/pedersen-commitment.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/public-address/standard-address.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="pedersen-commitment">Pedersen Commitment<a class="headerlink" href="#pedersen-commitment" title="Permanent link">&para;</a></h1>
-<p>https://www.reddit.com/r/Monero/comments/9ed7vb/pedersen_commitment/</p>
-<p>https://monero.stackexchange.com/questions/10177/who-generates-parameters-g-h-for-pedersen-commitment-in-monero</p>
+                <h1 id="address">Address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h1>
+<p>Monero public address is what you publish to get paid.</p>
+<p>An address can be generated offline and for free. It boils down to generating a large random number representing your private spending key.</p>
+<p>Publishing your Monero address does <strong>not</strong> endanger your privacy. That's because in Monero transactions go to stealth addresses which are decoupled from your public address.</p>
+<p>There are a few <strong>types of public addresses</strong> in Monero:</p>
+<ul>
+<li>Standard address - basic type of an address, also referred to as raw address</li>
+<li>Subaddress - what you should be using by default</li>
+<li>Integrated address - relevant for exchanges, merchants, and other businesses accepting Monero in a fully automated way</li>
+</ul>
+<h2 id="standard-address">Standard address<a class="headerlink" href="#standard-address" title="Permanent link">&para;</a></h2>
+<p>Historically, raw address was the only available option. For that reason it is the most widely adopted and supported address type.</p>
+<p>Its strength is simplicity. However, these days users should prefer receiving to subaddresses instead.</p>
+<p>Technically, raw address is also a basis for creating subaddresses and integrated addresses.</p>
+<p>Raw address is <strong>still useful for</strong>:</p>
+<ul>
+<li>accepting block reward in a solo-mining scenario as other addresses are not supported</li>
+<li>accepting from senders who batch payouts (like mining pools); in this scenario the sender is paying multiple parties using a single transaction; such transaction has multiple outputs; subaddresses do not work in this scenario</li>
+<li>accepting from senders who use legacy wallets (can't send to subaddress)</li>
+</ul>
+<p>Monero raw address is composed of two public keys:</p>
+<ul>
+<li>public spend key</li>
+<li>public view key</li>
+</ul>
+<p>It also contains a checksum and a "network byte" which actually identifies both the network and the address type.</p>
+<h2 id="data-structure">Data structure<a class="headerlink" href="#data-structure" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Size in bytes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>identifies the network and address type; <a href="https://github.com/monero-project/monero/blob/793bc973746a10883adb2f89827e223f562b9651/src/cryptonote_config.h#L149">18</a> - main chain; <a href="https://github.com/monero-project/monero/blob/793bc973746a10883adb2f89827e223f562b9651/src/cryptonote_config.h#L161">53</a> - test chain</td>
+</tr>
+<tr>
+<td>1</td>
+<td>32</td>
+<td>public spend key</td>
+</tr>
+<tr>
+<td>33</td>
+<td>32</td>
+<td>public view key</td>
+</tr>
+<tr>
+<td>65</td>
+<td>4</td>
+<td>checksum (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L261">Keccak-f[1600] hash</a> of the previous 65 bytes, trimmed to first <a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L53">4</a> bytes)</td>
+</tr>
+</tbody>
+</table>
+<p>It totals to 69 bytes. The bytes are then encoded (<a href="https://github.com/monero-project/monero/blob/8f1f43163a221153403a46902d026e3b72f1b3e3/src/common/base58.cpp#L240">src</a>) in <a href="/cryptography/base58">Monero specific Base58</a> format, resulting in a 95 chars long string. Example standard address:</p>
+<p><code>4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx3skxNgYeYTRj5UzqtReoS44qo9mtmXCqY45DJ852K5Jv2684Rge</code></p>
+<p>See the <a href="https://github.com/monero-project/monero/blob/f7b9f44c1b0d53170fd7f53d37fc67648f3247a2/src/cryptonote_basic/cryptonote_basic_impl.cpp#L159">source code</a>.</p>
+<h2 id="generating">Generating<a class="headerlink" href="#generating" title="Permanent link">&para;</a></h2>
+<p>Standard address is derived from the root private key. TODO.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://monero.stackexchange.com/questions/980/what-are-the-public-viewkeys-and-spendkeys">StackExchenge answer</a></li>
+<li><a href="https://xmr.llcoins.net/addresstests.html">https://xmr.llcoins.net/addresstests.html</a></li>
+</ul>
                 
                   
                 
@@ -811,6 +986,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Keccak-256
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../subaddress/" title="Subaddress" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Subaddress
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

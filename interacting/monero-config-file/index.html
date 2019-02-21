@@ -404,6 +404,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../monero-wallet-cli-reference/" title="monero-wallet-cli" class="md-nav__link">
+      monero-wallet-cli
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
       monero-wallet-gui
     </a>
@@ -487,39 +499,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
-      PRNG
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
-      Keccak-256
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
     
-    <label class="md-nav__link" for="nav-4-4">
+    <label class="md-nav__link" for="nav-4-2">
       Asymmetric
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-4">
+      <label class="md-nav__title" for="nav-4-2">
         Asymmetric
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -602,6 +590,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
+      PRNG
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+      Keccak-256
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -632,8 +644,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../public-address/main-address/" title="Main" class="md-nav__link">
-      Main
+    <a href="../../public-address/standard-address/" title="Standard" class="md-nav__link">
+      Standard
     </a>
   </li>
 
@@ -894,7 +906,7 @@
 <h2 id="applicability">Applicability<a class="headerlink" href="#applicability" title="Permanent link">&para;</a></h2>
 <p>By default Monero looks for <code>bitmonero.conf</code> in Monero <a href="/interacting/overview/#data-directory">data directory</a>.</p>
 <p>To use a specific config file add <code>--config-file</code> option:</p>
-<p><code>./monerod --config-file=/etc/monero.conf</code></p>
+<p><code>./monerod --config-file=/etc/monerod.conf</code></p>
 <p>The <code>--config-file</code> option is available for: </p>
 <ul>
 <li><code>monerod</code></li>
@@ -906,7 +918,7 @@
 <ul>
 <li><code>option-name=value</code></li>
 <li><code>valueless-option-name=1</code> for options that don't expect value</li>
-<li><code># I am a comment</code></li>
+<li><code># comment</code></li>
 <li>whitespace is ignored</li>
 </ul>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
@@ -916,18 +928,18 @@
 <p><code>./monerod --log-level=4 --stagenet</code></p>
 <p>translates to:</p>
 <div class="codehilite"><pre><span></span>log-level=4
-stagenet=1     # use value &quot;1&quot; for
+stagenet=1     # use value &quot;1&quot; to enable the value-less options like --stagenet
 </pre></div>
 
 
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span># /etc/monero.conf
+<div class="codehilite"><pre><span></span># /etc/monerod.conf
 
 # Data directory (blockchain db and indices)
 data-dir=/home/monero/.monero
 
 # Log file
-log-file=/var/log/monero/monero.log
+log-file=/var/log/monero/monerod.log
 max-log-file-size=0            # Prevent monerod from managing the log files; we want logrotate to take care of that
 
 # P2P full node

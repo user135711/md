@@ -13,7 +13,7 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/cryptography/base58/">
+        <link rel="canonical" href="https://monerodocs.org/todo/bulletproofs/">
       
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Base58 | Monero Documentation</title>
+        <title>Bulletproofs - Monero Documentation</title>
       
     
     
@@ -109,10 +109,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#base58" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -135,7 +131,7 @@
                 Monero Documentation
               </span>
               <span class="md-header-nav__topic">
-                Base58
+                Bulletproofs
               </span>
             
           
@@ -406,12 +402,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Cryptography
@@ -429,7 +423,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -460,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -472,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/private-key/" title="Private keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/private-key/" title="Private keys" class="md-nav__link">
       Private keys
     </a>
   </li>
@@ -484,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/public-key/" title="Public keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/public-key/" title="Public keys" class="md-nav__link">
       Public keys
     </a>
   </li>
@@ -496,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
       Edwards25519 curve
     </a>
   </li>
@@ -508,7 +502,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../asymmetric/key-image/" title="Key image" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/key-image/" title="Key image" class="md-nav__link">
       Key image
     </a>
   </li>
@@ -523,49 +517,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Base58
-      </label>
-    
-    <a href="./" title="Base58" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
       Base58
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -575,7 +531,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../prng/" title="PRNG" class="md-nav__link">
+    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -587,7 +543,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../keccak-256/" title="Keccak-256" class="md-nav__link">
+    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
       Keccak-256
     </a>
   </li>
@@ -821,55 +777,44 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#base58-in-monero" title="Base58 in Monero" class="md-nav__link">
-    Base58 in Monero
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/cryptography/base58.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/todo/bulletproofs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="base58">Base58<a class="headerlink" href="#base58" title="Permanent link">&para;</a></h1>
-<p>Base58 is a binary-to-text encoding scheme. It is similar to Base64 but has been modified to avoid both non-alphanumeric characters and letters which might look ambiguous when printed. The characters excluded in relation to Base64 are: <code>IOl0+/</code></p>
-<p>Base58 does not strictly specify the format. This results in some implementations being incompatible with others, for example with regard to alphabet order.</p>
-<p>For details, see <a href="https://en.wikipedia.org/wiki/Base58">Wikipedia</a>.</p>
-<h2 id="base58-in-monero">Base58 in Monero<a class="headerlink" href="#base58-in-monero" title="Permanent link">&para;</a></h2>
-<p>Monero has its own variant of Base58.</p>
-<p>In Monero the Base58 encoding is performed in 8-byte blocks, except the last block which is the remaining (8 or less) bytes .</p>
-<p>The 8-byte block converts to 11 or less Base58 characters. If the block converted to less then 11 characters, the output is padded with "1"s (0 in Base58). The final block is padded as well to whatever would be the maximum size of this number of bytes encoded in Base58.</p>
-<p>The advantage of Monero implementation is that output is of a fixed size which is not the case with plain Base58. The disadvantage is that default libraries won't work.</p>
-<p>For details, see <a href="https://github.com/monero-project/monero/blob/master/src/common/base58.cpp">reference C++ Base58</a> implementation and <a href="https://github.com/bigreddmachine/MoneroPy/blob/master/moneropy/base58.py">unofficial Python Base58</a> implementation.</p>
+                  <h1>Bulletproofs</h1>
+                
+                <p>Pieter Wuille on Bulletproofs:</p>
+<p>Bulletproofs is a general technology to implement zero-knowledge proofs.</p>
+<p>Bitcoin does not use zero-knowledge proofs. There is no way you can just "plug in" Bulletproofs anywhere in Bitcoin.</p>
+<p>Perhaps you are talking about confidential transactions (CT). This is a technique to permit a public ledger that makes the amounts hidden while still permitting everyone to verify the balances adds up. If that sounds like magic, that's because it is.</p>
+<p>CT rely on zero-knowledge proofs. They could use Bulletproofs. They could also use other types of zero-knowledge proofs (there are several, zk-SNARKS is the well known, each with their own trade-offs). Certainly the invention of Bulletproofs made CT more accessible.</p>
+<p>However... CT is still very different from how Bitcoin works right now. There is no obvious way to integrate them. My best hope would be using something like an extension block, where you can have coins on the "legacy" side or coins on the confidential side - with explicit operations to move them between the two.</p>
+<p>However, that is far from simple, and AFAIK nobody is really working on it. Much as I love this technique and would be very excited to see it in Bitcoin, it's unrealistic to think that it will be usable anytime soon there.</p>
+<p>Every system must lack at least one of unconditional soundness and unconditional blindness. It's perfectly possible to build a system that lacks both.</p>
+<p>Bulletproofs are a general zero-knowledge proof technique. That means that they can be used to prove any statement over secret data without revealing that data.</p>
+<p>You could prove you know 2 numbers that add up to 7.</p>
+<p>You could prove that you know a string whose SHA256 hash is 16c28109a2719ebd4a123db11ff966f02d814354e3dc932449484f1c5a804af4, without revealing anything else about that string.</p>
+<p>They could be used instead of zk-SNARKs in Zero-Knowledge Contingent Payments (swapping money for solutions to a problem). These can be done without any changes to Bitcoin.</p>
+<p>You could (in theory, read on) use them to build a blockchain similar to ZCash (which heavily relies on zk-SNARKs for proving that their ledger makes sense), but without the trusted setup procedure or novel cryptography (Bulletproofs use very conservative security assumptions). Unfortunately, Bulletproof validation is much slower than zk-SNARK validation for complex problems, so it's not really comparable.</p>
+<p>I expect that the most interesting applications are things we haven't considered yet. They suddenly bring zero-knowledge proofs into scope for a lot of problems and protocols where it wasn't really reasonable to go through the effort of using one of the existing proof systems.</p>
+<p>++++</p>
+<p>I'm pretty sure that Monero is not unconditionally sound. Even if it is, after switching to Bulletproofs they won't be (Bulletproofs cannot be made unconditionally sound).</p>
+<p>Yes, with the old rangeproof construction there was an alternative that was unconditionally sound, but not unconditionally private.</p>
+<p>This is not possible with Bulletproofs (and theoretically impossible with anything with similar compactness; unconditionally sound proofs cannot be small).</p>
+<p>++++</p>
+<p>Bulletproofs are a general zero-knowledge proof technique. That means that they can be used to prove any statement over secret data without revealing that data.</p>
+<p>You could prove you know 2 numbers that add up to 7.</p>
+<p>You could prove that you know a string whose SHA256 hash is 16c28109a2719ebd4a123db11ff966f02d814354e3dc932449484f1c5a804af4, without revealing anything else about that string.</p>
+<p>They could be used instead of zk-SNARKs in Zero-Knowledge Contingent Payments (swapping money for solutions to a problem). These can be done without any changes to Bitcoin.</p>
+<p>You could (in theory, read on) use them to build a blockchain similar to ZCash (which heavily relies on zk-SNARKs for proving that their ledger makes sense), but without the trusted setup procedure or novel cryptography (Bulletproofs use very conservative security assumptions). Unfortunately, Bulletproof validation is much slower than zk-SNARK validation for complex problems, so it's not really comparable.</p>
+<p>I expect that the most interesting applications are things we haven't considered yet. They suddenly bring zero-knowledge proofs into scope for a lot of problems and protocols where it wasn't really reasonable to go through the effort of using one of the existing proof systems.</p>
+<p>++++</p>
+<p>Practical zero-knowledge proofs have existed for a few years now, and ZKCPs are indeed an application of them.</p>
+<p>Bulletproofs are just a new type of zero-knowledge proof. Compared to zk-SNARKS, they're much more conservative in their security assumptions, and don't need a complicated setup procedure before proofs can be created. On the other hand, they're also larger and slower for complicated problsms. And they don't do anything that couldn't be done before - they're just more practical depending on your requirements.</p>
                 
                   
                 
@@ -886,41 +831,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../asymmetric/key-image/" title="Key image" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Key image
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../prng/" title="PRNG" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                PRNG
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
