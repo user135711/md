@@ -324,22 +324,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
+  <a href="#1-import-core-dev-pgp-key" title="1. Import core dev PGP key" class="md-nav__link">
+    1. Import core dev PGP key
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
+  <a href="#2-verify-signature-of-hash-list" title="2. Verify signature of hash list" class="md-nav__link">
+    2. Verify signature of hash list
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
+  <a href="#3-verify-the-hash" title="3. Verify the hash" class="md-nav__link">
+    3. Verify the hash
   </a>
   
 </li>
@@ -849,22 +849,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#0-import-core-dev-pgp-key" title="0. Import core dev PGP key" class="md-nav__link">
-    0. Import core dev PGP key
+  <a href="#1-import-core-dev-pgp-key" title="1. Import core dev PGP key" class="md-nav__link">
+    1. Import core dev PGP key
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-verify-signature-of-hash-list" title="1. Verify signature of hash list" class="md-nav__link">
-    1. Verify signature of hash list
+  <a href="#2-verify-signature-of-hash-list" title="2. Verify signature of hash list" class="md-nav__link">
+    2. Verify signature of hash list
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-verify-the-hash" title="2. Verify the hash" class="md-nav__link">
-    2. Verify the hash
+  <a href="#3-verify-the-hash" title="3. Verify the hash" class="md-nav__link">
+    3. Verify the hash
   </a>
   
 </li>
@@ -891,7 +891,7 @@
                 <h1 id="verify-monero-binaries">Verify Monero Binaries<a class="headerlink" href="#verify-monero-binaries" title="Permanent link">&para;</a></h1>
 <p>Verification must be carried on <strong>before extracting the archive and before using Monero</strong>.</p>
 <p>Instructions were tested on Linux. They should also work on macOS with slight modifications. </p>
-<h2 id="0-import-core-dev-pgp-key">0. Import core dev PGP key<a class="headerlink" href="#0-import-core-dev-pgp-key" title="Permanent link">&para;</a></h2>
+<h2 id="1-import-core-dev-pgp-key">1. Import core dev PGP key<a class="headerlink" href="#1-import-core-dev-pgp-key" title="Permanent link">&para;</a></h2>
 <p>This is a one time action. Skip this step for subsequent Monero releases.</p>
 <p>Monero core developers sign a list of hashes of released binaries.</p>
 <p>Riccardo "fluffypony" Spagni is Monero core developer who signs the releases.
@@ -910,23 +910,19 @@ trust
 <p>If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
 That would mean the key changed (likely was compromised).</p>
 </div>
-<h2 id="1-verify-signature-of-hash-list">1. Verify signature of hash list<a class="headerlink" href="#1-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
+<h2 id="2-verify-signature-of-hash-list">2. Verify signature of hash list<a class="headerlink" href="#2-verify-signature-of-hash-list" title="Permanent link">&para;</a></h2>
 <p>The list of binaries and their hashes is published on <a href="https://www.getmonero.org/downloads/hashes.txt">getmonero.org</a> and a few other places like release notes on <a href="https://reddit.com/r/monero">r/monero</a>.
 Please note the publication channel does not matter as long as you properly verify the signature!                                                                        u </p>
 <p>To verify these are real hashes (not tampered with) run: </p>
 <p><code>curl https://www.getmonero.org/downloads/hashes.txt | gpg --verify</code> </p>
-<p>The expected output is:</p>
-<div class="codehilite"><pre><span></span>...
-gpg: Good signature from &quot;Riccardo Spagni &amp;lt;ric@spagni.net&amp;gt;&quot; [full]
-</pre></div>
-
-
-<h2 id="2-verify-the-hash">2. Verify the hash<a class="headerlink" href="#2-verify-the-hash" title="Permanent link">&para;</a></h2>
+<p>The expected output should contain the line:</p>
+<p><code>gpg: Good signature from "Riccardo Spagni &lt;ric@spagni.net&gt;" [full]</code></p>
+<h2 id="3-verify-the-hash">3. Verify the hash<a class="headerlink" href="#3-verify-the-hash" title="Permanent link">&para;</a></h2>
 <p>By this step we checked that published hashes were not tampered with.</p>
 <p>The last step is to compare published hash with downloaded archive SHA-256 hash.</p>
 <p><a href="/interacting/download-monero-binaries">Download Monero</a> if you didn't already (but do not unpack).</p>
 <p>Replace the example file name with actual one:</p>
-<div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.13.0.4.tar.bz2
+<div class="codehilite"><pre><span></span>file_name=monero-linux-x64-v0.14.0.0.tar.bz2
 
 file_hash=`sha256sum $file_name | cut -c 1-64`
 

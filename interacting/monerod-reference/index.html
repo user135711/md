@@ -1310,7 +1310,7 @@ tail -f ~/.bitmonero/bitmonero.log           # watch the logs
 </tr>
 <tr>
 <td><code>--version</code></td>
-<td>Show <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Beryllium Bullet' (v0.13.0.4-release)</code></td>
+<td>Show <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Boron Butterfly' (v0.14.0.0-release)</code></td>
 </tr>
 <tr>
 <td><code>--os-version</code></td>
@@ -1539,6 +1539,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tbody>
 </table>
 <h4 id="accepting-monero">Accepting Monero<a class="headerlink" href="#accepting-monero" title="Permanent link">&para;</a></h4>
+<p>These are network notifications offered by <code>monerod</code>. There are also wallet notifications like <code>--tx-notify</code> offered by <code>monero-wallet-rpc</code> <a href="https://github.com/monero-project/monero/pull/4333">here</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1548,8 +1549,16 @@ This is for node-to-node communication. The following options do <strong>not</st
 </thead>
 <tbody>
 <tr>
-<td><code>--block-notify</code></td>
-<td>Run a program for each new block. The argument must be a <strong>full path</strong>. If the argument contains <code>%s</code> it will be replaced by the block hash. Example: <br /><code>./monerod --block-notify="/usr/bin/echo %s"</code><br /><br />Couple of notes:<br />1) Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up.<br />2) Mind blockchain reorganizations. Block notifications can revert to same and past heights. This actually happens pretty often.<br />3) See also <code>--tx-notify</code> option of <code>monero-wallet-rpc</code> daemon <a href="https://github.com/monero-project/monero/pull/4333">here</a>.</td>
+<td><code>--block-notify &lt;arg&gt;</code></td>
+<td>Run a program for each new block. The <code>&lt;arg&gt;</code> must be a <strong>full path</strong>. If the <code>&lt;arg&gt;</code> contains <code>%s</code> it will be replaced by the block hash. Example: <br /><code>./monerod --block-notify="/usr/bin/echo %s"</code><br /><br />Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up. <br /><br />Mind blockchain reorganizations. Block notifications can revert to same and past heights. Small reorganizations are natural and happen every day.</td>
+</tr>
+<tr>
+<td><code>--block-rate-notify &lt;arg&gt;</code></td>
+<td>Run a program when the number of blocks received in the recent past deviates significantly from the expectation. The <code>&lt;arg&gt;</code> must be a <strong>full path</strong>. The <code>&lt;arg</code>&gt; can contain any of <code>%t</code>, <code>%b</code>, <code>%e</code> symbols to interpolate: <br /><br ><code>%t</code>: the number of minutes in the observation window<br /><br ><code>%b</code>: the number of blocks observed in that window<br /><br ><code>%e</code>: the ideal number of blocks expected in that window<br /><br > The option will let you know if the network hash rate drops by a lot. This may be indicative of a large section of the network miners moving off to mine a private chain, to be later released to the network. Note that if this event triggers, it is not incontrovertible proof that this is happening. It might just be chance. The longer the window (the %t parameter), and the larger the distance between actual and expected number of blocks, the more indicative it is of a possible chain reorg double-spend attack being prepared.<br /><br /><strong>Recommendation:</strong> unless you run economically significant Monero exchange or operation, do <strong>not</strong> act on this data. It is hard to calibrate and easy to misinterpret. If this is a real attack, it will target high-liquidity entities and not small merchants.</td>
+</tr>
+<tr>
+<td><code>--reorg-notify &lt;arg&gt;</code></td>
+<td>Run a program when reorganization happens (ie, at least one block is removed from the top of the blockchain). The <code>&lt;arg&gt;</code> must be a <strong>full path</strong>. The <code>&lt;arg</code>&gt; can contain any of <code>%s</code>, <code>%h</code>, <code>%n</code> symbols to interpolate: <br /><br ><code>%s</code>: the height at which the split occurs <br /><br /><code>%h</code>: the height of the new blockchain<br /><br /><code>%d</code>: the number of blocks discarded from the old chain <br /><br /><code>%n</code>: the number of blocks being added <br /><br /> The option will let you know when a block is removed from the chain to be replaced by other blocks. This happens when a 51% attack occurs, but small reorgs also happen in the normal course of things. The <code>%d</code> parameter will be set to the number of blocks discarded from the old chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, that payment might have been cancelled). The <code>%n</code> parameter wil be set to the number of blocks in the new chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, any incoming payment in the first block will be automatically acted upon by your platform). <br /><br /><strong>Recommendation</strong>: unless you run economically significant Monero exchange or operation, you do <strong>not</strong> need to bother with this option. Simply account for reorganizations by requiring at least 10 confirmations before shipping valuable goods.</td>
 </tr>
 </tbody>
 </table>
@@ -1738,7 +1747,7 @@ You can also type commands directly in the console of the running <code>monerod<
 </tr>
 <tr>
 <td><code>version</code></td>
-<td>Show version information. Example output:<br /><code>Monero 'Beryllium Bullet' (v0.13.0.2-release)</code></td>
+<td>Show version information. Example output:<br /><code>Monero 'Boron Butterfly' (v0.14.0.0-release)</code></td>
 </tr>
 <tr>
 <td><code>status</code></td>
