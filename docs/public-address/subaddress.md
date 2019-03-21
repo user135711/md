@@ -20,9 +20,6 @@ Note it won't help if you have an account with the service. Then your payouts ar
 
 ## Group funds into accounts
 
-!!! Note
-    Feel free to skip this if your are new to Monero. Accounts are not essential and currently not supported by the GUI.
-
 **Accounts** are a convenience wallet-level feature to group subaddresses under one label and balance.
 
 You may want to organize your funds into accounts like "cash", "work", "trading", "mining", "donations", etc.
